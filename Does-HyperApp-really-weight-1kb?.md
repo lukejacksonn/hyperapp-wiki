@@ -1,4 +1,4 @@
-It's a stretch, but the answer is yes.
+It's a stretch, but the answer is **yes**.
 
 HyperApp consists of the following modules:
 
