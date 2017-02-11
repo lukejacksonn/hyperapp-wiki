@@ -1,13 +1,4 @@
-It's a stretch, but the answer is **yes**.
+HyperApp is 1300 bytes.
 
-HyperApp consists of the following modules:
-
-* `h`
-* `html`
-* `app`
-* `router`
-
-`html` is never used in production environments. The `router` is optional. 
-
-`h` and `app` near 1300 bytes. 
+The `html` module is never used in a production environment. That leaves `h`, `app` and `router`. The router is optional, so, the answer is yes. 
 
