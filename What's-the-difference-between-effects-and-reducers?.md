@@ -1,4 +1,4 @@
-Reducers are functions that evaluate the current state and return a new state. A reducer **can't** do async operations.
+Reducers are functions that evaluate the current state and return the next state. A reducer **can't** do async operations.
 
 Effects **can** be async, and they often are. Effects are used to cause side effects, like writing to a database or making requests to servers. Effects can dispatch other actions too, which is often the case, before or after an async task is done.
 
