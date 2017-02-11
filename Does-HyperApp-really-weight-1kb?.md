@@ -1,4 +1,6 @@
-Yes. HyperApp consists of the following modules:
+It's a stretch, but the answer is yes.
+
+HyperApp consists of the following modules:
 
 * `h`
 * `html`
