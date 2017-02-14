@@ -1,3 +1,3 @@
-HyperApp is 1300 bytes minified + gzipped.
+HyperApp is ~1300 bytes gzipped and without the router.
 
-How? The `html` module is never used in a production environment and the router is optional.
+The router is around 500 bytes.
