@@ -2,8 +2,7 @@ Reducers update the model, effects cause side effects.
 
 Effects may trigger other actions, which enables you to update the model asynchronously. 
 
-
-Here is a simplified picture of what happens when your application sends an action
+Both reducers and effects are called actions.
 
 **Application**
 ```jsx
@@ -20,23 +19,3 @@ if (action in reducers) {
     action(model, actions, data, error)
 }
 ```
-
-<div align=center>
-<table>
-  <tr>
-    <th colspan="2">Actions</th>
-  </tr>
-  <tr>
-    <th>Reducers</th>
-    <th>Effects</th>
-  </tr>
-  <tr>
-    <td>Update the model</td>
-    <td>Cause side effects</td>
-  </tr>
-  <tr>
-    <td>Return immmediately</td>
-    <td>Can trigger other actions </td>
-  </tr>
-</table>
-</div>
