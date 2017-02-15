@@ -1,17 +1,26 @@
-Reducers return the next model, therefore they can't do async operations.
+Reducers update the model, effects cause side effects. 
 
-Effects can be async, and they often are. Effects can dispatch other actions too, enabling you to update the model.
+Effects may trigger other actions, which enables you to update the model asynchronously. 
 
-When you dispatch an action using `actions.action`, HyperApp will determine whether `action` is a reducer or an effect.
+Reducers are synchronous. Both reducers and effects are called actions.
 
-**Reducers**
-```js
-const newModel = reducer(lastModel, data)
-render(view(model))
+Here is a simplified picture of what happens when your application sends an action
+
+**Application**
+```jsx
+actions.action(data)
 ```
 
-**Effects**
-```js
-return effect(model, actions, data, error)
+**HyperApp**
+```jsx
+if (action in reducers) { 
+    const newModel = action(oldModel, data)
+    render(view(newModel))
+
+} else // action is an effect
+    action(model, actions, data, error)
+}
 ```
+
+
 
