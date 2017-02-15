@@ -1,1 +1,0 @@
-# [Knowledge Base](https://github.com/hyperapp/hyperapp/wiki/Knowledge-Base)
