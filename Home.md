@@ -12,7 +12,7 @@ app({
 * [Colors](https://hyperapp.gomix.me/colors)
 * [CodeMirror](https://hyperapp.gomix.me/codemirror)
 * [SVG Clock](https://hyperapp.gomix.me/svg_clock)
-* [**Starter Template**](https://gomix.com/#!/project/hyperapp-starter)
+* [**Starter Template**](http://codepen.io/pen?template=Qdwpxy&editors=0010)
 
 If you want to support the project, make something cool with HyperApp and let us know.
 
