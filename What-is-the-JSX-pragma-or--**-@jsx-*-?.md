@@ -1,4 +1,4 @@
-The JSX pragma is a regular comment in your code that looks like this:
+The JSX pragma is a comment in your code that looks like this:
 
 ```jsx
 /** @jsx h */
