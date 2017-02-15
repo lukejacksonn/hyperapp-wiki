@@ -1,3 +1,1 @@
-HyperApp is ~1300 bytes gzipped and without the router.
-
-The router is around 500 bytes.
+HyperApp is ~1300 bytes gzipped without the router.
