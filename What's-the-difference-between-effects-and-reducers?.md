@@ -1,8 +1,11 @@
-Reducers update the model, effects cause side effects. 
 
-Effects may trigger other actions, which enables you to update the model asynchronously. 
+1. Both reducers and effects are called actions.
 
-Both reducers and effects are called actions.
+2. Reducers update the model, effects cause side effects. 
+
+3. Effects may trigger other actions, which enables you to update the model asynchronously. 
+
+
 
 **Application**
 ```jsx
