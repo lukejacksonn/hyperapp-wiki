@@ -1,4 +1,4 @@
-[HyperApp](https://github.com/hyperapp/hyperapp) is a JavaScript library for building modern UI applications. In this way, it's similar to others like React, Vue.js and Mithril.
+[HyperApp](https://github.com/hyperapp/hyperapp) is a JavaScript library for building modern frontend applications. In this way, it's similar to others like React, Vue.js and Mithril.
 
 ```jsx
 app({
