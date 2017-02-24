@@ -16,10 +16,9 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 
 This document is divided into three sections.
 
-* [Getting Started](/getting-started)
-* [Concepts](/concepts)
-* [API](/api)
-
+* [[Getting Started]]
+* [[Concepts]]
+* [[API]]
 
 ## Contributing
 
