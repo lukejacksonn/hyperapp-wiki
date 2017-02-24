@@ -1,18 +1,36 @@
-[HyperApp](https://github.com/hyperapp/hyperapp) is a JavaScript library for building frontend applications. In this way, it's similar to others like React, Vue.js and Mithril.
+Welcome to the HyperApp Wiki! 👋
 
-```jsx
-app({
-    model: "Hi.",
-    view: model => <h1>{model}</h1>
-})
-```
+[HyperApp](https://github.com/hyperapp/hyperapp) is a JavaScript library for building frontend applications.
 
-## Selected Examples
-* [TodoMVC](https://hyperapp-todomvc.gomix.me/)
-* [Colors](https://hyperapp.gomix.me/colors)
-* [CodeMirror](https://hyperapp.gomix.me/codemirror)
-* [SVG Clock](https://hyperapp.gomix.me/svg_clock)
-* [**Starter Template**](http://codepen.io/pen?template=Qdwpxy&editors=0010)
+[Elm Architecture]: https://guide.elm-lang.org/architecture/
+[Hyperx]: https://github.com/substack/hyperx
+[JSX]: https://facebook.github.io/react/docs/introducing-jsx.html
+
+* **Declarative**: HyperApp's design is based on the [Elm Architecture]. Create scalable browser-based applications using a functional paradigm. The twist is you don't have to learn a new language.
+* **Stateless components**: Build complex user interfaces from micro-components. Stateless components are framework agnostic, reusable and easy to debug.
+* **Batteries-included**: Out of the box, HyperApp has Elm-like state management, a virtual DOM engine and a router; it still weighs `1kb` and has no dependencies.
+
+HyperApp is not opinionated about your stack either; we're compatible with all bundlers and work well with Hyperx or JSX -- it's your choice.
+
+### Organization
+
+This document is divided into three sections.
+
+#### [Getting Started]()
+
+Build a few examples from start to finish using HyperApp.
+
+#### [Concepts]()
+
+Learn the fundamental concepts and architecture of HyperApp applications.
+
+#### [Documentation]()
+
+API reference.
+
+## Contributing
+
+This wiki is a collaborative effort. If you find an error fix it; if you think something is missing, feel free to create a new page or improve any of the existing pages.
 
 If you want to support the project, make something cool with HyperApp and let us know.
 
