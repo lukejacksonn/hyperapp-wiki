@@ -16,17 +16,10 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 
 This document is divided into three sections.
 
-#### [Getting Started]()
+* [Getting Started](/getting-started)
+* [Concepts](/concepts)
+* [API](/api)
 
-Build a few examples from start to finish using HyperApp.
-
-#### [Concepts]()
-
-Learn the fundamental concepts and architecture of HyperApp applications.
-
-#### [Documentation]()
-
-API reference.
 
 ## Contributing
 
