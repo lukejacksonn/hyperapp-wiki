@@ -22,8 +22,6 @@ This document is divided into three sections.
 
 ## Contributing
 
-This wiki is a collaborative effort. If you find an error fix it; if you think something is missing, feel free to create a new page or improve any of the existing pages.
-
-If you want to support the project, make something cool with HyperApp and let us know.
+This wiki is a collaborative effort. Feel free fix errors, add new content or improve any of the existing pages.
 
 To learn about updates and new releases, [follow us](https://twitter.com/hyperappjs) on Twitter. 👋 
