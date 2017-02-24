@@ -12,9 +12,7 @@ Welcome to the HyperApp Wiki! 👋
 
 HyperApp is not opinionated about your stack either; we're compatible with all bundlers and work well with Hyperx or JSX -- it's your choice.
 
-### Organization
-
-This document is divided into three sections.
+## Organization
 
 * [[Getting Started]]
 * [[Concepts]]
