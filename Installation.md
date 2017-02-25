@@ -96,7 +96,7 @@ Create a new `index.html` file, copy and paste the code from the example and ope
 
 ### What just happened?
 
-The browser downloaded HyperApp and Hyperx (or Babel for JSX), compiled the view and run the application.
+The browser downloaded HyperApp, Hyperx/JSX, compiled the view and run the application.
 
 This process is slow, but it's good enough for demos and sharing examples with other people.
 
