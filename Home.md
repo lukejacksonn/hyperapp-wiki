@@ -17,12 +17,9 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 ## Documentation
 
 * [[Getting Started]]
-* [[Build Pipeline]]
-  * [[JSX]]
-  * [[Hyperx]]
 * [[Concepts]]
-  * [[Lifecycle Methods]]
 * [[API]]
 
+## Contributing
 
-
+Feel free to contribute new content or improve any of the existing pages.
