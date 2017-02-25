@@ -1,13 +1,10 @@
-<sub>SETUP</sub>
+<sup><h1>ORGANIZATION</h1></sup>
+
 * [[Getting Started]]
 * [[Build Pipeline]]
   * [[JSX]]
   * [[Hyperx]]
-
-<sub>CONCEPTS</sub>
-* [[Architecture]]
-* [[Lifecycle Methods]]
-
-<sub>DOCUMENTATION</sub>
+* [[Concepts]]
+  * [[Lifecycle Methods]]
 * [[API]]
 
