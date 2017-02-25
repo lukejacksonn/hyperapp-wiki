@@ -14,7 +14,7 @@ A modern build pipeline consists of:
 * A **compiler** e.g. [Babel] or [Bublé]. It transforms modern JavaScript into code compatible with older browsers.
 * A **bundler**, e.g. [Webpack], [Rollup] or [Browserify]. It takes modules and their dependencies and generates a single bundle that can be delivered to the browser.
 
-### JSX and Hyperx
+### JSX/Hyperx
 
 It's common to use a build pipeline to transform [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) or [Hyperx](https://github.com/substack/hyperx) into native HyperApp [`h`](/hyperapp/hyperapp/wiki/API#h) function calls.
 
@@ -30,3 +30,8 @@ Vanilla out:
 ```jsx
 const hello = h("h1", { id: "test" }, "Hi.")
 ```
+
+See the next section for instructions on how to setup build pipeline for your chosen template library:
+
+* [[JSX]]
+* [[Hyperx]]
