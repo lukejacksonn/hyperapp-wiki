@@ -10,7 +10,7 @@ Welcome to the HyperApp Wiki! 👋
 
 * **Declarative**: HyperApp's design is based on the [Elm Architecture]. Create scalable browser-based applications using a functional paradigm. The twist is you don't have to learn a new language.
 * **Stateless components**: Build complex user interfaces from micro-components. Stateless components are framework agnostic, reusable and easy to debug.
-* **Batteries-included**: Out of the box, HyperApp has Elm-like state management, a virtual DOM engine and a router; it still weighs `1kb` and has no dependencies.
+* **Batteries-included**: Out of the box, HyperApp has Elm-like state management and a virtual DOM engine; it still weighs `1kb` and has no dependencies.
 
 HyperApp is not opinionated about your stack either; we're compatible with all bundlers and work well with [Hyperx] or [JSX] -- it's your choice.
 
