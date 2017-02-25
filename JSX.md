@@ -21,7 +21,6 @@ For an in-depth introduction to JSX, visit the official [documentation](https://
 
 To use JSX with HyperApp, we'll use a compiler to transform JSX into native HyperApp [h](/hyperapp/hyperapp/wiki/api#h) function calls and a bundler to create a single `bundle.js` file we can deliver to the browser.
 
-
 In a new directory, create an `index.html` file:
 
 ```html
@@ -151,7 +150,7 @@ $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/rollup -cf iife -i index
 
 
 
-## Webpack
+### Webpack
 
 Install development dependencies:
 <pre>
