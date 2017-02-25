@@ -1,3 +1,4 @@
+* [[Home]]
 * [[Getting Started]]
 * [[Build Pipeline]]
   * [[JSX]]
