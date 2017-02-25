@@ -1,4 +1,4 @@
-<sub><strong>Table of Contents</strong></sub>
+<strong>Table of Contents</strong>
 
 * [[Getting Started]]
 * [[Build Pipeline]]
