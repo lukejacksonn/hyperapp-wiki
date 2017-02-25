@@ -1,5 +1,3 @@
-# API
-
 HyperApp has three named exports: [`h`](#h), [`app`](#app), and [`router`](#router).
 
 ## h
