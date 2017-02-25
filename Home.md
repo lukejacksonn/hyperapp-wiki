@@ -16,7 +16,8 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 
 ## Organization
 
-* [[Installation]]
+* [[Hello World]]
+* [[Build Pipeline]]
   * [[JSX]]
   * [[Hyperx]]
 * [[Concepts]]
