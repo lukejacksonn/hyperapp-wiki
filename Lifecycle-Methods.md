@@ -8,7 +8,7 @@ Lifecycle methods are functions that can be attached to virtual nodes in order t
 
 Signature: `(element)`.
 
-* `element` is a real DOM element.
+* `element` is the real DOM element.
 
 
 ```jsx
