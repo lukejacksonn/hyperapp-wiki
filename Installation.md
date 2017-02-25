@@ -14,7 +14,7 @@ To use a specific version of HyperApp:
 
 You can also skip the installation and try HyperApp in the online REPL.
 
-> The online REPL is a work in progress and will be available over the next weeks. In the meantime, use [this](https://codepen.io/jbucaran/pen/Qdwpxy) CodePen template.
+> The online REPL is not ready yet, in the meantime, use [this](https://codepen.io/jbucaran/pen/Qdwpxy) CodePen template.
 
 ## Build Pipeline
 
@@ -57,7 +57,7 @@ const hello = h("h1", { id: "test" }, "Hi.")
 
 Let's create a simple hello world example.
 
-Create a new `index.html` file, copy and paste the code from the example (or download it <a href="https://cdn.rawgit.com/jbucaran/290fcba656dab0275ba86e3f6f9cc969/raw/88e3cf377f597da9a4ad3704dc86bcd7a2d6d911/index.html" download="index.html">here</a>), and open it in your browser.
+Create a new [`index.html`](https://cdn.rawgit.com/jbucaran/290fcba656dab0275ba86e3f6f9cc969/raw/88e3cf377f597da9a4ad3704dc86bcd7a2d6d911/index.html) file, copy and paste the code from the example and open it in your browser.
 
 ### JSX
 
@@ -97,23 +97,6 @@ Create a new `index.html` file, copy and paste the code from the example (or dow
 </body>
 ```
 [View online](http://codepen.io/jbucaran/pen/JEQXQz)
-
-### Vanilla
-
-```html
-<body>
-    <script src="https://unpkg.com/hyperapp"></script>
-    <script>
-        const { h, app } = hyperapp
-
-        app({
-            model: "Hi.",
-            view: model => h("h1", { id: "test" }, model)
-        })
-    </script>
-</body>
-```
-[View online](http://codepen.io/jbucaran/pen/VPqoYR)
 
 ### What just happened?
 
