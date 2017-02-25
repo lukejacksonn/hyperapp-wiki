@@ -69,13 +69,13 @@ Create a new `index.html` file, copy and paste the code from the example and ope
 
         app({
             model: "Hi.",
-            view: model => <h1>{model}</h1>
+            view: model => <h1 ="id">{model}</h1>
         })
     </script>
 </body>
 ```
 
-[View online](https://cdn.rawgit.com/jbucaran/290fcba656dab0275ba86e3f6f9cc969/raw/88e3cf377f597da9a4ad3704dc86bcd7a2d6d911/index.html)
+[View online](https://rawgit.com/jbucaran/290fcba656dab0275ba86e3f6f9cc969/raw/64c7acd16af8470f120213506ccaebde194fe905/index.html).
 
 ### Hyperx
 
@@ -94,7 +94,7 @@ Create a new `index.html` file, copy and paste the code from the example and ope
     </script>
 </body>
 ```
-[View online](https://cdn.rawgit.com/jbucaran/5cfa8c98464fe0b5a48edbae6b332b27/raw/459b7875f9a604166c0751ad55960cc6bb4500bd/index.html)
+[View online](https://rawgit.com/jbucaran/5cfa8c98464fe0b5a48edbae6b332b27/raw/fd27e1cb48d44e2c96714914b4ae05b70f10e33d/index.html)
 
 ### What just happened?
 
