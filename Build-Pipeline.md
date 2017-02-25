@@ -31,7 +31,4 @@ Vanilla out:
 const hello = h("h1", { id: "test" }, "Hi.")
 ```
 
-See the next section for instructions on how to setup build pipeline for your chosen template library:
-
-* [[JSX]]
-* [[Hyperx]]
+See JSX or Hyperx for instructions on how to setup build pipeline.
