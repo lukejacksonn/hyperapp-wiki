@@ -59,9 +59,6 @@ Install dependencies:
 npm i -S <a href="https://www.npmjs.com/package/hyperapp">hyperapp</a>
 </pre>
 
-
-
-
 ### Browserify
 
 Install development dependencies:
@@ -88,12 +85,6 @@ $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/browserify \
 </pre>
 
 [Get this boilerplate](https://gist.github.com/jbucaran/48c1edb4fb0ea1aa5415b6686cc7fb45).
-
-
-
-
-
-
 
 ### Webpack
 
@@ -142,10 +133,6 @@ $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/webpack -p
 </pre>
 
 [Get this boilerplate](https://gist.github.com/jbucaran/c6a6bdb5383a985cec6b0ae4ebe5a4b1).
-
-
-
-
 
 ### Rollup
 
