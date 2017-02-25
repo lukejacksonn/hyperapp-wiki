@@ -22,4 +22,4 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 
 ## Contributing
 
-Feel free to contribute new content or improve any of the existing pages.
+Documentation improvements are very welcome. Feel free to contribute new content or edit any of the existing pages.
