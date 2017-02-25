@@ -1,4 +1,4 @@
-Welcome to the HyperApp Wiki! 👋
+Welcome to the HyperApp Wiki! Use the links on the sidebar to navigate the documentation.
 
 [HyperApp](https://github.com/hyperapp/hyperapp) is a JavaScript library for building frontend applications.
 
@@ -13,3 +13,5 @@ Welcome to the HyperApp Wiki! 👋
 * **Batteries-included**: Out of the box, HyperApp has Elm-like state management and a virtual DOM engine; it still weighs `1kb` and has no dependencies.
 
 HyperApp is not opinionated about your stack either; we're compatible with all bundlers and work well with [Hyperx] or [JSX] -- it's your choice.
+
+Want to know more? [Follow us](https://twitter.com/hyperappjs) on Twitter for updates. 👋 
