@@ -45,10 +45,80 @@ The generated code is smaller and performs better than the alternative: sending 
 JSX/Hyperx in:
 
 ```jsx
-const hello = <div id="test">Hi.</div>
+const hello = <h1 id="test">Hi.</h1>
 ```
 
 Vanilla out:
 ```jsx
-const hello = h("div", { id: "test" }, "Hi.")
+const hello = h("h1", { id: "test" }, "Hi.")
 ```
+
+## Hello World
+
+Let's create a simple hello world example.
+
+Create a new `index.html` file, copy and paste the code from the example (or download it <a href="https://cdn.rawgit.com/jbucaran/290fcba656dab0275ba86e3f6f9cc969/raw/88e3cf377f597da9a4ad3704dc86bcd7a2d6d911/index.html" download="index.html">here</a>), and open it in your browser.
+
+### JSX
+
+```html
+<body>
+    <script src="https://unpkg.com/babel-standalone"></script>
+    <script src="https://unpkg.com/hyperapp"></script>
+    <script type="text/babel">
+        const { h, app } = hyperapp
+        /** @jsx h */
+
+        app({
+            model: "Hi.",
+            view: model => <h1>{model}</h1>
+        })
+    </script>
+</body>
+```
+
+[View online](http://codepen.io/jbucaran/pen/Qdwpxy)
+
+### Hyperx
+
+```html
+<body>
+    <script src="https://unpkg.com/hyperapp"></script>
+    <script src="https://wzrd.in/standalone/hyperx"></script>
+    <script>
+        const { h, app } = hyperapp
+        const html = hyperx(h)
+
+        app({
+            model: "Hi.",
+            view: model => html`<h1>${model}</h1>`
+        })
+    </script>
+</body>
+```
+[View online](http://codepen.io/jbucaran/pen/JEQXQz)
+
+### Vanilla
+
+```html
+<body>
+    <script src="https://unpkg.com/hyperapp"></script>
+    <script>
+        const { h, app } = hyperapp
+
+        app({
+            model: "Hi.",
+            view: model => h("h1", { id: "test" }, model)
+        })
+    </script>
+</body>
+```
+[View online](http://codepen.io/jbucaran/pen/VPqoYR)
+
+### What just happened?
+
+The browser downloaded HyperApp and Hyperx (or Babel for JSX), compiled the view and run the application.
+
+This process is slow, but it's good enough for demos and sharing examples with other people.
+
+In the next section we'll explore how to setup a build pipeline for Hyperx and JSX using Browserify, Webpack and Rollup.
