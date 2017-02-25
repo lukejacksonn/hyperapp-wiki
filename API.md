@@ -124,9 +124,6 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/zNxZLP).
 
-
-
-
 ### effects
 
 Effects are a kind of action. The other kind of action are [reducers](#reducers).
@@ -141,7 +138,6 @@ Signature: `(model, actions, data, error)`.
 * `error` is a function you can call to throw an error.
 
 ```jsx
-
 const wait = time =>
     new Promise(resolve =>
         setTimeout(_ => resolve(), time))
@@ -178,8 +174,6 @@ app({ model, view, reducers, effects })
 
 [View online](http://codepen.io/jbucaran/pen/jyEKmw).
 
-
-
 ### subscriptions
 
 Subscriptions are functions scheduled to run only once when the [DOM is ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, create timers, open a socket connection, attach mouse/keyboard event listeners, etc.
@@ -207,7 +201,6 @@ app({
 ```
 
 [View online](http://codepen.io/jbucaran/pen/Bpyraw).
-
 
 ### hooks
 
@@ -268,8 +261,7 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/JELvjO).
 
-
-## router
+### router
 
 Signature: `(render, options)`.
 
@@ -314,7 +306,7 @@ app({
 [View online](https://hyperapp-routing.gomix.me)
 
 
-### setLocation
+#### setLocation
 
 Call `actions.setLocation(path)` to update the [location.pathname](https://developer.mozilla.org/en-US/docs/Web/API/Location). If the path matches an existing route, the corresponding view will be rendered. Available if you are using the [Router](#router).
 
@@ -346,7 +338,7 @@ app({
 [View online](https://gomix.com/#!/project/hyperapp-set-location)
 
 
-### href
+#### href
 
 HyperApp intercepts all `<a href="/path">...</a>` clicks and calls `action.setLocation("/path")` in your behalf.
 External links and links that begin with a `#` character are not intercepted.
