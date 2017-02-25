@@ -1,4 +1,4 @@
-To create HyperApp applications ready for production you will be using a build pipeline.
+To create applications ready for production you will be using a build pipeline.
 
 A modern build pipeline consists of:
 
