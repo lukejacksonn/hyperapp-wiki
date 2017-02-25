@@ -1,1 +1,1 @@
-Want to know more? [Follow us](https://twitter.com/hyperappjs) on Twitter for updates. 👋 
+For news and announcements, [follow us](https://twitter.com/hyperappjs) on Twitter.
