@@ -16,7 +16,7 @@ A modern build pipeline consists of:
 
 ## Why?
 
-It's common to use a build pipeline to transform [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) or [Hyperx](https://github.com/substack/hyperx) into native HyperApp [`h`](/hyperapp/hyperapp/wiki/API#h) function calls.
+It's common to use a build pipeline to transform [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) or [Hyperx](https://github.com/substack/hyperx) into native HyperApp [h](/hyperapp/hyperapp/wiki/API#h) function calls.
 
 The generated code is smaller and faster than the alternative: sending a parser over the wire and compiling the view in the user's browser. 
 
