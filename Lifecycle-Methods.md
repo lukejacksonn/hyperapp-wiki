@@ -1,10 +1,10 @@
 Lifecycle methods are functions that can be attached to virtual nodes in order to access actual DOM elements when they are created, updated or before they are removed.
 
-* oncreate: Called before an element is created.
+* _oncreate_: Called before an element is created.
 
-* onupdate: Called before an element is updated.
+* _onupdate_: Called before an element is updated.
 
-* onremove: Called before an element is removed.
+* _onremove_: Called before an element is removed.
 
 Signature: `(element)`.
 
