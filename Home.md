@@ -1,6 +1,6 @@
 Welcome to the HyperApp Wiki! :wave:
 
-[HyperApp](https://github.com/hyperapp/hyperapp) is a JavaScript library for building frontend applications.
+HyperApp is a JavaScript library for building frontend applications.
 
 [Elm Architecture]: https://guide.elm-lang.org/architecture/
 [Hyperx]: https://github.com/substack/hyperx
@@ -19,6 +19,7 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 * [[Getting Started]]
 * [[Concepts]]
 * [[API]]
+* [[Links]]
 
 ## Contributing
 
