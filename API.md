@@ -1,7 +1,7 @@
 ## Table of Contents
 
 * [h](#h)
-* [app](#h)
+* [app](#app)
     * [model](#model)
     * [view](#view)
     * [reducers](#reducers)
@@ -10,7 +10,7 @@
     * [hooks](#hooks)
     * [root](#root)
     * [router](#router)
-        * [`actions.setLocation`](#actionssetlocation)
+        * [setLocation](#setlocation)
         * [href](#href)
 
 
@@ -330,7 +330,7 @@ app({
 [View online](https://hyperapp-routing.gomix.me)
 
 
-### `actions.setLocation`
+### setLocation
 
 Call `actions.setLocation(path)` to update the [location.pathname](https://developer.mozilla.org/en-US/docs/Web/API/Location). If the path matches an existing route, the corresponding view will be rendered. Available if you are using the [Router](#router).
 
