@@ -1,4 +1,4 @@
-<sup><h4>ORGANIZATION</h4></sup>
+<sup><strong>ORGANIZATION</strong></sup>
 
 * [[Getting Started]]
 * [[Build Pipeline]]
