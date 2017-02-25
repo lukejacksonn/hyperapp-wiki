@@ -14,13 +14,4 @@ Welcome to the HyperApp Wiki! 👋
 
 HyperApp is not opinionated about your stack either; we're compatible with all bundlers and work well with [Hyperx] or [JSX] -- it's your choice.
 
-## Organization
-
-* [[Getting Started]]
-* [[Build Pipeline]]
-  * [[JSX]]
-  * [[Hyperx]]
-* [[Concepts]]
-  * [[Lifecycle Methods]]
-* [[API]]
-
+This wiki is a collaborative effort. Feel free to fix errors or contribute new content.
