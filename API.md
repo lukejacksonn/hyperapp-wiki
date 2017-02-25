@@ -1,16 +1,6 @@
 # API
 
-HyperApp has three named exports: [`h`](#h), [`app`](#app), and [`router`]().
-
-```jsx
-import { h, app, router } from "hyperapp"
-```
-
-In the browser; via a CDN, `hyperapp` is available in the global scope.
-
-```jsx
-const { h, app, router } = hyperapp
-```
+HyperApp has three named exports: [`h`](#h), [`app`](#app), and [`router`](#router).
 
 ## h
 
@@ -45,18 +35,17 @@ const tree = h("div", {}, [
 
 Starts the application.
 
-`app` has this signature: `app(options)`.
-
-* `options` has the following properties:
-  * [`model`](#model)
-  * [`view`](#view)
-  * [`reducers`](#reducers)
-  * [`effects`](#effects)
-  * [`subscriptions`](#subscriptions)
-  * [`hooks`](#hooks)
-  * [`root`](#root)
-  * [`router`](concepts/router.md)
-
+<pre>
+app({
+    <a href="#model">model</a>,
+    <a href="#view">view</a>,
+    <a href="#reducers">reducers</a>,
+    <a href="#effects">effects</a>,
+    <a href="#subscriptions">subscriptions</a>,
+    <a href="#root">root</a>,
+    <a href="#router">router</a>
+})
+</pre>
 
 
 ### model
@@ -304,3 +293,106 @@ app({
 ```
 
 [View online](http://codepen.io/jbucaran/pen/JELvjO)
+
+
+
+
+
+
+
+## router
+
+The router is any function with the following signature: `(render, options)`.
+
+* `render` is a function provided by HyperApp that accepts a [view](#view) and renders it.
+* `options` is the same object passed to [`app`](#app).
+
+You can define your own router or use the one provided with HyperApp.
+```jsx
+import { h, app, router } from "hyperapp"
+```
+
+To use the router, pass it to `app`.
+
+The `view` property is used as a dictionary of routes/views.
+
+The key is the route and the value is the [view](#view) function.
+
+* `/` match the index route or use as a wildcard to select the view when no route matches.
+
+* `/:key` match a route using the regular expression `[A-Za-z0-9]+`. The matched key is passed to the [view](#view) function via [`params`](#params).
+
+```jsx
+const Anchor = ({ href }) => (
+  <h1><a href={"/" + href}>{href}</a></h1>
+)
+
+app({
+  router,
+  view: {
+    "/": _ => (
+      <Anchor
+        href={Math.floor(Math.random() * 999)}
+      />
+    ),
+    "/:key": (model, actions, { key }) =>
+      <div>
+        <h1>{key}</h1>
+        <a href="/">Back</a>
+      </div>
+  }
+})
+```
+
+[View online](https://hyperapp-routing.gomix.me)
+
+
+
+
+### `actions.setLocation`
+Call `actions.setLocation(path)` to update the [location.pathname](https://developer.mozilla.org/en-US/docs/Web/API/Location). If the path matches an existing route, the corresponding view will be rendered. Available if you are using the default [Router](#router).
+
+```jsx
+app({
+  router,
+  view: {
+    "/": (model, actions) =>
+      <div>
+        <h1>Home</h1>
+        <button
+          onclick={_ =>
+            actions.setLocation("/about")}
+        >
+          About
+        </button>
+      </div>,
+
+    "/about": (model, actions) =>
+      <div>
+        <h1>About</h1>
+        <button
+          onclick={_ =>
+            actions.setLocation("/")}
+        >
+          Home
+        </button>
+      </div>
+  }
+})
+
+```
+
+[View online](https://gomix.com/#!/project/hyperapp-set-location)
+
+
+
+
+### href
+HyperApp intercepts all `<a href="/path">...</a>` clicks and calls `action.setLocation("/path")`.
+External links and links that begin with a `#` character are not intercepted.
+
+Add a custom `data-no-routing` attribute to anchor elements that should be handled differently.
+
+```html
+<a data-no-routing>Not a route</a>
+```
