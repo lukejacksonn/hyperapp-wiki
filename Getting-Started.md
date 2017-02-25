@@ -14,7 +14,7 @@ To use a specific version of HyperApp:
 
 You can also skip the installation and try HyperApp in the online REPL.
 
-> The online REPL is not ready yet, in the meantime, use [this](https://codepen.io/jbucaran/pen/Qdwpxy) CodePen template.
+> The online REPL is not ready yet, in the meantime, use a [CodePen](https://codepen.io/jbucaran/pen/Qdwpxy) template.
 
 ## Hello World
 
