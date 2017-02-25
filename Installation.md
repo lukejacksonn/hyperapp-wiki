@@ -57,7 +57,7 @@ const hello = h("h1", { id: "test" }, "Hi.")
 
 Let's create a simple hello world example.
 
-Create a new [`index.html`](https://cdn.rawgit.com/jbucaran/290fcba656dab0275ba86e3f6f9cc969/raw/88e3cf377f597da9a4ad3704dc86bcd7a2d6d911/index.html) file, copy and paste the code from the example and open it in your browser.
+Create a new `index.html` file, copy and paste the code from the example and open it in your browser.
 
 ### JSX
 
@@ -77,7 +77,7 @@ Create a new [`index.html`](https://cdn.rawgit.com/jbucaran/290fcba656dab0275ba8
 </body>
 ```
 
-[View online](http://codepen.io/jbucaran/pen/Qdwpxy)
+[View online](https://cdn.rawgit.com/jbucaran/290fcba656dab0275ba86e3f6f9cc969/raw/88e3cf377f597da9a4ad3704dc86bcd7a2d6d911/index.html)
 
 ### Hyperx
 
@@ -96,7 +96,7 @@ Create a new [`index.html`](https://cdn.rawgit.com/jbucaran/290fcba656dab0275ba8
     </script>
 </body>
 ```
-[View online](http://codepen.io/jbucaran/pen/JEQXQz)
+[View online](https://cdn.rawgit.com/jbucaran/5cfa8c98464fe0b5a48edbae6b332b27/raw/459b7875f9a604166c0751ad55960cc6bb4500bd/index.html)
 
 ### What just happened?
 
