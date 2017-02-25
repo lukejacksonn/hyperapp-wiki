@@ -96,60 +96,6 @@ $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/browserify \
 
 [Get this boilerplate](https://gist.github.com/jbucaran/21bbf0bbb0fe97345505664883100706).
 
-
-
-
-
-### Rollup
-
-Install development dependencies:
-<pre>
-npm i -D \
-    <a href="https://www.npmjs.com/package/rollup">rollup</a> \
-    <a href="https://www.npmjs.com/package/rollup-plugin-babel">rollup-plugin-babel</a> \
-    <a href="https://www.npmjs.com/package/rollup-plugin-node-resolve">rollup-plugin-node-resolve</a> \
-    <a href="https://www.npmjs.com/package/rollup-plugin-uglify">rollup-plugin-uglify</a> \
-    <a href="https://www.npmjs.com/package/babel-preset-es2015-rollup">babel-preset-es2015-rollup</a> \
-    <a href="https://www.npmjs.com/package/babel-plugin-transform-react-jsx">babel-plugin-transform-react-jsx</a>
-</pre>
-
-
-Create a `rollup.config.js` file:
-
-```jsx
-import babel from "rollup-plugin-babel"
-import resolve from "rollup-plugin-node-resolve"
-import uglify from "rollup-plugin-uglify"
-
-export default {
-    plugins: [
-        babel({
-            babelrc: false,
-            presets: ["es2015-rollup"],
-            plugins: [
-                ["transform-react-jsx", { pragma: "h" }]
-            ]
-        }),
-        resolve({
-            jsnext: true
-        }),
-        uglify()
-    ]
-}
-```
-
-Bundle your application:
-<pre>
-$(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/rollup -cf iife -i index.js -o bundle.js
-</pre>
-
-[Get this boilerplate](https://gist.github.com/jbucaran/0c0da8f1256a0a66090151cfda777c2c).
-
-
-
-
-
-
 ### Webpack
 
 Install development dependencies:
@@ -201,4 +147,49 @@ $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/webpack -p
 </pre>
 
 [Get this boilerplate](https://gist.github.com/jbucaran/6010a83891043a6e0c37a3cec684c08e).
+
+### Rollup
+
+Install development dependencies:
+<pre>
+npm i -D \
+    <a href="https://www.npmjs.com/package/rollup">rollup</a> \
+    <a href="https://www.npmjs.com/package/rollup-plugin-babel">rollup-plugin-babel</a> \
+    <a href="https://www.npmjs.com/package/rollup-plugin-node-resolve">rollup-plugin-node-resolve</a> \
+    <a href="https://www.npmjs.com/package/rollup-plugin-uglify">rollup-plugin-uglify</a> \
+    <a href="https://www.npmjs.com/package/babel-preset-es2015-rollup">babel-preset-es2015-rollup</a> \
+    <a href="https://www.npmjs.com/package/babel-plugin-transform-react-jsx">babel-plugin-transform-react-jsx</a>
+</pre>
+
+
+Create a `rollup.config.js` file:
+
+```jsx
+import babel from "rollup-plugin-babel"
+import resolve from "rollup-plugin-node-resolve"
+import uglify from "rollup-plugin-uglify"
+
+export default {
+    plugins: [
+        babel({
+            babelrc: false,
+            presets: ["es2015-rollup"],
+            plugins: [
+                ["transform-react-jsx", { pragma: "h" }]
+            ]
+        }),
+        resolve({
+            jsnext: true
+        }),
+        uglify()
+    ]
+}
+```
+
+Bundle your application:
+<pre>
+$(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/rollup -cf iife -i index.js -o bundle.js
+</pre>
+
+[Get this boilerplate](https://gist.github.com/jbucaran/0c0da8f1256a0a66090151cfda777c2c).
 
