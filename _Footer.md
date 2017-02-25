@@ -1,1 +1,0 @@
-For news and announcements, [follow us](https://twitter.com/hyperappjs) on Twitter.
