@@ -59,8 +59,8 @@ Create a new `index.html` file, copy and paste the code from the example and ope
 
 ```jsx
 <body>
-    <script src="https://unpkg.com/babel-standalone"></script>
     <script src="https://unpkg.com/hyperapp"></script>
+    <script src="https://unpkg.com/babel-standalone"></script>
     <script type="text/babel">
         const { h, app } = hyperapp
         /** @jsx h */
@@ -73,7 +73,7 @@ Create a new `index.html` file, copy and paste the code from the example and ope
 </body>
 ```
 
-[View online](https://rawgit.com/jbucaran/290fcba656dab0275ba86e3f6f9cc969/raw/64c7acd16af8470f120213506ccaebde194fe905/index.html).
+[View online](https://rawgit.com/jbucaran/290fcba656dab0275ba86e3f6f9cc969/raw/7cb90ea423b17d7d0625bacad95d22ed0ce70158/index.html).
 
 ### Hyperx
 
