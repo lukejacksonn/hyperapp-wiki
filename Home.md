@@ -14,12 +14,12 @@ Welcome to the HyperApp Wiki! :wave:
 
 HyperApp is not opinionated about your stack either; we're compatible with all bundlers and work well with [Hyperx] or [JSX] -- it's your choice.
 
-### Documentation
+## Documentation
 
 * [[Getting Started]]
 * [[Concepts]]
 * [[API]]
 
-### Contributing
+## Contributing
 
 Documentation improvements are very welcome. Feel free to contribute new content or edit any of the existing pages.
