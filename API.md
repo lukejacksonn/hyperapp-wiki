@@ -152,7 +152,7 @@ Effects are used to cause side effects and are often asynchronous, like writing 
 Signature: `(model, actions, data, error)`.
 
 * `model` is the current model.
-* `actions` is an object used to trigger [reducers](#reducers) and [effects](#effects).
+* `actions` is an object used to trigger [reducers](#reducers) and effects.
 * `data` is the data sent to the effect.
 * `error` is a function you can call to throw an error.
 
