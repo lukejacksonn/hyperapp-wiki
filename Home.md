@@ -26,4 +26,3 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 
 
 
-Want to know more? [Follow us](https://twitter.com/hyperappjs) on Twitter for updates. 👋 
