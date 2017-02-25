@@ -79,8 +79,7 @@ $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/browserify \
     -t hyperxify \
     -t babelify \
     -g uglifyify \
-    -p bundle-collapser/plugin index.js \
-    | uglifyjs > bundle.js
+    -p bundle-collapser/plugin index.js | uglifyjs > bundle.js
 </pre>
 
 [Get this boilerplate](https://gist.github.com/jbucaran/48c1edb4fb0ea1aa5415b6686cc7fb45).
