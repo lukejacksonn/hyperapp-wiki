@@ -1,8 +1,14 @@
+<small>SETUP</small>
+
 * [[Getting Started]]
 * [[Build Pipeline]]
   * [[JSX]]
   * [[Hyperx]]
-* [[Concepts]]
-  * [[Lifecycle Methods]]
+
+<small>CONCEPTS</small>
+* [[Architecture]]
+* [[Lifecycle Methods]]
+
+<small>DOCUMENTATION</small>
 * [[API]]
 
