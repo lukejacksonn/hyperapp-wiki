@@ -1,4 +1,4 @@
-[JSX](http://facebook.github.io/jsx) is a XML-like syntax extension to ECMAScript. It allows you to mix HTML and JavaScript.
+JSX is a XML-like syntax extension to ECMAScript. It allows you to mix HTML and JavaScript.
 
 JSX is not part of the ECMAScript standard, but using the appropriate tooling we can compile our JavaScript + JSX code into vanilla JavaScript that browsers understand.
 
