@@ -300,7 +300,7 @@ import { router } from "hyperapp"
 
 When using the router, the [`view`](#view) is treated as a dictionary of routes/views.
 
-The key is the route and the value is the [view](#view) function.
+The _key_ is the route and the _value_ is the [view](#view).
 
 * `/` match the index route or use as a wildcard to select the view when no route matches.
 
