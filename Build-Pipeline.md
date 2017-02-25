@@ -31,4 +31,4 @@ Vanilla out:
 const hello = h("h1", { id: "test" }, "Hi.")
 ```
 
-In the next section we'll explore how to setup a build pipeline for [[JSX]] and [[Hyperx]].
+In the next section we'll learn how to setup a build pipeline for [[JSX]] and [[Hyperx]].
