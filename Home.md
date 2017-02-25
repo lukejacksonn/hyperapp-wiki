@@ -13,5 +13,3 @@ Welcome to the HyperApp Wiki! 👋
 * **Batteries-included**: Out of the box, HyperApp has Elm-like state management and a virtual DOM engine; it still weighs `1kb` and has no dependencies.
 
 HyperApp is not opinionated about your stack either; we're compatible with all bundlers and work well with [Hyperx] or [JSX] -- it's your choice.
-
-This wiki is a collaborative effort. Feel free to fix errors or contribute new content.
