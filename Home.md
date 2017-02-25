@@ -1,4 +1,4 @@
-Welcome to the HyperApp Wiki!
+Welcome to the HyperApp Wiki! :wave:
 
 [HyperApp](https://github.com/hyperapp/hyperapp) is a JavaScript library for building frontend applications.
 
@@ -14,7 +14,7 @@ Welcome to the HyperApp Wiki!
 
 HyperApp is not opinionated about your stack either; we're compatible with all bundlers and work well with [Hyperx] or [JSX] -- it's your choice.
 
-## Table of Contents
+## Documentation
 
 * [[Getting Started]]
 * [[Build Pipeline]]
