@@ -22,7 +22,7 @@ const html = hyperx(h)
 
 ## Setup
 
-We'll be using need [Hyperxify](https://github.com/substack/hyperxify) to transform Hyperx into native HyperApp [h](/hyperapp/hyperapp/wiki/api#h) function calls and a bundler to create a single `bundle.js` file we can deliver to the browser.
+We'll use [Hyperxify](https://github.com/substack/hyperxify) to transform Hyperx into native HyperApp [h](/hyperapp/hyperapp/wiki/api#h) function calls and a bundler to create a single `bundle.js` file we can deliver to the browser.
 
 There are caveats, however, the ES6 module syntax is incompatible with Hyperxify, so you have to use Node.js `require` function.
 
