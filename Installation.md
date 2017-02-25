@@ -61,7 +61,7 @@ Create a new `index.html` file, copy and paste the code from the example (or dow
 
 ### JSX
 
-```html
+```jsx
 <body>
     <script src="https://unpkg.com/babel-standalone"></script>
     <script src="https://unpkg.com/hyperapp"></script>
@@ -81,7 +81,7 @@ Create a new `index.html` file, copy and paste the code from the example (or dow
 
 ### Hyperx
 
-```html
+```jsx
 <body>
     <script src="https://unpkg.com/hyperapp"></script>
     <script src="https://wzrd.in/standalone/hyperx"></script>
