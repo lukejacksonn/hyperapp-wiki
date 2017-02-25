@@ -53,8 +53,6 @@ const hello = h("h1", { id: "test" }, "Hi.")
 
 ## Hello World
 
-Let's create a simple hello world example.
-
 Create a new `index.html` file, copy and paste the code from the example and open it in your browser.
 
 ### JSX
