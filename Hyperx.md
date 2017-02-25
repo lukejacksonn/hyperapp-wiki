@@ -92,54 +92,6 @@ $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/browserify \
 
 
 
-### Rollup
-
-Install development dependencies:
-
-<pre>
-npm i -D \
-    <a href="https://www.npmjs.com/package/babel-preset-es2015-rollup">babel-preset-es2015-rollup</a> \
-    <a href="https://www.npmjs.com/package/hyperx">hyperx</a> \
-    <a href="https://www.npmjs.com/package/hyperxify">hyperxify</a> \
-    <a href="https://www.npmjs.com/package/rollup">rollup</a> \
-    <a href="https://www.npmjs.com/package/rollup-plugin-browserify-transform">rollup-plugin-browserify-transform</a> \
-    <a href="https://www.npmjs.com/package/rollup-plugin-buble">rollup-plugin-buble</a> \
-    <a href="https://www.npmjs.com/package/rollup-plugin-commonjs">rollup-plugin-commonjs</a> \
-    <a href="https://www.npmjs.com/package/rollup-plugin-node-resolve">rollup-plugin-node-resolve</a> \
-    <a href="https://www.npmjs.com/package/rollup-plugin-uglify">rollup-plugin-uglify</a>
-</pre>
-
-Create a `rollup.config.js` file:
-
-```jsx
-import buble from "rollup-plugin-buble"
-import resolve from "rollup-plugin-node-resolve"
-import uglify from "rollup-plugin-uglify"
-import browserify from "rollup-plugin-browserify-transform"
-import hyperxify from "hyperxify"
-import cjs from "rollup-plugin-commonjs"
-
-export default {
-	moduleName: "window",
-	plugins: [
-		browserify(hyperxify),
-		buble(),
-		cjs(),
-		resolve({
-			module: false
-		}),
-		uglify()
-	]
-}
-```
-
-Bundle your application:
-<pre>
-$(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/rollup -cf iife -i index.js -o bundle.js
-</pre>
-
-[Get this boilerplate](https://gist.github.com/jbucaran/fac2c3de24e5171596fb189f9c1feb8e).
-
 
 
 
@@ -192,3 +144,53 @@ $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/webpack -p
 [Get this boilerplate](https://gist.github.com/jbucaran/c6a6bdb5383a985cec6b0ae4ebe5a4b1).
 
 
+
+
+
+### Rollup
+
+Install development dependencies:
+
+<pre>
+npm i -D \
+    <a href="https://www.npmjs.com/package/babel-preset-es2015-rollup">babel-preset-es2015-rollup</a> \
+    <a href="https://www.npmjs.com/package/hyperx">hyperx</a> \
+    <a href="https://www.npmjs.com/package/hyperxify">hyperxify</a> \
+    <a href="https://www.npmjs.com/package/rollup">rollup</a> \
+    <a href="https://www.npmjs.com/package/rollup-plugin-browserify-transform">rollup-plugin-browserify-transform</a> \
+    <a href="https://www.npmjs.com/package/rollup-plugin-buble">rollup-plugin-buble</a> \
+    <a href="https://www.npmjs.com/package/rollup-plugin-commonjs">rollup-plugin-commonjs</a> \
+    <a href="https://www.npmjs.com/package/rollup-plugin-node-resolve">rollup-plugin-node-resolve</a> \
+    <a href="https://www.npmjs.com/package/rollup-plugin-uglify">rollup-plugin-uglify</a>
+</pre>
+
+Create a `rollup.config.js` file:
+
+```jsx
+import buble from "rollup-plugin-buble"
+import resolve from "rollup-plugin-node-resolve"
+import uglify from "rollup-plugin-uglify"
+import browserify from "rollup-plugin-browserify-transform"
+import hyperxify from "hyperxify"
+import cjs from "rollup-plugin-commonjs"
+
+export default {
+	moduleName: "window",
+	plugins: [
+		browserify(hyperxify),
+		buble(),
+		cjs(),
+		resolve({
+			module: false
+		}),
+		uglify()
+	]
+}
+```
+
+Bundle your application:
+<pre>
+$(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/rollup -cf iife -i index.js -o bundle.js
+</pre>
+
+[Get this boilerplate](https://gist.github.com/jbucaran/fac2c3de24e5171596fb189f9c1feb8e).
