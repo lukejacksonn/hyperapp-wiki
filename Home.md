@@ -27,3 +27,5 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 ## Contributing
 
 This wiki is a collaborative effort. If you find an error or wish to contribute new content, feel free to [edit](_edit) this page.
+
+Want to know more? [Follow us](https://twitter.com/hyperappjs) on Twitter for updates. 👋 
