@@ -110,7 +110,7 @@ Signature: `(model, data, params)`.
 * `model` is the current model.
 * `data` is the data sent to the reducer.
 
-If you are using the [router](#router.md), reducers use an additional argument:
+If you are using the [router](#router), reducers use an additional argument:
 
 <a id="params"></a>
 
