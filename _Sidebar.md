@@ -5,6 +5,8 @@
   * [[Hyperx]]
 * [[Concepts]]
   * [[Lifecycle Methods]]
+  * [[State Management]]
+  * [[Virtual DOM]]
 * [[API]]
   * [h](/hyperapp/hyperapp/wiki/api#h)
   * [app](/hyperapp/hyperapp/wiki/api#app)
