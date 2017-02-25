@@ -1,5 +1,3 @@
-<strong>NAVIGATION</strong>
-
 * [[Getting Started]]
 * [[Build Pipeline]]
   * [[JSX]]
