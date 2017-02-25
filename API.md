@@ -1,19 +1,3 @@
-### Table of Contents
-
-* [h](#h)
-* [app](#app)
-    * [model](#model)
-    * [view](#view)
-    * [reducers](#reducers)
-    * [effects](#effects)
-    * [subscriptions](#subscriptions)
-    * [hooks](#hooks)
-    * [root](#root)
-    * [router](#router)
-        * [setLocation](#setlocation)
-        * [href](#href)
-
-
 ## h
 
 Creates a virtual DOM node. A virtual DOM node is a Javascript data structure that describes a DOM element. Virtual nodes can be nested to create a virtual DOM tree.
