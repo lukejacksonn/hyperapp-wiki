@@ -100,4 +100,4 @@ The browser downloaded HyperApp, Hyperx/JSX, compiled the view and run the appli
 
 This process is slow, but it's good enough for demos and sharing examples with other people.
 
-In the next section we'll explore how to setup a build pipeline for Hyperx and JSX using Browserify, Webpack and Rollup.
+In the next section we'll explore how to setup a build pipeline using Browserify, Webpack and Rollup.
