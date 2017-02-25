@@ -26,6 +26,4 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 
 ## Contributing
 
-This wiki is a collaborative effort. Feel free to fix typos, contribute new content or improve any of the existing pages.
-
-[edit](_edit)
+This wiki is a collaborative effort. If you find an error or wish to contribute new content, feel free to [edit](_edit) this page.
