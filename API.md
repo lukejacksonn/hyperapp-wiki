@@ -1,37 +1,38 @@
-HyperApp has three named exports: [`h`](#h), [`app`](#app), and [`router`](#router).
+## Table of Contents
+
+* [h](#h)
+* [app](#h)
+    * [model](#model)
+    * [view](#view)
+    * [reducers](#reducers)
+    * [effects](#effects)
+    * [subscriptions](#subscriptions)
+    * [hooks](#hooks)
+    * [root](#root)
+    * [router](#router)
+        * [`actions.setLocation`](#actionssetlocation)
+        * [href](#href)
+
 
 ## h
 
-Creates a virtual DOM node. A virtual DOM node is a Javascript data structure that describes a DOM element.
+Creates a virtual DOM node. A virtual DOM node is a Javascript data structure that describes a DOM element. Virtual nodes can be nested to create a virtual DOM tree.
 
-A nested structure of virtual nodes is called a virtual DOM tree.
-
-`h` has the following signature: `h(tag, data, children)`.
+Signature: `(tag, data, children)`.
 
 * `tag` is a tag name, e.g. `div` or a function that returns a tree of virtual nodes.
-* `data` is an object with attributes, styles, events, properties, [lifecycle methods](#lifecycle-methods), etc.
+* `data` is an object with attributes, styles, events, properties, [[Lifecycle Methods]], etc.
 * `children` is an array of children virtual nodes. (Optional)
 
 ```jsx
-const tree = h("div", {}, [
-    h("button", {
-        onclick: actions.add
-    }, "+"),
-    h("h1", {}, model),
-    h("button", {
-        onclick: actions.sub,
-        disabled: model <= 0
-    }, "-")
-])
+const node = h("a", { href: "#" }, "Hi.")
 ```
-
-
-
-
 
 ## app
 
 Starts the application.
+
+Signature: `(options)`.
 
 <pre>
 app({
@@ -48,23 +49,30 @@ app({
 
 ### model
 
-The model is a primitive type, array or object that represents the state of your application. HyperApp applications use a single model architecture.
+The model is a primitive type, array or object that represents the entire state of your application.
 
-This means that the entire state of your application must be expressed as a single object.
+This means there is a single source of truth shared across all the components in your application.
 
-
-
+```jsx
+const model = {
+    title: "Hi."
+}
+```
 
 ### view
 
 A view is a function that returns a virtual DOM tree. See [`h`](#h).
 
-A view has the following signature: `(model, actions)`.
+Signature: `(model, actions)`.
 
 * `model` is the current model.
 * `actions` is an object used to trigger [reducers](#reducers) and [effects](#effects).
 
-You can trigger actions like so:
+```jsx
+const view = model => h("a", { href: "#" }, model.title)
+```
+
+To trigger actions use:
 
 ```jsx
 actions.action(data)
@@ -72,7 +80,6 @@ actions.action(data)
 
 * `data` is the data you want to pass to the `action`.
 * `action` is the name of a [reducer](#reducers) or [effect](#effects).
-
 
 ```jsx
 app({
@@ -90,29 +97,20 @@ app({
 [View online](http://codepen.io/jbucaran/pen/ZLGGzy/).
 
 
-
-
 ### reducers
 
 Reducers are a kind of action. The other kind of action are [effects](#effects).
 
-A reducer returns a new model or part of a model. If it returns part of a model, that part is merged with the current model.
+Reducers return a new model or part of it. If it returns part of a model, that part will be merged with the current model.
 
-```jsx
-const reducers = {
-  add: model => model + 1,
-  sub: model => model - 1
-}
-```
+Reducers can be triggered inside a [view](#view), [effect](#effects) or [subscription](#subscriptions).
 
-A reducer can be triggered inside a [view](#view), [effect](#effects) or [subscription](#subscriptions).
-
-A reducer has the following signature: `(model, data, params)`.
+Signature: `(model, data, params)`.
 
 * `model` is the current model.
 * `data` is the data sent to the reducer.
 
-When using the [router](concepts/router.md), reducers receive an additional argument:
+If you are using the [router](#router.md), reducers use an additional argument:
 
 <a id="params"></a>
 
@@ -129,11 +127,12 @@ app({
         <div>
             <button onclick={actions.add}>
                 +
-      </button>
+            </button>
             <h1>{model}</h1>
-            <button onclick={actions.sub} disabled={model <= 0}>
+            <button onclick={actions.sub}
+                    disabled={model <= 0}>
                 -
-      </button>
+            </button>
         </div>
     )
 })
@@ -150,7 +149,7 @@ Effects are a kind of action. The other kind of action are [reducers](#reducers)
 
 Effects are used to cause side effects and are often asynchronous, like writing to a database, or sending requests to servers.
 
-Effects have the following signature: `(model, actions, data, error)`.
+Signature: `(model, actions, data, error)`.
 
 * `model` is the current model.
 * `actions` is an object used to trigger [reducers](#reducers) and [effects](#effects).
@@ -168,14 +167,6 @@ const model = {
     waiting: false
 }
 
-const view = (model, actions) =>
-    <button
-        onclick={actions.waitThenAdd}
-        disabled={model.waiting}
-    >
-        {model.counter}
-    </button>
-
 const reducers = {
     add: model => ({ counter: model.counter + 1 }),
     toggle: model => ({ waiting: !model.waiting })
@@ -190,19 +181,26 @@ const effects = {
     }
 }
 
+const view = (model, actions) =>
+    <button
+        onclick={actions.waitThenAdd}
+        disabled={model.waiting}
+    >
+        {model.counter}
+    </button>
+
 app({ model, view, reducers, effects })
 ```
 
-
-[View online](http://codepen.io/jbucaran/pen/jyEKmw)
+[View online](http://codepen.io/jbucaran/pen/jyEKmw).
 
 
 
 ### subscriptions
 
-Subscriptions are functions scheduled to run only once when the [DOM is ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, open a socket connection, attach mouse or keyboard event listeners, etc.
+Subscriptions are functions scheduled to run only once when the [DOM is ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, create timers, open a socket connection, attach mouse/keyboard event listeners, etc.
 
-A subscription has the following signature: `(model, actions, error)`.
+Signature: `(model, actions, error)`.
 
 ```jsx
 app({
@@ -220,13 +218,11 @@ app({
                 })
             )
     ],
-    view: model =>
-        <h1>{model.x + ", " + model.y}</h1>
+    view: model => <h1>{model.x + ", " + model.y}</h1>
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/Bpyraw)
-
+[View online](http://codepen.io/jbucaran/pen/Bpyraw).
 
 
 ### hooks
@@ -263,24 +259,20 @@ app({
         <div>
             <button onclick={actions.doSomething}>
                 Log
-      </button>
+            </button>
             <button onclick={actions.boom}>
                 Error
-      </button>
+            </button>
         </div>
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/xgbzEy)
-
-
-
+[View online](http://codepen.io/jbucaran/pen/xgbzEy).
 
 
 ### root
 
-The root is the container of your application. If none is given, a `div` element is appended to document.body and used as the container.
-
+The root is the container of your application. If none is given, a `div` element is appended to `document.body` and used as the container.
 
 ```jsx
 app({
@@ -290,29 +282,23 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/JELvjO)
-
-
-
-
-
+[View online](http://codepen.io/jbucaran/pen/JELvjO).
 
 
 ## router
 
-The router is any function with the following signature: `(render, options)`.
+Signature: `(render, options)`.
 
 * `render` is a function provided by HyperApp that accepts a [view](#view) and renders it.
 * `options` is the same object passed to [`app`](#app).
 
 You can define your own router or use the one provided with HyperApp.
+
 ```jsx
-import { h, app, router } from "hyperapp"
+import { router } from "hyperapp"
 ```
 
-To use the router, pass it to `app`.
-
-The `view` property is used as a dictionary of routes/views.
+When using the router, the [`view`](#view) is treated as a dictionary of routes/views.
 
 The key is the route and the value is the [view](#view) function.
 
@@ -321,75 +307,67 @@ The key is the route and the value is the [view](#view) function.
 * `/:key` match a route using the regular expression `[A-Za-z0-9]+`. The matched key is passed to the [view](#view) function via [`params`](#params).
 
 ```jsx
-const Anchor = ({ href }) => (
-  <h1><a href={"/" + href}>{href}</a></h1>
-)
+const Anchor = ({ href }) =>
+    <h1><a href={"/" + href}>{href}</a></h1>
 
 app({
-  router,
-  view: {
-    "/": _ => (
-      <Anchor
-        href={Math.floor(Math.random() * 999)}
-      />
-    ),
-    "/:key": (model, actions, { key }) =>
-      <div>
-        <h1>{key}</h1>
-        <a href="/">Back</a>
-      </div>
-  }
+    router,
+    view: {
+        "/": _ => (
+            <Anchor
+                href={Math.floor(Math.random() * 999)}
+            />
+        ),
+        "/:key": (model, actions, { key }) =>
+            <div>
+                <h1>{key}</h1>
+                <a href="/">Back</a>
+            </div>
+    }
 })
 ```
 
 [View online](https://hyperapp-routing.gomix.me)
 
 
-
-
 ### `actions.setLocation`
-Call `actions.setLocation(path)` to update the [location.pathname](https://developer.mozilla.org/en-US/docs/Web/API/Location). If the path matches an existing route, the corresponding view will be rendered. Available if you are using the default [Router](#router).
+
+Call `actions.setLocation(path)` to update the [location.pathname](https://developer.mozilla.org/en-US/docs/Web/API/Location). If the path matches an existing route, the corresponding view will be rendered. Available if you are using the [Router](#router).
 
 ```jsx
 app({
-  router,
-  view: {
-    "/": (model, actions) =>
-      <div>
-        <h1>Home</h1>
-        <button
-          onclick={_ =>
-            actions.setLocation("/about")}
-        >
-          About
-        </button>
-      </div>,
+    router,
+    view: {
+        "/": (model, actions) =>
+            <div>
+                <h1>Home</h1>
+                <button
+                    onclick={_ => actions.setLocation("/about")}>
+                    About
+                </button>
+            </div>,
 
-    "/about": (model, actions) =>
-      <div>
-        <h1>About</h1>
-        <button
-          onclick={_ =>
-            actions.setLocation("/")}
-        >
-          Home
-        </button>
-      </div>
-  }
+        "/about": (model, actions) =>
+            <div>
+                <h1>About</h1>
+                <button
+                    onclick={_ => actions.setLocation("/")}>
+                    Home
+                </button>
+            </div>
+    }
 })
-
 ```
 
 [View online](https://gomix.com/#!/project/hyperapp-set-location)
 
 
-
-
 ### href
-HyperApp intercepts all `<a href="/path">...</a>` clicks and calls `action.setLocation("/path")`.
+
+HyperApp intercepts all `<a href="/path">...</a>` clicks and calls `action.setLocation("/path")` in your behalf.
 External links and links that begin with a `#` character are not intercepted.
 
-Add a custom `data-no-routing` attribute to anchor elements that should be handled differently.
+Add a custom `data-no-routing` attribute to anchor elements to opt out of this.
 
 ```html
 <a data-no-routing>Not a route</a>
