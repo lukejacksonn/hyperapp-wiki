@@ -9,8 +9,7 @@ const hello = html`
         <button
             onclick=${action}
         >Click</button>
-    </div>
-`
+    </div>`
 ```
 
 To generate the `html` function, you can use the following boilerplate:
