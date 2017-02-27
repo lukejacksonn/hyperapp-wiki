@@ -21,8 +21,7 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 * [[Components]]
 * [[Namespaces]]
 * [[Lifecycle Methods]]
-* [[State Management]]
-* [[Virtual DOM]]
+* [[Architecture]]
 * [[API]]
 
 ## Contributing
