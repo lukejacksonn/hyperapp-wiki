@@ -1,5 +1,10 @@
 Lifecycle methods are functions that can be attached to [virtual nodes](hyperapp/hyperapp/wiki/api#h) in order to access actual DOM elements when they are created, updated or before they are removed.
 
+```jsx
+app({
+    view: <div oncreate={e => console.log(e)}></div>
+})
+```
 The following are the available methods and their signature:
 
 * _oncreate_([_Element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)):  Called before an element is created.
@@ -8,6 +13,9 @@ The following are the available methods and their signature:
 
 * _onremove_([_Element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is removed.
 
+
+### Examples
+Using the [canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial) element.
 
 ```jsx
 const repaint = (canvas, model) => {
