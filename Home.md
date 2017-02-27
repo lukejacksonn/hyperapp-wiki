@@ -18,10 +18,9 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 
 * [[Getting Started]]
 * [[Build Pipeline]]
+* [[Architecture]]
 * [[Components]]
 * [[Namespaces]]
-* [[Lifecycle Methods]]
-* [[Architecture]]
 * [[API]]
 
 ## Contributing
