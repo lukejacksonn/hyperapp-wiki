@@ -8,7 +8,6 @@
   * [[Components]]
   * [[Architecture]]
   * [[Lifecycle Methods]]
-  * [[Namespaces]]
 * [[Tutorials]]
   * [[Rocket Launcher]]
   * [[Tweet Box]]
