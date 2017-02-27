@@ -5,6 +5,7 @@
   * [[Hyperx]]
 * [[Concepts]]
   * [[Components]]
+  * [[Namespaces]]
   * [[Lifecycle Methods]]
   * [[State Management]]
   * [[Virtual DOM]]
