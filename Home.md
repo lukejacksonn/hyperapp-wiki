@@ -15,10 +15,14 @@ HyperApp is a JavaScript library for building frontend applications.
 HyperApp is not opinionated about your stack either; we're compatible with all bundlers and work well with [Hyperx] or [JSX] -- it's your choice.
 
 ## Contents
-
 * [[Getting Started]]
 * [[Build Pipeline]]
 * [[Concepts]]
+  * [[Virtual Nodes]]
+  * [[Components]]
+  * [[Architecture]]
+  * [[Lifecycle Methods]]
+  * [[Namespaces]]
 * [[Tutorials]]
 * [[API]]
 
