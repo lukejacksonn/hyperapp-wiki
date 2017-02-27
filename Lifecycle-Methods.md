@@ -8,8 +8,6 @@ The following are the available methods and their signature:
 
 * _onremove_([_Element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is removed.
 
-* `element` is the real DOM element.
-
 
 ```jsx
 const repaint = (canvas, model) => {
