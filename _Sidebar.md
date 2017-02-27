@@ -7,6 +7,8 @@
   * [[Lifecycle Methods]]
   * [[State Management]]
   * [[Virtual DOM]]
+* [[Tutorials]]
+  * [[Rocket Launcher]]
 * [[Components]]
 * [[Namespaces]]
 * [[API]]
