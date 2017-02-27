@@ -4,6 +4,7 @@
   * [[JSX]]
   * [[Hyperx]]
 * [[Concepts]]
+  * [[Components]]
   * [[Lifecycle Methods]]
   * [[State Management]]
   * [[Virtual DOM]]
