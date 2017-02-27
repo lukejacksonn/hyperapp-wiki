@@ -32,7 +32,7 @@ Create a new `index.html` file, copy and paste the code from the example and ope
 
         app({
             model: "Hi.",
-            view: model => <h1 ="id">{model}</h1>
+            view: model => <h1 id="title">{model}</h1>
         })
     </script>
 </body>
