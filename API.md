@@ -214,6 +214,10 @@ Called when the model changes. Signature: `(oldModel, newModel, data)`.
 
 Called when an action (reducer or effect) is triggered. Signature: `(name, data)`.
 
+#### onRender
+
+Called before the view is rendered. Use it to overwrite the view with a different one. Signature: `(model, view) : view`. 
+
 #### onError
 
 Called when you use the `error` function inside a subscription or effect. If you don't use this hook, the default behavior is to throw. Signature: `(err)`.
