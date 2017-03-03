@@ -1,4 +1,4 @@
-# h
+## h
 
 Creates a virtual DOM node. A virtual DOM node is a Javascript data structure that describes a DOM element. Virtual nodes can be nested to create a virtual DOM tree.
 
@@ -12,7 +12,7 @@ Signature: `(tag, data, children)`.
 const node = h("a", { href: "#" }, "Hi.")
 ```
 
-# app
+## app
 
 Starts the application.
 
@@ -206,15 +206,15 @@ app({
 
 Hooks are function handlers used to inspect your application, implement middleware, loggers, etc. There are four: `onUpdate`, `onAction`, `onRender` and `onError`.
 
-### onUpdate
+#### onUpdate
 
 Called when the model changes. Signature: `(oldModel, newModel, data)`.
 
-### onAction
+#### onAction
 
 Called when an action (reducer or effect) is triggered. Signature: `(name, data)`.
 
-### onRender
+#### onRender
 
 Called before the view is rendered. Use it to overwrite the view with a different one. Signature: `(model, view) : view`. 
 
