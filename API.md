@@ -208,7 +208,7 @@ Hooks are function handlers used to inspect your application, implement middlewa
 
 #### onUpdate
 
-Called when the model changes. Signature: `(oldModel, newModel, data)`.
+Called before when model is updated. Signature: `(oldModel, newModel, data)`.
 
 #### onAction
 
@@ -229,8 +229,8 @@ app({
         doSomething: model => !model
     },
     effects: {
-        boom: (model, actions, data, err) =>
-            setTimeout(_ => err(Error("BOOM")), 1000)
+        boom: (model, actions, data, error) =>
+            setTimeout(_ => error(Error("BOOM")), 1000)
     },
     hooks: {
         onError: e => alert(e),
