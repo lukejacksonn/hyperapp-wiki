@@ -20,13 +20,13 @@ Signature: `(options)`.
 
 <pre>
 app({
-    <a href="#model">model</a>,
-    <a href="#view">view</a>,
-    <a href="#reducers">reducers</a>,
-    <a href="#effects">effects</a>,
-    <a href="#subscriptions">subscriptions</a>,
-    <a href="#plugins">plugins</a>,
-    <a href="#root">root</a>
+  <a href="#model">model</a>,
+  <a href="#view">view</a>,
+  <a href="#reducers">reducers</a>,
+  <a href="#effects">effects</a>,
+  <a href="#subscriptions">subscriptions</a>,
+  <a href="#plugins">plugins</a>,
+  <a href="#root">root</a>
 })
 </pre>
 
@@ -39,7 +39,7 @@ This means there is a single source of truth shared across all the components in
 
 ```jsx
 const model = {
-    title: "Hi."
+  title: "Hi."
 }
 ```
 
@@ -67,19 +67,18 @@ actions.action(data)
 
 ```jsx
 app({
-    model: true,
-    reducers: {
-        toggle: model => !model,
-    },
-    view: (model, actions) =>
-        <button onclick={actions.toggle}>
-            {model.toString()}
-        </button>
+  model: true,
+  reducers: {
+    toggle: model => !model,
+  },
+  view: (model, actions) =>
+    <button onclick={actions.toggle}>
+      {model.toString()}
+    </button>
 })
 ```
 
 [View online](http://codepen.io/jbucaran/pen/ZLGGzy/).
-
 
 ### reducers
 
@@ -96,23 +95,22 @@ Signature: `(model, data)`.
 
 ```jsx
 app({
-    model: 0,
-    reducers: {
-        add: model => model + 1,
-        sub: model => model - 1,
-    },
-    view: (model, actions) => (
-        <div>
-            <button onclick={actions.add}>
-                +
-            </button>
-            <h1>{model}</h1>
-            <button onclick={actions.sub}
-                    disabled={model <= 0}>
-                -
-            </button>
-        </div>
-    )
+  model: 0,
+  reducers: {
+    add: model => model + 1,
+    sub: model => model - 1,
+  },
+  view: (model, actions) =>
+    <div>
+      <button onclick={actions.add}>
+        +
+      </button>
+      <h1>{model}</h1>
+      <button onclick={actions.sub}
+        disabled={model <= 0}>
+        -
+      </button>
+    </div>
 })
 ```
 
@@ -133,35 +131,35 @@ Signature: `(model, actions, data, error)`.
 
 ```jsx
 const wait = time =>
-    new Promise(resolve =>
-        setTimeout(_ => resolve(), time))
+  new Promise(resolve =>
+    setTimeout(_ => resolve(), time))
 
 const model = {
-    counter: 0,
-    waiting: false
+  counter: 0,
+  waiting: false
 }
 
 const reducers = {
-    add: model => ({ counter: model.counter + 1 }),
-    toggle: model => ({ waiting: !model.waiting })
+  add: model => ({ counter: model.counter + 1 }),
+  toggle: model => ({ waiting: !model.waiting })
 }
 
 const effects = {
-    waitThenAdd: (model, actions) => {
-        actions.toggle()
-        wait(1000)
-            .then(actions.add)
-            .then(actions.toggle)
-    }
+  waitThenAdd: (model, actions) => {
+    actions.toggle()
+    wait(1000)
+      .then(actions.add)
+      .then(actions.toggle)
+  }
 }
 
 const view = (model, actions) =>
-    <button
-        onclick={actions.waitThenAdd}
-        disabled={model.waiting}
-    >
-        {model.counter}
-    </button>
+  <button
+    onclick={actions.waitThenAdd}
+    disabled={model.waiting}
+  >
+    {model.counter}
+  </button>
 
 app({ model, view, reducers, effects })
 ```
@@ -176,21 +174,21 @@ Signature: `(model, actions, error)`.
 
 ```jsx
 app({
-    model: { x: 0, y: 0 },
-    reducers: {
-        move: (_, { x, y }) => ({ x, y })
-    },
-    subscriptions: [
-        (_, actions) =>
-            addEventListener(
-                "mousemove",
-                e => actions.move({
-                    x: e.clientX,
-                    y: e.clientY,
-                })
-            )
-    ],
-    view: model => <h1>{model.x + ", " + model.y}</h1>
+  model: { x: 0, y: 0 },
+  reducers: {
+    move: (_, { x, y }) => ({ x, y })
+  },
+  subscriptions: [
+    (_, actions) =>
+      addEventListener(
+        "mousemove",
+        e => actions.move({
+          x: e.clientX,
+          y: e.clientY,
+        })
+      )
+  ],
+  view: model => <h1>{model.x + ", " + model.y}</h1>
 })
 ```
 
@@ -218,27 +216,27 @@ Called when you use the `error` function inside a subscription or effect. If you
 
 ```jsx
 app({
-    model: true,
-    reducers: {
-        doSomething: model => !model
-    },
-    effects: {
-        boom: (model, actions, data, error) =>
-            setTimeout(_ => error(Error("BOOM")), 1000)
-    },
-    hooks: {
-        onError: e => alert(e),
-        onAction: name => alert(name)
-    },
-    view: (model, actions) =>
-        <div>
-            <button onclick={actions.doSomething}>
-                Log
-            </button>
-            <button onclick={actions.boom}>
-                Error
-            </button>
-        </div>
+  model: true,
+  reducers: {
+    doSomething: model => !model
+  },
+  effects: {
+    boom: (model, actions, data, error) =>
+      setTimeout(_ => error(Error("Errors be bold!")), 1000)
+  },
+  hooks: {
+    onError: e => alert(e),
+    onAction: name => alert(name)
+  },
+  view: (model, actions) =>
+    <div>
+      <button onclick={actions.doSomething}>
+        Log
+      </button>
+      <button onclick={actions.boom}>
+        Error
+      </button>
+    </div>
 })
 ```
 
@@ -255,9 +253,9 @@ The root is the container of your application. If none is given, a `div` element
 
 ```jsx
 app({
-    model: "Hi. I'm from main.",
-    view: model => <h1>{model}</h1>,
-    root: document.getElementById("main")
+  model: "Hi. I'm from main.",
+  view: model => <h1>{model}</h1>,
+  root: document.getElementById("main")
 })
 ```
 
