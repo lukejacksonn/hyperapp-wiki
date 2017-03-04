@@ -29,4 +29,4 @@ Vanilla out:
 const hello = h("h1", { id: "test" }, "Hi.")
 ```
 
-In the next section we'll learn how to compile [[JSX]] and [[Hyperx]] for HyperApp.
+In the next sections we'll learn how to compile [[JSX]] and [[Hyperx]] with HyperApp.
