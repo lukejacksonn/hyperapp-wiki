@@ -1,6 +1,6 @@
 * [[Home]]
 * [[Getting Started]]
-* [[Build Pipeline]]
+* [[Build Setup]]
   * [[JSX]]
   * [[Hyperx]]
 * [[Concepts]]
