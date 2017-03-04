@@ -16,7 +16,7 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 
 ## Contents
 * [[Getting Started]]
-* [[Build Pipeline]]
+* [[Build Setup]]
 * [[Concepts]]
 * [[Plugins]]
 * [[Tutorials]]
