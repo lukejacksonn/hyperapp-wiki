@@ -1,4 +1,4 @@
-Lifecycle methods are functions that can be attached to [virtual nodes](hyperapp/hyperapp/wiki/api#h) in order to access the real DOM elements before they are created, updated or removed.
+Lifecycle methods are functions that can be attached to [virtual nodes](hyperapp/hyperapp/wiki/api#h) in order to access a real DOM element before it is created, updated or removed.
 
 ```jsx
 app({
