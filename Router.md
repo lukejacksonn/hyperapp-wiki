@@ -10,7 +10,7 @@ The _key_ is the route and the _value_ is the [view](#view).
 
 * `/` match the index route.
 
-* `/:key` match a route using the regular expression `[A-Za-z0-9]+`. The matched key is passed to the [view](#view) function via [`params`](#model-router-params).
+* `/:key` match a route using the regular expression `[A-Za-z0-9]+`. The matched key is passed to the [view](#view) function via [`params`](#modelrouterparams).
 
 ```jsx
 ...
