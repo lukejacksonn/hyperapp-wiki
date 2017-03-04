@@ -1,6 +1,4 @@
-To create applications ready for production you will be using a build pipeline.
-
-A modern build pipeline consists of:
+To create applications ready for production you will be using:
 
 [Browserify]: http://browserify.org/
 [Rollup]: http://rollupjs.org/
@@ -16,7 +14,7 @@ A modern build pipeline consists of:
 
 ## Why?
 
-It's common to use a build setup to transform JSX or Hyperx into native HyperApp [h](/hyperapp/hyperapp/wiki/API#h) function calls.
+To compile JSX or Hyperx into native HyperApp [h](/hyperapp/hyperapp/wiki/API#h) function calls.
 
 The generated code is smaller and faster than the alternative: sending a parser over the wire and compiling the view in the user's browser. 
 
@@ -31,4 +29,4 @@ Vanilla out:
 const hello = h("h1", { id: "test" }, "Hi.")
 ```
 
-In the next section we'll learn how to setup a build setup for [[JSX]] and [[Hyperx]].
+In the next section we'll learn how to compile [[JSX]] and [[Hyperx]] for HyperApp.
