@@ -59,9 +59,6 @@ Matched route.
 
 Matched route params.
 
-<details>
-<summary>Example</summary>
-
 ```javascript
 // route /user/:id/posts/:postId
 // url /user/7a45h2/posts/9df081
@@ -70,5 +67,3 @@ model.router.params = {
 	postId: '9df081'
 }
 ```
-
-</details>
