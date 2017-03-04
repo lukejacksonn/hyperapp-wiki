@@ -251,6 +251,10 @@ app({
 [View online](http://codepen.io/jbucaran/pen/xgbzEy).
 
 
+### plugins
+
+WIP
+
 ### root
 
 The root is the container of your application. If none is given, a `div` element is appended to `document.body` and used as the container.
@@ -265,90 +269,3 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/JELvjO).
 
-### router
-
-Signature: `(render, options)`.
-
-* `render` is a function provided by HyperApp that accepts a [view](#view) and renders it.
-* `options` is the same object passed to [`app`](#app).
-
-You can define your own router or use the one provided with HyperApp.
-
-```jsx
-import { router } from "hyperapp"
-```
-
-When using the router, the [`view`](#view) is treated as a dictionary of routes/views.
-
-The _key_ is the route and the _value_ is the [view](#view).
-
-* `/` match the index route or use as a wildcard to select the view when no route matches.
-
-* `/:key` match a route using the regular expression `[A-Za-z0-9]+`. The matched key is passed to the [view](#view) function via [`params`](#params).
-
-```jsx
-const Anchor = ({ href }) =>
-    <h1><a href={"/" + href}>{href}</a></h1>
-
-app({
-    router,
-    view: {
-        "/": _ => (
-            <Anchor
-                href={Math.floor(Math.random() * 999)}
-            />
-        ),
-        "/:key": (model, actions, { key }) =>
-            <div>
-                <h1>{key}</h1>
-                <a href="/">Back</a>
-            </div>
-    }
-})
-```
-
-[View online](https://hyperapp-routing.gomix.me)
-
-
-#### setLocation
-
-Call `actions.setLocation(path)` to update the [location.pathname](https://developer.mozilla.org/en-US/docs/Web/API/Location). If the path matches an existing route, the corresponding view will be rendered. Available if you are using the [Router](#router).
-
-```jsx
-app({
-    router,
-    view: {
-        "/": (model, actions) =>
-            <div>
-                <h1>Home</h1>
-                <button
-                    onclick={_ => actions.setLocation("/about")}>
-                    About
-                </button>
-            </div>,
-
-        "/about": (model, actions) =>
-            <div>
-                <h1>About</h1>
-                <button
-                    onclick={_ => actions.setLocation("/")}>
-                    Home
-                </button>
-            </div>
-    }
-})
-```
-
-[View online](https://gomix.com/#!/project/hyperapp-set-location)
-
-
-#### href
-
-HyperApp intercepts all `<a href="/path">...</a>` clicks and calls `action.setLocation("/path")` in your behalf.
-External links and links that begin with a `#` character are not intercepted.
-
-Add a custom `data-no-routing` attribute to anchor elements to opt out of this.
-
-```html
-<a data-no-routing>Not a route</a>
-```
