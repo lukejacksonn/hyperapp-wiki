@@ -2,7 +2,7 @@
 
 Creates a virtual DOM node. A virtual DOM node is a Javascript data structure that describes a DOM element. Virtual nodes can be nested to create a virtual DOM tree.
 
-Signature: `(tag, data, children)`.
+Signature: (tag, data, children).
 
 * `tag` is a tag name, e.g. `div` or a function that returns a tree of virtual nodes.
 * `data` is an object with attributes, styles, events, properties, [[Lifecycle Methods]], etc.
@@ -16,7 +16,7 @@ const node = h("a", { href: "#" }, "Hi.")
 
 Starts the application.
 
-Signature: `(options)`.
+Signature: (options).
 
 <pre>
 app({
@@ -47,7 +47,7 @@ const model = {
 
 A view is a function that returns a virtual DOM tree. See [`h`](#h).
 
-Signature: `(model, actions)`.
+Signature: (model, actions).
 
 * `model` is the current model.
 * `actions` is an object used to trigger [reducers](#reducers) and [effects](#effects).
@@ -88,7 +88,7 @@ Reducers return a new model or part of it. If it returns part of a model, that p
 
 Reducers can be triggered inside a [view](#view), [effect](#effects) or [subscription](#subscriptions).
 
-Signature: `(model, data)`.
+Signature: (model, data).
 
 * `model` is the current model.
 * `data` is the data sent to the reducer.
@@ -122,7 +122,7 @@ Effects are a kind of action. The other kind of action are [reducers](#reducers)
 
 Effects are used to cause side effects and are often asynchronous, like writing to a database, or sending requests to servers.
 
-Signature: `(model, actions, data, error)`.
+Signature: (model, actions, data, error).
 
 * `model` is the current model.
 * `actions` is an object used to trigger [reducers](#reducers) and effects.
@@ -170,7 +170,7 @@ app({ model, view, reducers, effects })
 
 Subscriptions are functions scheduled to run once after the [DOM is ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, create timers, open a socket connection, attach mouse/keyboard event listeners, etc.
 
-Signature: `(model, actions, error)`.
+Signature: (model, actions, error).
 
 ```jsx
 app({
@@ -198,21 +198,13 @@ app({
 
 Hooks are function handlers used to inspect your application, implement middleware, loggers, etc. There are four: `onUpdate`, `onAction`, `onRender` and `onError`.
 
-#### onUpdate
+* _onUpdate_: Called before the model is updated. Signature: (oldModel, newModel, data).
 
-Called before when model is updated. Signature: `(oldModel, newModel, data)`.
+* _onAction_: Called before an action is triggered. Signature: (action, data).
 
-#### onAction
+* _onRender_: Called before the [view](#view) is rendered. Return a view to overwrite the default one. Signature: (model, view) : view. 
 
-Called when an action (reducer or effect) is triggered. Signature: `(name, data)`.
-
-#### onRender
-
-Called before the view is rendered. Use it to overwrite the view with a different one. Signature: `(model, view) : view`. 
-
-#### onError
-
-Called when you use the `error` function inside a subscription or effect. If you don't use this hook, the default behavior is to throw. Signature: `(err)`.
+* _onError_: Called when you use the `error` function inside a subscription or effect. If you don't use this hook, the default behavior is to throw. Signature: (error).
 
 ```jsx
 app({
@@ -225,8 +217,8 @@ app({
       setTimeout(_ => error(Error("Errors be bold!")), 1000)
   },
   hooks: {
-    onError: e => alert(e),
-    onAction: name => alert(name)
+    onError: error => alert(error),
+    onAction: action => alert(action)
   },
   view: (model, actions) =>
     <div>
