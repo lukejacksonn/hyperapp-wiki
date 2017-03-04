@@ -7,11 +7,11 @@ app({
 ```
 The available methods are:
 
-* _oncreate_([_Element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)):  Called before an element is created.
+* _oncreate_([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)):  Called before an element is created.
 
-* _onupdate_([_Element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is updated.
+* _onupdate_([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is updated.
 
-* _onremove_([_Element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is removed.
+* _onremove_([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is removed.
 
 
 ### Examples
