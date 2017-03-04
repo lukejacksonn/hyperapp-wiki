@@ -168,7 +168,7 @@ app({ model, view, reducers, effects })
 
 ### subscriptions
 
-Subscriptions are functions scheduled to run only once when the [DOM is ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, create timers, open a socket connection, attach mouse/keyboard event listeners, etc.
+Subscriptions are functions scheduled to run once after the [DOM is ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, create timers, open a socket connection, attach mouse/keyboard event listeners, etc.
 
 Signature: `(model, actions, error)`.
 
