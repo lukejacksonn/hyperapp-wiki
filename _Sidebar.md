@@ -25,7 +25,7 @@
     * [effects](/hyperapp/hyperapp/wiki/api#effects)
     * [subscriptions](/hyperapp/hyperapp/wiki/api#subscriptions)
     * [hooks](/hyperapp/hyperapp/wiki/api#hooks)
-    * [root](/hyperapp/hyperapp/wiki/api#root)
     * [plugins](/hyperapp/hyperapp/wiki/api#plugins)
+    * [root](/hyperapp/hyperapp/wiki/api#root)
 
 
