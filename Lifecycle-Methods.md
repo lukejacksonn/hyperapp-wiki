@@ -2,7 +2,7 @@ Lifecycle methods are functions that can be attached to [virtual nodes](hyperapp
 
 ```jsx
 app({
-  view: <div oncreate={e => console.log(e)}></div>
+  view: <div oncreate={element => console.log(element)}></div>
 })
 ```
 The available methods are:
