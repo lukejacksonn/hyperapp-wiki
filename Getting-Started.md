@@ -65,8 +65,8 @@ Create a new `index.html` file, copy and paste the code from the example and ope
 
 ### What just happened?
 
-The browser downloaded HyperApp with Hyperx or JSX, compiled the view and run the application.
+The browser downloaded HyperApp with Hyperx or JSX, compiled the view and ran the application.
 
-This workflow is great for demos and sharing examples with other people, but not so great for production.
+This workflow is great for demos and sharing examples with other people, but not so great for a production application.
 
 In the next section we'll explore how to create a [[Build Setup]] using Browserify, Webpack and Rollup.
