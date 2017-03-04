@@ -8,9 +8,7 @@ JSX looks like this:
 const hello =
   <div>
     <h1>Hello.</h1>
-    <button
-      onclick=${action}
-    >Click</button>
+    <button onclick=${action}>Click</button>
   </div>
 ```
 
