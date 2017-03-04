@@ -9,6 +9,10 @@
   * [[Architecture]]
   * [[Lifecycle Methods]]
 * [[Plugins]]
+  * [[Router]]
+    * [actions.go](/hyperapp/hyperapp/wiki/api#actionsgo)
+    * [model.router.match](/hyperapp/hyperapp/wiki/api#modelroutermatch)
+    * [model.router.params](/hyperapp/hyperapp/wiki/api#modelrouterparams)
 * [[Tutorials]]
   * [[Rocket Launcher]]
   * [[Tweet Box]]
@@ -22,7 +26,6 @@
     * [subscriptions](/hyperapp/hyperapp/wiki/api#subscriptions)
     * [hooks](/hyperapp/hyperapp/wiki/api#hooks)
     * [root](/hyperapp/hyperapp/wiki/api#root)
-    * [router](/hyperapp/hyperapp/wiki/api#router)
-        * [setLocation](/hyperapp/hyperapp/wiki/api#setlocation)
-        * [href](/hyperapp/hyperapp/wiki/api#href)
+    * [plugins](/hyperapp/hyperapp/wiki/api#plugins)
+
 
