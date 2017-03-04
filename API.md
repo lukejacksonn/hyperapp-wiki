@@ -25,8 +25,8 @@ app({
     <a href="#reducers">reducers</a>,
     <a href="#effects">effects</a>,
     <a href="#subscriptions">subscriptions</a>,
-    <a href="#root">root</a>,
-    <a href="#router">router</a>
+    <a href="#plugins">plugins</a>,
+    <a href="#root">root</a>
 })
 </pre>
 
