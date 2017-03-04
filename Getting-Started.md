@@ -24,17 +24,19 @@ Create a new `index.html` file, copy and paste the code from the example and ope
 
 ```jsx
 <body>
-    <script src="https://unpkg.com/hyperapp"></script>
-    <script src="https://unpkg.com/babel-standalone"></script>
-    <script type="text/babel">
-        const { h, app } = hyperapp
-        /** @jsx h */
+  <script src="https://unpkg.com/hyperapp"></script>
+  <script src="https://unpkg.com/babel-standalone"></script>
+  <script type="text/babel">
 
-        app({
-            model: "Hi.",
-            view: model => <h1 id="title">{model}</h1>
-        })
-    </script>
+  const { h, app } = hyperapp
+  /** @jsx h */
+
+  app({
+    model: "Hi.",
+    view: model => <h1 id="title">{model}</h1>
+  })
+
+  </script>
 </body>
 ```
 
@@ -44,25 +46,27 @@ Create a new `index.html` file, copy and paste the code from the example and ope
 
 ```jsx
 <body>
-    <script src="https://unpkg.com/hyperapp"></script>
-    <script src="https://wzrd.in/standalone/hyperx"></script>
-    <script>
-        const { h, app } = hyperapp
-        const html = hyperx(h)
+  <script src="https://unpkg.com/hyperapp"></script>
+  <script src="https://wzrd.in/standalone/hyperx"></script>
+  <script>
 
-        app({
-            model: "Hi.",
-            view: model => html`<h1>${model}</h1>`
-        })
-    </script>
+  const { h, app } = hyperapp
+  const html = hyperx(h)
+
+  app({
+    model: "Hi.",
+    view: model => html`<h1>${model}</h1>`
+  })
+
+  </script>
 </body>
 ```
 [View online](https://rawgit.com/jbucaran/5cfa8c98464fe0b5a48edbae6b332b27/raw/fd27e1cb48d44e2c96714914b4ae05b70f10e33d/index.html).
 
 ### What just happened?
 
-The browser downloaded HyperApp, Hyperx/JSX, compiled the view and run the application.
+The browser downloaded HyperApp with Hyperx or JSX, compiled the view and run the application.
 
-This process is slow, but it's good enough for demos and sharing examples with other people.
+This workflow is great for demos and sharing examples with other people, but not so great for production.
 
-In the next section we'll explore how to setup a [[Build Pipeline]] using Browserify, Webpack and Rollup.
+In the next section we'll explore how to create a [[Build Setup]] using Browserify, Webpack and Rollup.
