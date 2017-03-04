@@ -56,13 +56,13 @@ npm i -S <a href="https://www.npmjs.com/package/hyperapp">hyperapp</a>
 Install development dependencies:
 <pre>
 npm i -D \
-    <a href="https://www.npmjs.com/package/babel-plugin-transform-react-jsx">babel-plugin-transform-react-jsx</a> \
-    <a href="https://www.npmjs.com/package/babel-preset-es2015">babel-preset-es2015</a> \
-    <a href="https://www.npmjs.com/package/babelify">babelify</a> \
-    <a href="https://www.npmjs.com/package/browserify">browserify</a> \
-    <a href="https://www.npmjs.com/package/bundle-collapser">bundle-collapser</a> \
-    <a href="https://www.npmjs.com/package/uglifyify">uglifyify</a> \
-    <a href="https://www.npmjs.com/package/uglifyjs">uglifyjs</a>
+  <a href="https://www.npmjs.com/package/babel-plugin-transform-react-jsx">babel-plugin-transform-react-jsx</a> \
+  <a href="https://www.npmjs.com/package/babel-preset-es2015">babel-preset-es2015</a> \
+  <a href="https://www.npmjs.com/package/babelify">babelify</a> \
+  <a href="https://www.npmjs.com/package/browserify">browserify</a> \
+  <a href="https://www.npmjs.com/package/bundle-collapser">bundle-collapser</a> \
+  <a href="https://www.npmjs.com/package/uglifyify">uglifyify</a> \
+  <a href="https://www.npmjs.com/package/uglifyjs">uglifyjs</a>
 </pre>
 
 Create a `.babelrc` file:
@@ -84,9 +84,9 @@ Create a `.babelrc` file:
 Bundle your application:
 <pre>
 $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/browserify \
-    -t babelify \
-    -g uglifyify \
-    -p bundle-collapser/plugin index.js | uglifyjs > bundle.js
+  -t babelify \
+  -g uglifyify \
+  -p bundle-collapser/plugin index.js | uglifyjs > bundle.js
 </pre>
 
 [Get this boilerplate](https://gist.github.com/jbucaran/21bbf0bbb0fe97345505664883100706).
@@ -96,11 +96,11 @@ $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/browserify \
 Install development dependencies:
 <pre>
 npm i -D \
-    <a href="https://www.npmjs.com/package/webpack">webpack</a> \
-    <a href="https://www.npmjs.com/package/babel-core">babel-core</a> \
-    <a href="https://www.npmjs.com/package/babel-loader">babel-loader</a> \
-    <a href="https://www.npmjs.com/package/babel-preset-es2015">babel-preset-es2015</a> \
-    <a href="https://www.npmjs.com/package/babel-plugin-transform-react-jsx">babel-plugin-transform-react-jsx</a>
+  <a href="https://www.npmjs.com/package/webpack">webpack</a> \
+  <a href="https://www.npmjs.com/package/babel-core">babel-core</a> \
+  <a href="https://www.npmjs.com/package/babel-loader">babel-loader</a> \
+  <a href="https://www.npmjs.com/package/babel-preset-es2015">babel-preset-es2015</a> \
+  <a href="https://www.npmjs.com/package/babel-plugin-transform-react-jsx">babel-plugin-transform-react-jsx</a>
 </pre>
 
 Create a `.babelrc` file:
@@ -148,12 +148,12 @@ $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/webpack -p
 Install development dependencies:
 <pre>
 npm i -D \
-    <a href="https://www.npmjs.com/package/rollup">rollup</a> \
-    <a href="https://www.npmjs.com/package/rollup-plugin-babel">rollup-plugin-babel</a> \
-    <a href="https://www.npmjs.com/package/rollup-plugin-node-resolve">rollup-plugin-node-resolve</a> \
-    <a href="https://www.npmjs.com/package/rollup-plugin-uglify">rollup-plugin-uglify</a> \
-    <a href="https://www.npmjs.com/package/babel-preset-es2015-rollup">babel-preset-es2015-rollup</a> \
-    <a href="https://www.npmjs.com/package/babel-plugin-transform-react-jsx">babel-plugin-transform-react-jsx</a>
+  <a href="https://www.npmjs.com/package/rollup">rollup</a> \
+  <a href="https://www.npmjs.com/package/rollup-plugin-babel">rollup-plugin-babel</a> \
+  <a href="https://www.npmjs.com/package/rollup-plugin-node-resolve">rollup-plugin-node-resolve</a> \
+  <a href="https://www.npmjs.com/package/rollup-plugin-uglify">rollup-plugin-uglify</a> \
+  <a href="https://www.npmjs.com/package/babel-preset-es2015-rollup">babel-preset-es2015-rollup</a> \
+  <a href="https://www.npmjs.com/package/babel-plugin-transform-react-jsx">babel-plugin-transform-react-jsx</a>
 </pre>
 
 
