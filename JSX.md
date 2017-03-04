@@ -1,4 +1,4 @@
-JSX is a XML-like syntax extension to ECMAScript. It allows you to mix HTML and JavaScript.
+JSX is an XML-like syntax extension to ECMAScript. It allows you to mix HTML and JavaScript.
 
 JSX is not part of the ECMAScript standard, but using the appropriate tooling we can compile our JavaScript + JSX code into vanilla JavaScript that browsers understand.
 
@@ -6,12 +6,12 @@ JSX looks like this:
 
 ```jsx
 const hello =
-    <div>
-        <h1>Hello.</h1>
-        <button
-            onclick=${action}
-        >Click</button>
-    </div>
+  <div>
+    <h1>Hello.</h1>
+    <button
+      onclick=${action}
+    >Click</button>
+  </div>
 ```
 
 For an in-depth introduction to JSX, visit the official [documentation](https://facebook.github.io/react/docs/introducing-jsx.html).
@@ -27,10 +27,11 @@ In a new directory, create an `index.html` file:
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Hello HyperApp</title>
+  <title>Hello HyperApp</title>
 </head>
+
 <body>
-    <script src="bundle.js"></script>
+  <script src="bundle.js"></script>
 </body>
 </html>
 ```
@@ -41,8 +42,8 @@ And an `index.js` file:
 import { h, app } from "hyperapp"
 
 app({
-    model: "Hi.",
-    view: model => <h1>{model}</h1>
+  model: "Hi.",
+  view: model => <h1>{model}</h1>
 })
 ```
 
@@ -50,10 +51,6 @@ Install dependencies:
 <pre>
 npm i -S <a href="https://www.npmjs.com/package/hyperapp">hyperapp</a>
 </pre>
-
-
-
-
 
 
 ### Browserify
@@ -74,14 +71,14 @@ Create a `.babelrc` file:
 
 ```js
 {
-    "presets": ["es2015"],
+  "presets": ["es2015"],
     "plugins": [
-        [
-            "transform-react-jsx",
-            {
-                "pragma": "h"
-            }
-        ]
+      [
+        "transform-react-jsx",
+        {
+          "pragma": "h"
+        }
+      ]
     ]
 }
 ```
@@ -111,14 +108,14 @@ npm i -D \
 Create a `.babelrc` file:
 ```js
 {
-    "presets": ["es2015"],
+  "presets": ["es2015"],
     "plugins": [
-        [
-            "transform-react-jsx",
-            {
-                "pragma": "h"
-            }
-        ]
+      [
+        "transform-react-jsx",
+        {
+          "pragma": "h"
+        }
+      ]
     ]
 }
 ```
@@ -127,17 +124,17 @@ Create a `webpack.config.js` file:
 
 ```js
 module.exports = {
-    entry: "./index.js",
-    output: {
-        filename: "bundle.js",
-    },
-    module: {
-        loaders: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: "babel-loader"
-        }]
-    }
+  entry: "./index.js",
+  output: {
+    filename: "bundle.js",
+  },
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: "babel-loader"
+    }]
+  }
 }
 ```
 
@@ -170,19 +167,19 @@ import resolve from "rollup-plugin-node-resolve"
 import uglify from "rollup-plugin-uglify"
 
 export default {
-    plugins: [
-        babel({
-            babelrc: false,
-            presets: ["es2015-rollup"],
-            plugins: [
-                ["transform-react-jsx", { pragma: "h" }]
-            ]
-        }),
-        resolve({
-            jsnext: true
-        }),
-        uglify()
-    ]
+  plugins: [
+    babel({
+      babelrc: false,
+      presets: ["es2015-rollup"],
+      plugins: [
+        ["transform-react-jsx", { pragma: "h" }]
+      ]
+    }),
+    resolve({
+      jsnext: true
+    }),
+    uglify()
+  ]
 }
 ```
 
