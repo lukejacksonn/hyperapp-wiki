@@ -89,7 +89,7 @@ Reducers return a new model or part of it. If it returns part of a model, that p
 
 Reducers can be triggered inside a [view](#view), [effect](#effects) or [subscription](#subscriptions).
 
-Signature: `(model, data, params)`.
+Signature: `(model, data)`.
 
 * `model` is the current model.
 * `data` is the data sent to the reducer.
