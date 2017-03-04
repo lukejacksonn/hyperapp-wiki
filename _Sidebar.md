@@ -3,7 +3,7 @@
 * [[Build Setup]]
   * [[JSX]]
   * [[Hyperx]]
-* Concepts
+* [[Concepts]]
   * [[Virtual Nodes]]
   * [[Components]]
   * [[Architecture]]
