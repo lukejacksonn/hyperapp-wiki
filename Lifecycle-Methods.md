@@ -5,7 +5,7 @@ app({
   view: <div oncreate={e => console.log(e)}></div>
 })
 ```
-The following are the available methods and their signature:
+The available methods are:
 
 * _oncreate_([_Element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)):  Called before an element is created.
 
