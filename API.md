@@ -1,12 +1,12 @@
 ## h
 
-Creates a virtual DOM node. A virtual DOM node is a Javascript data structure that describes a DOM element. Virtual nodes can be nested to create a virtual DOM tree.
+Creates a virtual DOM node. A virtual DOM node is a lightweight JavaScript object that describes a DOM element. Virtual nodes can be nested to complex virtual DOM trees.
 
 Signature: (tag, data, children).
 
-* `tag` is a tag name, e.g. `div` or a function that returns a tree of virtual nodes.
-* `data` is an object with attributes, styles, events, properties, [[Lifecycle Methods]], etc.
-* `children` is an array of children virtual nodes. (Optional)
+* _tag_: a tag name, e.g. div or a function that returns a tree of virtual nodes.
+* _data_: an object with attributes, styles, events, properties, [[Lifecycle Methods]], etc.
+* _children_: an array of children virtual nodes. (Optional)
 
 ```jsx
 const node = h("a", { href: "#" }, "Hi.")
@@ -22,8 +22,7 @@ Signature: (options).
 app({
   <a href="#model">model</a>,
   <a href="#view">view</a>,
-  <a href="#reducers">reducers</a>,
-  <a href="#effects">effects</a>,
+  <a href="#actions">actions</a>,
   <a href="#subscriptions">subscriptions</a>,
   <a href="#plugins">plugins</a>,
   <a href="#root">root</a>
@@ -35,8 +34,6 @@ app({
 
 The model is a primitive type, array or object that represents the entire state of your application.
 
-This means there is a single source of truth shared across all the components in your application.
-
 ```jsx
 const model = {
   title: "Hi."
@@ -45,30 +42,30 @@ const model = {
 
 ### view
 
-A view is a function that returns a virtual DOM tree. See [`h`](#h).
+A view is a function that returns a virtual DOM tree. See [`h`](#h). HyperApp virtual DOM engine consumes a view to render a DOM tree.
 
 Signature: (model, actions).
 
-* `model` is the current model.
-* `actions` is an object used to trigger [reducers](#reducers) and [effects](#effects).
+* _model_: the current model.
+* _actions_: your application's [actions](#actions).
 
 ```jsx
 const view = model => h("a", { href: "#" }, model.title)
 ```
 
-To trigger actions use:
+To call an action:
 
 ```jsx
 actions.action(data)
 ```
 
-* `data` is the data you want to pass to the `action`.
-* `action` is the name of a [reducer](#reducers) or [effect](#effects).
+* _data_: any data you want to pass to the action.
+* _action_: the name of the action.
 
 ```jsx
 app({
   model: true,
-  reducers: {
+  actions: {
     toggle: model => !model,
   },
   view: (model, actions) =>
@@ -80,18 +77,18 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/ZLGGzy/).
 
-### reducers
+### actions
 
-Reducers are a kind of action. The other kind of action are [effects](#effects).
+Actions are used to update the model, which in turn causes the view to be rendered.
 
-Reducers return a new model or part of it. If it returns part of a model, that part will be merged with the current model.
+To update the model, an action returns a new model or a part of it, which will be merged with the previous model.
 
-Reducers can be triggered inside a [view](#view), [effect](#effects) or [subscription](#subscriptions).
+Signature: (model, data, actions, error).
 
-Signature: (model, data).
-
-* `model` is the current model.
-* `data` is the data sent to the reducer.
+* _model_: the current model.
+* _actions_: your application's actions.
+* _data_: the data passed to the action.
+* _error_: a function you can call to throw an error.
 
 ```jsx
 app({
@@ -116,66 +113,18 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/zNxZLP).
 
-### effects
-
-Effects are a kind of action. The other kind of action are [reducers](#reducers).
-
-Effects are used to cause side effects and are often asynchronous, like writing to a database, or sending requests to servers.
-
-Signature: (model, actions, data, error).
-
-* `model` is the current model.
-* `actions` is an object used to trigger [reducers](#reducers) and effects.
-* `data` is the data sent to the effect.
-* `error` is a function you can call to throw an error.
-
-```jsx
-const wait = time =>
-  new Promise(resolve =>
-    setTimeout(_ => resolve(), time))
-
-const model = {
-  counter: 0,
-  waiting: false
-}
-
-const reducers = {
-  add: model => ({ counter: model.counter + 1 }),
-  toggle: model => ({ waiting: !model.waiting })
-}
-
-const effects = {
-  waitThenAdd: (model, actions) => {
-    actions.toggle()
-    wait(1000)
-      .then(actions.add)
-      .then(actions.toggle)
-  }
-}
-
-const view = (model, actions) =>
-  <button
-    onclick={actions.waitThenAdd}
-    disabled={model.waiting}
-  >
-    {model.counter}
-  </button>
-
-app({ model, view, reducers, effects })
-```
-
-[View online](http://codepen.io/jbucaran/pen/jyEKmw).
+Actions can also be used to cause [[Side Effects]] like writing to a database, or sending requests to servers.
 
 ### subscriptions
 
-Subscriptions are functions scheduled to run once after the [DOM is ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, create timers, open a socket connection, attach mouse/keyboard event listeners, etc.
+Subscriptions are functions scheduled to run once after the [DOM is ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, open a socket connection, attach mouse/keyboard event listeners, etc.
 
 Signature: (model, actions, error).
 
 ```jsx
 app({
   model: { x: 0, y: 0 },
-  reducers: {
+  actions: {
     move: (_, { x, y }) => ({ x, y })
   },
   subscriptions: [
@@ -196,20 +145,20 @@ app({
 
 ### hooks
 
-Hooks are function handlers used to inspect your application, implement middleware, loggers, etc. There are four: `onUpdate`, `onAction`, `onRender` and `onError`.
+Hooks are function handlers used to inspect your application, implement middleware, loggers, etc. There are four:
 
 * _onUpdate_: Called before the model is updated. Signature: (oldModel, newModel, data).
 
 * _onAction_: Called before an action is triggered. Signature: (action, data).
 
-* _onRender_: Called before the [view](#view) is rendered. Return a view to overwrite the default one. Signature: (model, view) : view. 
+* _onRender_: Called before the [view](#view) is rendered. Return a view to overwrite the default one. Signature: (model, view). 
 
-* _onError_: Called when you use the `error` function inside a subscription or effect. If you don't use this hook, the default behavior is to throw. Signature: (error).
+* _onError_: Called when you use the error function inside a subscription or action. If you don't use this hook, the default behavior is to throw. Signature: (error).
 
 ```jsx
 app({
   model: true,
-  reducers: {
+  actions: {
     doSomething: model => !model
   },
   effects: {
@@ -233,7 +182,6 @@ app({
 ```
 
 [View online](http://codepen.io/jbucaran/pen/xgbzEy).
-
 
 ### plugins
 
