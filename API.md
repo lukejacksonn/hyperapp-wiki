@@ -197,11 +197,27 @@ app({
 
 ### plugins
 
-WIP
+Plugins are functions that enhance your application by extending the [model](#model) and adding new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions).
+
+Signature: (options).
+
+* _options_: the original options object passed to [app](#app).
+
+```jsx
+cont Logger = options => ({
+  hooks: {
+    onAction: name => console.log(name)
+  }
+})
+
+app({
+  plugins: [Logger]
+})
+```
 
 ### root
 
-The root is the container of your application. If none is given, a `div` element is appended to `document.body` and used as the container.
+The root is the container of your application. If none is given, a `div` element is appended to `document.body` and used as root.
 
 ```jsx
 app({
