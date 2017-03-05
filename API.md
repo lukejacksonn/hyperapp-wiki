@@ -113,7 +113,7 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/zNxZLP).
 
-Actions can also be used to cause [[Side Effects]] like writing to a database, or sending requests to servers.
+Actions can cause [[Side Effects]] too, like writing to a database, or sending requests to servers. These kind of actions are often asynchronous in nature, so they have no return value. Alternatively, you may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows you to chain actions using [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
 
 ### subscriptions
 
