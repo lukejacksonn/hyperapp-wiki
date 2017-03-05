@@ -1,16 +1,28 @@
 ## h
 
-Creates a virtual DOM node. A virtual DOM node is a lightweight JavaScript object that describes a DOM element. Virtual nodes can be nested to complex virtual DOM trees.
+Creates a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element. 
 
 Signature: (tag, data, children).
 
 * _tag_: a tag name, e.g. div or a function that returns a tree of virtual nodes.
-* _data_: an object with attributes, styles, events, properties, [[Lifecycle Methods]], etc.
-* _children_: an array of children virtual nodes. (Optional)
+* _data_: an object with attributes, styles, events, [[Lifecycle Methods]], etc.
+* _children_: a string or an array of virtual nodes. 
 
+For example:
 ```jsx
-const node = h("a", { href: "#" }, "Hi.")
+h("a", { href: "#" }, "Hi.")
 ```
+Creates a virtual node:
+```jsx
+{
+  tag: "a",
+  data: {
+    href: "#"
+  }
+  children: "Hi."
+}
+```
+
 
 ## app
 
