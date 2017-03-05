@@ -12,7 +12,7 @@ HyperApp is a JavaScript library for building frontend applications.
 * **Stateless components**: Build complex user interfaces from micro-components. Stateless components are framework agnostic, reusable and easy to debug.
 * **Batteries-included**: Out of the box, HyperApp has Elm-like state management and a virtual DOM engine; it still weighs `1kb` and has no dependencies.
 
-HyperApp is not opinionated about your stack either; we're compatible with all bundlers and work well with [Hyperx] or [JSX] -- it's your choice.
+HyperApp is not opinionated about your stack either; we're compatible with all bundlers and work well with [[Hyperx]] or [[JSX]] -- it's your choice.
 
 ## Contents
 * [[Getting Started]]
