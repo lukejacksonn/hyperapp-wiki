@@ -81,7 +81,7 @@ app({
 
 Actions are used to update the model, which in turn causes the view to be rendered.
 
-To update the model, an action returns a new model or a part of it, which will be merged with the previous model.
+To update the model, an action returns a new model or a part of it, which is then merged with the previous model.
 
 Signature: (model, data, actions, error).
 
