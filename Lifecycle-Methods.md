@@ -13,7 +13,6 @@ The available methods are:
 
 * _onremove_([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is removed.
 
-
 ### Examples
 Using the [canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial) element.
 
@@ -29,7 +28,7 @@ const repaint = (canvas, model) => {
 
 app({
   model: { x: 0, y: 0 },
-  reducers: {
+  actions: {
     move: model => ({
       x: model.x + 1,
       y: model.y + 1,
