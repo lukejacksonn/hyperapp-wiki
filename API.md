@@ -93,7 +93,7 @@ Signature: (model, data, actions, error).
 ```jsx
 app({
   model: 0,
-  reducers: {
+  actions: {
     add: model => model + 1,
     sub: model => model - 1,
   },
