@@ -9,11 +9,11 @@ Signature: (tag, data, children).
 * _children_: a string or an array of virtual nodes.
 
 For example:
-```jsx
+```js
 h("a", { href: "#" }, "Hi.")
 ```
 Returns the following object:
-```jsx
+```js
 {
   tag: "a",
   data: {
@@ -57,7 +57,7 @@ Signature: (model, actions).
 
 To call an action:
 
-```jsx
+```js
 actions.action(data)
 ```
 
@@ -213,7 +213,7 @@ app({
 
 ### plugins
 
-Functions that extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). See the [[Router]] for a practical example.
+Functions that extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). Functions that exactly accepts the same `options` object as any HyperApp - think for them as another hyperapp. See the [[Router]] for a practical example.
 
 Signature: (options).
 
