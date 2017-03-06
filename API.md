@@ -118,7 +118,7 @@ Actions can cause [[Side Effects]] too, e.g. writing to a database, sending requ
 
 ### subscriptions
 
-Subscriptions are functions scheduled to run once after the [DOM is ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, open a socket connection, attach mouse/keyboard event listeners, etc.
+Functions scheduled to run once after the [DOM is ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, open a socket connection, attach mouse/keyboard event listeners, etc.
 
 Signature: (model, actions, error).
 
@@ -146,7 +146,7 @@ app({
 
 ### hooks
 
-Hooks are function handlers used to inspect an application, implement middleware, loggers, etc. There are four:
+Functions used to inspect an application, implement middleware, loggers, etc. There are four:
 
 * _onUpdate_: Called before the model is updated. Signature: (oldModel, newModel, data).
 
@@ -160,17 +160,17 @@ Hooks are function handlers used to inspect an application, implement middleware
 app({
   model: true,
   actions: {
-    doSomething: model => !model
+    toggle: model => !model
     fail: (model, data, actions, error) =>
-      setTimeout(_ => error(Error("Errors be bold!")), 1000)
+      setTimeout(_ => error(Error("Fail!")), 1000)
   },
   hooks: {
-    onError: error => alert(error),
-    onAction: action => alert(action)
+    onError: error => console.log(error),
+    onAction: action => console.log(action)
   },
   view: (model, actions) =>
     <div>
-      <button onclick={actions.doSomething}>
+      <button onclick={actions.toggle}>
         Log
       </button>
       <button onclick={actions.fail}>
@@ -184,7 +184,7 @@ app({
 
 ### plugins
 
-Functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). For a complete example, see the [[Router]].
+Functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). For a practical example, see the [[Router]].
 
 Signature: (options).
 
@@ -204,7 +204,7 @@ app({
 
 ### root
 
-The HTML root node of an application. If none is given, a `div` element is appended to `document.body` and used as root.
+The HTML root node of the application. If none is given, a `div` element is appended to [`document.body`](https://developer.mozilla.org/en-US/docs/Web/API/Document/body) and used as the root.
 
 ```jsx
 app({
@@ -215,4 +215,3 @@ app({
 ```
 
 [View online](http://codepen.io/jbucaran/pen/JELvjO).
-
