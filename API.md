@@ -43,13 +43,13 @@ app({
 
 ### model
 
-The model is a primitive type, array or object that represents the state of an application.
+A primitive type, array or object that represents the state of an application. 
 
 Changes in the model cause the [view](#view) to be rendered, and the model is changed by triggering [actions](#actions). 
 
 ### view
 
-A view is a function that returns a virtual node. See [h](#h). 
+A function that returns a virtual node tree. See also: [h](#h), [[Hyperx]], [[JSX]]. 
 
 Signature: (model, actions).
 
@@ -206,7 +206,7 @@ app({
 
 ### root
 
-The root is the container of an application. If none is given, a `div` element is appended to `document.body` and used as root.
+The root  If none is given, a `div` element is appended to `document.body` and used as root.
 
 ```jsx
 app({
