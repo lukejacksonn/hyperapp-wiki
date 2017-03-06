@@ -25,7 +25,7 @@ Creates a virtual node:
 
 ## app
 
-Starts the application.
+Starts an application.
 
 Signature: (options).
 
@@ -43,13 +43,13 @@ app({
 
 ### model
 
-The model is a primitive type, array or object that represents the state of your application.
+The model is a primitive type, array or object that represents the state of an application.
 
-Changes in the model cause the [view](#view) to be rendered, and [actions](#actions) are triggered to change the model.
+Changes in the model cause the [view](#view) to be rendered, and the model is changed by triggering [actions](#actions). 
 
 ### view
 
-A view is a function that returns a virtual node. See [h](#h). To render a view, you must update the model by triggering [actions](#actions).
+A view is a function that returns a virtual node. See [h](#h). 
 
 Signature: (model, actions).
 
@@ -114,7 +114,7 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/zNxZLP).
 
-Actions can cause [[Side Effects]] too, e.g. writing to a database, sending requests to servers, etc. These kind of actions are often asynchronous in nature and have no return value or may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows you to chain actions using [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
+Actions can cause [[Side Effects]] too, e.g. writing to a database, sending requests to servers, etc. These are often asynchronous and produce no return value. Optionally, an action may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows you to chain actions using [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
 
 ### subscriptions
 
