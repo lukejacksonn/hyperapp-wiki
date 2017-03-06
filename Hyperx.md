@@ -5,8 +5,8 @@ Hyperx looks like this:
 ```jsx
 const hello = html`
   <div>
-      <h1>Hello.</h1>
-      <button onclick=${action}>Click</button>
+    <h1>Hello.</h1>
+    <button onclick=${action}>Click</button>
   </div>`
 ```
 
@@ -136,13 +136,17 @@ Install development dependencies:
 
 <pre>
 npm i -D \
+  <a href="https://www.npmjs.com/package/babel-preset-es2015-rollup">babel-preset-es2015-rollup</a> \
+  <a href="https://www.npmjs.com/package/hyperx">hyperx</a> \
+  <a href="https://www.npmjs.com/package/hyperxify">hyperxify</a> \
   <a href="https://www.npmjs.com/package/rollup">rollup</a> \
-  <a href="https://www.npmjs.com/package/rollup-plugin-jsx">rollup-plugin-jsx</a> \
+  <a href="https://www.npmjs.com/package/rollup-plugin-browserify-transform">rollup-plugin-browserify-transform</a> \
   <a href="https://www.npmjs.com/package/rollup-plugin-buble">rollup-plugin-buble</a> \
   <a href="https://www.npmjs.com/package/rollup-plugin-commonjs">rollup-plugin-commonjs</a> \
   <a href="https://www.npmjs.com/package/rollup-plugin-node-resolve">rollup-plugin-node-resolve</a> \
   <a href="https://www.npmjs.com/package/rollup-plugin-uglify">rollup-plugin-uglify</a>
 </pre>
+
 
 Create a `rollup.config.js` file:
 
