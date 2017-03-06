@@ -23,7 +23,6 @@ Creates a virtual node:
 }
 ```
 
-
 ## app
 
 Starts the application.
@@ -46,17 +45,11 @@ app({
 
 The model is a primitive type, array or object that represents the entire state of your application.
 
-```jsx
-const model = {
-  title: "Hi."
-}
-```
-
-The model is updated via [actions](#actions), which cause the [view](#view) to be rendered.
+When the model changes, the [view](#view) is rendered and to change the model, you must call [actions](#actions).
 
 ### view
 
-A view is a function that returns a virtual DOM tree. See [`h`](#h). HyperApp virtual DOM engine consumes a view to render a DOM tree.
+A view is a function that returns a virtual node. 
 
 Signature: (model, actions).
 
