@@ -1,12 +1,12 @@
 ## h
 
-Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element. 
+Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element.
 
 Signature: (tag, data, children).
 
 * _tag_: a tag name, e.g. div or a function that returns a tree of virtual nodes.
 * _data_: an object with attributes, styles, events, [[Lifecycle Methods]], etc.
-* _children_: a string or an array of virtual nodes. 
+* _children_: a string or an array of virtual nodes.
 
 For example:
 ```jsx
@@ -40,16 +40,15 @@ app({
 })
 </pre>
 
-
 ### model
 
-A primitive type, array or object that represents the state of an application. 
+A primitive type, array or object that represents the state of the application.
 
-Changes in the model cause the [view](#view) to be rendered, and the model is changed by triggering [actions](#actions). 
+Changes in the model cause the [view](#view) to be rendered, and the model is changed by triggering [actions](#actions).
 
 ### view
 
-A function that returns a virtual node tree. See: [h](#h), [[Hyperx]], [[JSX]]. 
+A function that returns a virtual node tree. See: [h](#h), [[Hyperx]], [[JSX]].
 
 Signature: (model, actions).
 
@@ -114,11 +113,13 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/zNxZLP).
 
-Actions can cause [[Side Effects]] too, e.g. writing to a database, sending requests to servers, etc. These are often asynchronous and produce no return value. Optionally, an action may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows chaining of actions using [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
+Actions can cause [[Side Effects]] too, e.g. writing to a database, sending requests to servers, etc. These kind of actions are usually asynchronous and have no return value.
+
+Alternatively, an action may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows chaining actions via [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use ES7 [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
 
 ### subscriptions
 
-Functions scheduled to run once after the [DOM is ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, open a socket connection, attach mouse/keyboard event listeners, etc.
+Functions scheduled to run once after the DOM is [ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, open a socket connection, attach mouse/keyboard event listeners, etc.
 
 Signature: (model, actions, error).
 
@@ -130,8 +131,7 @@ app({
   },
   subscriptions: [
     (_, actions) =>
-      addEventListener(
-        "mousemove",
+      addEventListener("mousemove",
         e => actions.move({
           x: e.clientX,
           y: e.clientY,
@@ -152,7 +152,7 @@ Functions used to inspect an application, implement middleware, loggers, etc. Th
 
 * _onAction_: Called before an action is triggered. Signature: (action, data).
 
-* _onRender_: Called before the [view](#view) is rendered. Return a view to overwrite the default one. Signature: (model, view). 
+* _onRender_: Called before the [view](#view) is rendered. Return a different view to overwrite the default one. Signature: (model, view).
 
 * _onError_: Called when the error function is used. If none is given, the default behavior is to throw. Signature: (error).
 
@@ -184,11 +184,11 @@ app({
 
 ### plugins
 
-Functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). For a practical example, see the [[Router]].
+Functions that extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). See the [[Router]] for a practical example.
 
 Signature: (options).
 
-* _options_: the same options object passed to [app](#app).
+* _options_: the options object passed to [app](#app).
 
 ```jsx
 cont Logger = options => ({
@@ -204,7 +204,7 @@ app({
 
 ### root
 
-The HTML root node of the application. If none is given, a `div` element is appended to [`document.body`](https://developer.mozilla.org/en-US/docs/Web/API/Document/body) and used as the root.
+The HTML root element of the application. If none is given, a `div` element is appended to [`document.body`](https://developer.mozilla.org/en-US/docs/Web/API/Document/body) and used as the root.
 
 ```jsx
 app({
