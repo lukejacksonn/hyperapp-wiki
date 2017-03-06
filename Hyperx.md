@@ -146,7 +146,7 @@ npm i -D \
 
 Create a `rollup.config.js` file:
 
-```jsx
+```js
 import jsx from "rollup-plugin-jsx"
 import buble from "rollup-plugin-buble"
 import uglify from "rollup-plugin-uglify"
@@ -166,8 +166,9 @@ export default {
 ```
 
 Bundle your application:
-<pre>
-$(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/rollup -cf iife -i index.js -o bundle.js
-</pre>
+
+```
+rollup -c -f iife -i index.js -o bundle.js
+```
 
 [Get this boilerplate](https://gist.github.com/jbucaran/fac2c3de24e5171596fb189f9c1feb8e).
