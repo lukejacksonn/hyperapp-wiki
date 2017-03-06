@@ -43,22 +43,18 @@ app({
 
 ### model
 
-The model is a primitive type, array or object that represents the entire state of your application.
+The model is a primitive type, array or object that represents the state of your application.
 
-When the model changes, the [view](#view) is rendered and to change the model, you must call [actions](#actions).
+Changes in the model cause the [view](#view) to be rendered, and [actions](#actions) are triggered to change the model.
 
 ### view
 
-A view is a function that returns a virtual node. 
+A view is a function that returns a virtual node. See [h](#h). To render a view, you must update the model by triggering [actions](#actions).
 
 Signature: (model, actions).
 
 * _model_: the current model.
 * _actions_: your application's [actions](#actions).
-
-```jsx
-const view = model => h("a", { href: "#" }, model.title)
-```
 
 To call an action:
 
@@ -86,9 +82,7 @@ app({
 
 ### actions
 
-Actions are used to update the model, which in turn causes the view to be rendered.
-
-To update the model, an action returns a new model or a part of it, which is then merged with the previous model.
+Actions are functions that return a new model or a part of it. The new model is merged with the previous one to update the current model.
 
 Signature: (model, data, actions, error).
 
@@ -120,7 +114,7 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/zNxZLP).
 
-Actions can cause [[Side Effects]] too, like writing to a database, or sending requests to servers. These kind of actions are often asynchronous in nature, so they have no return value. Alternatively, you may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows you to chain actions using [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
+Actions can cause [[Side Effects]] too, e.g. writing to a database, sending requests to servers, etc. These kind of actions are often asynchronous in nature and have no return value or may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows you to chain actions using [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
 
 ### subscriptions
 
