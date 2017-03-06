@@ -186,11 +186,11 @@ app({
 
 ### plugins
 
-Plugins are functions that enhance an application by extending the [model](#model), adding new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions).
+Functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). See: [[Router]].
 
 Signature: (options).
 
-* _options_: the original options object passed to [app](#app).
+* _options_: the same options object passed to [app](#app).
 
 ```jsx
 cont Logger = options => ({
@@ -206,7 +206,7 @@ app({
 
 ### root
 
-The root  If none is given, a `div` element is appended to `document.body` and used as root.
+The root is the HTML root node of an application. If none is given, a `div` element is appended to `document.body` and used as root.
 
 ```jsx
 app({
