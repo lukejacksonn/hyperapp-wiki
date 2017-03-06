@@ -161,9 +161,7 @@ app({
   model: true,
   actions: {
     doSomething: model => !model
-  },
-  effects: {
-    boom: (model, actions, data, error) =>
+    fail: (model, data, actions, error) =>
       setTimeout(_ => error(Error("Errors be bold!")), 1000)
   },
   hooks: {
@@ -175,7 +173,7 @@ app({
       <button onclick={actions.doSomething}>
         Log
       </button>
-      <button onclick={actions.boom}>
+      <button onclick={actions.fail}>
         Error
       </button>
     </div>
@@ -186,7 +184,7 @@ app({
 
 ### plugins
 
-Functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). See: [[Router]].
+Functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). For a complete example, see the [[Router]].
 
 Signature: (options).
 
@@ -206,7 +204,7 @@ app({
 
 ### root
 
-The root is the HTML root node of an application. If none is given, a `div` element is appended to `document.body` and used as root.
+The HTML root node of an application. If none is given, a `div` element is appended to `document.body` and used as root.
 
 ```jsx
 app({
