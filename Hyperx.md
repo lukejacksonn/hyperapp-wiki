@@ -136,11 +136,8 @@ Install development dependencies:
 
 <pre>
 npm i -D \
-  <a href="https://www.npmjs.com/package/babel-preset-es2015-rollup">babel-preset-es2015-rollup</a> \
-  <a href="https://www.npmjs.com/package/hyperx">hyperx</a> \
-  <a href="https://www.npmjs.com/package/hyperxify">hyperxify</a> \
   <a href="https://www.npmjs.com/package/rollup">rollup</a> \
-  <a href="https://www.npmjs.com/package/rollup-plugin-browserify-transform">rollup-plugin-browserify-transform</a> \
+  <a href="https://www.npmjs.com/package/rollup-plugin-jsx">rollup-plugin-jsx</a> \
   <a href="https://www.npmjs.com/package/rollup-plugin-buble">rollup-plugin-buble</a> \
   <a href="https://www.npmjs.com/package/rollup-plugin-commonjs">rollup-plugin-commonjs</a> \
   <a href="https://www.npmjs.com/package/rollup-plugin-node-resolve">rollup-plugin-node-resolve</a> \
@@ -150,23 +147,20 @@ npm i -D \
 Create a `rollup.config.js` file:
 
 ```jsx
+import jsx from "rollup-plugin-jsx"
 import buble from "rollup-plugin-buble"
-import resolve from "rollup-plugin-node-resolve"
 import uglify from "rollup-plugin-uglify"
-import browserify from "rollup-plugin-browserify-transform"
-import hyperxify from "hyperxify"
-import cjs from "rollup-plugin-commonjs"
+import resolve from "rollup-plugin-node-resolve"
+import commonjs from "rollup-plugin-commonjs"
 
 export default {
-  moduleName: "window",
+  moduleName: "myApp",
   plugins: [
-    browserify(hyperxify),
+    jsx({ factory: "h" }),
     buble(),
-    cjs(),
-    resolve({
-      module: false
-    }),
-    uglify()
+    resolve({ jsnext: true }),
+    commonjs(),
+    uglify({ compress: { warnings: false } })
   ]
 }
 ```
