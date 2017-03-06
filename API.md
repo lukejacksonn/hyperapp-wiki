@@ -115,6 +115,36 @@ app({
 
 Actions can cause [[Side Effects]] too, e.g. writing to a database, sending requests to servers, etc. These kind of actions are usually asynchronous and have no return value.
 
+```jsx
+app({
+  model: {
+    counter: 0,
+    waiting: false
+  },
+  actions: {
+    add: model => ({ counter: model.counter + 1 }),
+    toggle: model => ({ waiting: !model.waiting }),
+    waitThenAdd: (model, _, actions) => {
+      actions.toggle()
+      setTimeout(_ => {
+        actions.add()
+        actions.toggle()
+      }, 1500)
+    }
+  },
+  view: (model, actions) =>
+    <button
+      onclick={actions.waitThenAdd}
+      disabled={model.waiting}
+    >
+      {model.counter}
+    </button>
+})
+```
+
+[View online](http://codepen.io/jbucaran/pen/jyEKmw).
+
+
 Alternatively, an action may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows chaining actions via [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use ES7 [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
 
 ### subscriptions
