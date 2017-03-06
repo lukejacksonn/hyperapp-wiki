@@ -160,13 +160,13 @@ Functions used to inspect an application, implement middleware, loggers, etc. Th
 app({
   model: true,
   actions: {
-    toggle: model => !model
-    fail: (model, data, actions, error) =>
-      setTimeout(_ => error(Error("Fail!")), 1000)
+    toggle: model => !model,
+    fail: (model, actions, data, err) =>
+      setTimeout(_ => err("Abort, Retry, Fail!"), 1000)
   },
   hooks: {
-    onError: error => console.log(error),
-    onAction: action => console.log(action)
+    onError: e => console.log(`Error: ${e}`),
+    onAction: (action) => console.log(`Action: ${action}`)
   },
   view: (model, actions) =>
     <div>
