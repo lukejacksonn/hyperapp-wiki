@@ -235,7 +235,7 @@ app({
 
 The HTML root element of the application. If none is given, a div element is appended to [document.body](https://developer.mozilla.org/en-US/docs/Web/API/Document/body) and used as the root.
 
-Note that using `document.body` as root may lead to unexpected results when other elements are already
+> Note that using document.body as root may lead to unexpected results when other elements are already
 present.
 
 ```jsx
