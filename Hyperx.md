@@ -147,20 +147,23 @@ npm i -D \
 Create a `rollup.config.js` file:
 
 ```jsx
-import jsx from "rollup-plugin-jsx"
 import buble from "rollup-plugin-buble"
-import uglify from "rollup-plugin-uglify"
 import resolve from "rollup-plugin-node-resolve"
-import commonjs from "rollup-plugin-commonjs"
+import uglify from "rollup-plugin-uglify"
+import browserify from "rollup-plugin-browserify-transform"
+import hyperxify from "hyperxify"
+import cjs from "rollup-plugin-commonjs"
 
 export default {
-  moduleName: "myApp",
+  moduleName: "window",
   plugins: [
-    jsx({ factory: "h" }),
+    browserify(hyperxify),
     buble(),
-    resolve({ jsnext: true }),
-    commonjs(),
-    uglify({ compress: { warnings: false } })
+    cjs(),
+    resolve({
+      module: false
+    }),
+    uglify()
   ]
 }
 ```
