@@ -1,6 +1,6 @@
 ## h
 
-Creates a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element. 
+Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element. 
 
 Signature: (tag, data, children).
 
@@ -12,7 +12,7 @@ For example:
 ```jsx
 h("a", { href: "#" }, "Hi.")
 ```
-Creates a virtual node:
+Returns the following object:
 ```jsx
 {
   tag: "a",
@@ -49,7 +49,7 @@ Changes in the model cause the [view](#view) to be rendered, and the model is ch
 
 ### view
 
-A function that returns a virtual node tree. See also: [h](#h), [[Hyperx]], [[JSX]]. 
+A function that returns a virtual node tree. See: [h](#h), [[Hyperx]], [[JSX]]. 
 
 Signature: (model, actions).
 
@@ -82,7 +82,7 @@ app({
 
 ### actions
 
-Actions are functions that return a new model or a part of it. The new model is merged with the previous one to update the current model.
+Functions that return a new model or a part of it. The new model is merged with the previous one to update the current model.
 
 Signature: (model, data, actions, error).
 
