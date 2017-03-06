@@ -71,7 +71,7 @@ app({
     toggle: model => !model,
   },
   view: (model, actions) =>
-    <button onclick={actions.toggle}>
+    <button onClick={actions.toggle}>
       {model.toString()}
     </button>
 })
@@ -99,11 +99,11 @@ app({
   },
   view: (model, actions) =>
     <div>
-      <button onclick={actions.add}>
+      <button onClick={actions.add}>
         +
       </button>
       <h1>{model}</h1>
-      <button onclick={actions.sub}
+      <button onClick={actions.sub}
         disabled={model <= 0}>
         -
       </button>
@@ -134,7 +134,7 @@ app({
   },
   view: (model, actions) =>
     <button
-      onclick={actions.waitThenAdd}
+      onClick={actions.waitThenAdd}
       disabled={model.waiting}
     >
       {model.counter}
@@ -199,10 +199,10 @@ app({
   },
   view: (model, actions) =>
     <div>
-      <button onclick={actions.toggle}>
+      <button onClick={actions.toggle}>
         Log
       </button>
-      <button onclick={actions.fail}>
+      <button onClick={actions.fail}>
         Error
       </button>
     </div>
