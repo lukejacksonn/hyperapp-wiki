@@ -7,11 +7,11 @@ app({
 ```
 The available methods are:
 
-* _onCreate_([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)):  Called before an element is created.
+* onCreate([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)):  Called before an element is created.
 
-* _onUpdate_([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is updated.
+* onUpdate([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is updated.
 
-* _onRemove_([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is removed.
+* onRemove([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is removed.
 
 ### Examples
 Using the [canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial) element.
