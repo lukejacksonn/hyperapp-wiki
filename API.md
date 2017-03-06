@@ -54,7 +54,7 @@ A view is a function that returns a virtual node. See [h](#h).
 Signature: (model, actions).
 
 * _model_: the current model.
-* _actions_: your application's [actions](#actions).
+* _actions_: the application's [actions](#actions).
 
 To call an action:
 
@@ -62,7 +62,7 @@ To call an action:
 actions.action(data)
 ```
 
-* _data_: any data you want to pass to the action.
+* _data_: any data to pass to the action.
 * _action_: the name of the action.
 
 ```jsx
@@ -87,9 +87,9 @@ Actions are functions that return a new model or a part of it. The new model is 
 Signature: (model, data, actions, error).
 
 * _model_: the current model.
-* _actions_: your application's actions.
+* _actions_: the application's actions.
 * _data_: the data passed to the action.
-* _error_: a function you can call to throw an error.
+* _error_: a function that can be called to throw an error.
 
 ```jsx
 app({
@@ -114,7 +114,7 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/zNxZLP).
 
-Actions can cause [[Side Effects]] too, e.g. writing to a database, sending requests to servers, etc. These are often asynchronous and produce no return value. Optionally, an action may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows you to chain actions using [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
+Actions can cause [[Side Effects]] too, e.g. writing to a database, sending requests to servers, etc. These are often asynchronous and produce no return value. Optionally, an action may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows chaining of actions using [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
 
 ### subscriptions
 
@@ -146,7 +146,7 @@ app({
 
 ### hooks
 
-Hooks are function handlers used to inspect your application, implement middleware, loggers, etc. There are four:
+Hooks are function handlers used to inspect an application, implement middleware, loggers, etc. There are four:
 
 * _onUpdate_: Called before the model is updated. Signature: (oldModel, newModel, data).
 
@@ -154,7 +154,7 @@ Hooks are function handlers used to inspect your application, implement middlewa
 
 * _onRender_: Called before the [view](#view) is rendered. Return a view to overwrite the default one. Signature: (model, view). 
 
-* _onError_: Called when you use the error function inside a subscription or action. If you don't use this hook, the default behavior is to throw. Signature: (error).
+* _onError_: Called when the error function is used. If none is given, the default behavior is to throw. Signature: (error).
 
 ```jsx
 app({
@@ -186,7 +186,7 @@ app({
 
 ### plugins
 
-Plugins are functions that enhance your application by extending the [model](#model) and adding new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions).
+Plugins are functions that enhance an application by extending the [model](#model), adding new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions).
 
 Signature: (options).
 
@@ -206,7 +206,7 @@ app({
 
 ### root
 
-The root is the container of your application. If none is given, a `div` element is appended to `document.body` and used as root.
+The root is the container of an application. If none is given, a `div` element is appended to `document.body` and used as root.
 
 ```jsx
 app({
