@@ -21,12 +21,12 @@ The generated code is smaller and faster than the alternative: sending a parser 
 JSX or Hyperx in:
 
 ```jsx
-const hello = <h1 id="test">Hi.</h1>
+<h1 id="test">Hi.</h1>
 ```
 
 Vanilla out:
 ```jsx
-const hello = h("h1", { id: "test" }, "Hi.")
+h("h1", { id: "test" }, "Hi.")
 ```
 
 In the next sections we'll learn how to compile [[JSX]] and [[Hyperx]] with HyperApp.
