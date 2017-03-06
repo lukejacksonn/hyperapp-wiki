@@ -2,16 +2,16 @@ Lifecycle methods are functions that can be attached to [virtual nodes](hyperapp
 
 ```jsx
 app({
-  view: <div oncreate={element => console.log(element)}></div>
+  view: <div onCreate={element => console.log(element)}></div>
 })
 ```
 The available methods are:
 
-* _oncreate_([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)):  Called before an element is created.
+* _onCreate_([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)):  Called before an element is created.
 
-* _onupdate_([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is updated.
+* _onUpdate_([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is updated.
 
-* _onremove_([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is removed.
+* _onRemove_([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is removed.
 
 ### Examples
 Using the [canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial) element.
@@ -41,7 +41,7 @@ app({
     <canvas
       width="600"
       height="300"
-      onupdate={e => repaint(e, model)}
+      onUpdate={e => repaint(e, model)}
     />
 })
 ```
