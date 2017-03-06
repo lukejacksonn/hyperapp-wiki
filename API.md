@@ -52,6 +52,8 @@ const model = {
 }
 ```
 
+The model is updated via [actions](#actions), which cause the [view](#view) to be rendered.
+
 ### view
 
 A view is a function that returns a virtual DOM tree. See [`h`](#h). HyperApp virtual DOM engine consumes a view to render a DOM tree.
