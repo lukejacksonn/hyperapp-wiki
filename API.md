@@ -204,7 +204,7 @@ app({
 
 ### root
 
-The HTML root element of the application. If none is given, a `div` element is appended to [`document.body`](https://developer.mozilla.org/en-US/docs/Web/API/Document/body) and used as the root.
+The HTML root element of the application. If none is given, a div element is appended to [document.body](https://developer.mozilla.org/en-US/docs/Web/API/Document/body) and used as the root.
 
 ```jsx
 app({
