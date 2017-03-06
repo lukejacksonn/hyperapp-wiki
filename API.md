@@ -1,12 +1,14 @@
+
+
 ## h
 
 Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element.
 
 Signature: (tag, data, children).
 
-* _tag_: a tag name, e.g. div or a function that returns a tree of virtual nodes.
-* _data_: an object with attributes, styles, events, [[Lifecycle Methods]], etc.
-* _children_: a string or an array of virtual nodes.
+* tag: a tag name, e.g. div or a function that returns a tree of virtual nodes.
+* data: an object with attributes, styles, events, [[Lifecycle Methods]], etc.
+* children: a string or an array of virtual nodes.
 
 For example:
 ```js
@@ -52,8 +54,8 @@ A function that returns a virtual node tree. See: [h](#h), [[Hyperx]], [[JSX]].
 
 Signature: (model, actions).
 
-* _model_: the current model.
-* _actions_: the application's [actions](#actions).
+* model: the current model.
+* actions: the application's [actions](#actions).
 
 To call an action:
 
@@ -61,8 +63,8 @@ To call an action:
 actions.action(data)
 ```
 
-* _data_: any data to pass to the action.
-* _action_: the name of the action.
+* data: any data to pass to the action.
+* action: the name of the action.
 
 ```jsx
 app({
@@ -85,10 +87,10 @@ Functions that return a new model or a part of it. The new model is merged with 
 
 Signature: (model, data, actions, error).
 
-* _model_: the current model.
-* _data_: the data passed to the action.
-* _actions_: the application's actions.
-* _error_: a function that can be called to throw an error.
+* model: the current model.
+* data: the data passed to the action.
+* actions: the application's actions.
+* error: a function that can be called to throw an error.
 
 ```jsx
 app({
@@ -177,13 +179,13 @@ app({
 
 Functions used to inspect an application, implement middleware, loggers, etc. There are four:
 
-* _onUpdate_: Called before the model is updated. Signature: (oldModel, newModel, data).
+* onUpdate: Called before the model is updated. Signature: (oldModel, newModel, data).
 
-* _onAction_: Called before an action is triggered. Signature: (action, data).
+* onAction: Called before an action is triggered. Signature: (action, data).
 
-* _onRender_: Called before the [view](#view) is rendered. Return a different view to overwrite the default one. Signature: (model, view).
+* onRender: Called before the [view](#view) is rendered. Return a different view to overwrite the default one. Signature: (model, view).
 
-* _onError_: Called when the error function is used. If none is given, the default behavior is to throw. Signature: (error).
+* onError: Called when the error function is used. If none is given, the default behavior is to throw. Signature: (error).
 
 ```jsx
 app({
@@ -217,7 +219,7 @@ Functions that extend the [model](#model), add new [actions](#actions), [hooks](
 
 Signature: (options).
 
-* _options_: the options object passed to [app](#app).
+* options: the options object passed to [app](#app).
 
 ```jsx
 cont Logger = options => ({
