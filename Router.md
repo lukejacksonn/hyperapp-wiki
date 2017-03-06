@@ -58,7 +58,7 @@ Matched route.
 ```javascript
 // route /user/:id/posts/:postId
 // url /user/7a45h2/posts/9df081
-model.router.matched = '/user/:id/posts/:postId'
+model.router.match = '/user/:id/posts/:postId'
 ```
 
 ## model.router.params
