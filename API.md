@@ -86,8 +86,8 @@ Functions that return a new model or a part of it. The new model is merged with 
 Signature: (model, data, actions, error).
 
 * _model_: the current model.
-* _actions_: the application's actions.
 * _data_: the data passed to the action.
+* _actions_: the application's actions.
 * _error_: a function that can be called to throw an error.
 
 ```jsx
