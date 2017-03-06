@@ -113,7 +113,7 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/zNxZLP).
 
-Actions can cause [[Side Effects]] too, e.g. writing to a database, sending requests to servers, etc. These kind of actions are usually asynchronous and have no return value.
+Actions can be asynchronous too, e.g. writing to a database, sending requests to servers, etc. These kind of actions usually have no return value.
 
 ```jsx
 app({
@@ -143,7 +143,6 @@ app({
 ```
 
 [View online](http://codepen.io/jbucaran/pen/jyEKmw).
-
 
 Alternatively, an action may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows chaining actions via [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use ES7 [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
 
