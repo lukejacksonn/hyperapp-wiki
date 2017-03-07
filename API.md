@@ -1,7 +1,7 @@
 The API reference provides detailed information HyperApp exports. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]].
 
-* [h](#h)
-* [app](#app)
+* [h](#h-)
+* [app](#app-)
   * [model](#model)
   * [view](#view)
   * [actions](#actions)
@@ -9,7 +9,7 @@ The API reference provides detailed information HyperApp exports. This document 
   * [hooks](#hooks)
   * [plugins](#plugins)
   * [root](#root)
-* [Router](#router)
+* [Router](#router-)
 
 ## h [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js)
 
