@@ -2,7 +2,7 @@ The API reference provides detailed information HyperApp exports. This document 
 
 * [h](#-h-) 
 * [app](#-app-) 
-* Router(#-router-)
+* [Router](#-router-)
 
 ## [#](#-h-) h [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js)
 
