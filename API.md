@@ -148,7 +148,7 @@ app({
       <input
         type="text"
         placeholder="Type to search..."
-        onKeyup={actions.search}
+        onKeyUp={actions.search}
       />
       <div>
         <img
@@ -168,7 +168,7 @@ Alternatively, an action may return a [Promise](https://developer.mozilla.org/en
 
 ### subscriptions
 
-An array of functions scheduled to run once after the DOM is [ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, open a socket connection, attach mouse/keyboard event listeners, etc.
+An array of functions scheduled to run once after the DOM is [ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use subscriptions to register global events, open a socket connection, etc.
 
 Signature: (model, actions, error).
 
@@ -195,7 +195,7 @@ app({
 
 ### hooks
 
-Functions used to inspect an application, implement middleware, loggers, etc. There are four:
+A collection of functions used to inspect an application, implement middleware, loggers, etc. There are four:
 
 * onUpdate: Called before the model is updated. Signature: (oldModel, newModel, data).
 
@@ -233,7 +233,7 @@ app({
 
 ### plugins
 
-Functions that extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). Functions that exactly accepts the same `options` object as any HyperApp - think for them as another hyperapp. See the [[Router]] for a practical example.
+An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). See the [[Router]] for a practical example.
 
 Signature: (options).
 
