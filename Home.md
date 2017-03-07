@@ -18,8 +18,6 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 * [[Getting Started]]
 * [[Build Setup]]
 * [[Concepts]]
-* [[Plugins]]
-  * [[Router]]
 * [[Tutorials]]
 * [[API]]
 
