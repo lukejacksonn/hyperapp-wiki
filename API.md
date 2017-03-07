@@ -46,7 +46,7 @@ app({
 })
 </pre>
 
-### model
+### [#](#-model-) model
 
 A primitive type, array or object that represents the state of the application.
 
