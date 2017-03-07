@@ -1,8 +1,8 @@
 The API reference provides detailed information about each of HyperApp module exports. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]].
 
-* [h](#h)
-* [app](#app)
-* [[Router]]
+* [h](#h) [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js)
+* [app](#app) [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js)
+* [[Router]] [<>](https://github.com/hyperapp/hyperapp/blob/master/src/router.js)
 
 ## h
 
