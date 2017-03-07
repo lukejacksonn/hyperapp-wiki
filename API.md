@@ -1,5 +1,3 @@
-
-
 ## h
 
 Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element.
@@ -83,14 +81,16 @@ app({
 
 ### actions
 
-Functions that return a new model or a part of it. The new model is merged with the previous one to update the current model.
+A collection of functions that describe the behavior of an application. Actions are typically used to update the [model](#model).
+
+To update the model, an action must return a new model or a fragment of it. 
 
 Signature: (model, data, actions, error).
 
 * model: the current model.
 * data: the data passed to the action.
 * actions: the application's actions.
-* error: a function that can be called to throw an error.
+* error: a function that calls the onError [hook](#hooks).
 
 ```jsx
 app({
@@ -115,42 +115,57 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/zNxZLP).
 
-Actions can be asynchronous too, e.g. writing to a database, sending requests to servers, etc. These kind of actions usually have no return value.
+Actions may trigger other actions, cause side effects, e.g. writing to a database, fetching data from a server, etc. When used this way, there's usually no return value.
 
 ```jsx
 app({
   model: {
-    counter: 0,
-    waiting: false
+    url: "",
+    isFetching: false
   },
   actions: {
-    add: model => ({ counter: model.counter + 1 }),
-    toggle: model => ({ waiting: !model.waiting }),
-    waitThenAdd: (model, _, actions) => {
-      actions.toggle()
-      setTimeout(_ => {
-        actions.add()
-        actions.toggle()
-      }, 1500)
-    }
+    search: (model, { target }, actions) => {
+      const text = target.value
+      if (model.isFetching || text === "") {
+        return
+      }
+      actions.toggleFetching()
+      fetch(`//api.giphy.com/v1/gifs/search?q=${text}&limit=1&api_key=dc6zaTOxFJmzC`)
+        .then(data => data.json())
+        .then(({ data }) => {
+          actions.toggleFetching()
+          data[0] && actions.setUrl(data[0].images.original.url)
+        })
+    },
+    setUrl: (_, url) => ({ url }),
+    toggleFetching: model => ({ isFetching: !model.isFetching })
   },
   view: (model, actions) =>
-    <button
-      onClick={actions.waitThenAdd}
-      disabled={model.waiting}
-    >
-      {model.counter}
-    </button>
+    <div>
+      <input
+        type="text"
+        placeholder="Type to search..."
+        onKeyup={actions.search}
+      />
+      <div>
+        <img
+          src={model.url}
+          style={{
+            display: !model.url || model.isFetching ? "none" : "block"
+          }}
+        />
+      </div>
+    </div>
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/jyEKmw).
+[View online](http://codepen.io/jbucaran/pen/ZeByKv?editors=0010).
 
 Alternatively, an action may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows chaining actions via [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use ES7 [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
 
 ### subscriptions
 
-Functions scheduled to run once after the DOM is [ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, open a socket connection, attach mouse/keyboard event listeners, etc.
+An array of functions scheduled to run once after the DOM is [ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use a subscription to register global events, open a socket connection, attach mouse/keyboard event listeners, etc.
 
 Signature: (model, actions, error).
 
