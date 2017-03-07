@@ -118,6 +118,7 @@ app({
 Actions may trigger other actions, cause side effects, e.g. writing to a database, fetching data from a server, etc. When used this way, there's usually no return value.
 
 ```jsx
+
 app({
   model: {
     url: "",
@@ -126,14 +127,13 @@ app({
   actions: {
     search: (model, { target }, actions) => {
       const text = target.value
-      const url = `//api.giphy.com/v1/gifs/search?q=${text}&api_key=dc6zaTOxFJmzC`
 
       if (model.isFetching || text === "") {
         return
       }
 
       actions.toggleFetching()
-      fetch(url)
+      fetch(`//api.giphy.com/v1/gifs/search?q=${text}&api_key=dc6zaTOxFJmzC`)
         .then(data => data.json())
         .then(({ data }) => {
           actions.toggleFetching()
