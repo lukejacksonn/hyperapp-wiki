@@ -1,10 +1,10 @@
 The API reference provides detailed information HyperApp exports. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]].
 
-* [h](#h) 
-* [app](#app) 
-* [[Router]] 
+* [h](#-h-) 
+* [app](#-app-) 
+* Router(#-router-)
 
-## [#](#h) h [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js)
+## [#](#-h-) h [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js)
 
 Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element.
 
@@ -29,7 +29,7 @@ Returns the following object:
 }
 ```
 
-## [#](#app) app [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js)
+## [#](#-app-) app [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js)
 
 Starts an application.
 
@@ -274,7 +274,7 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/JELvjO).
 
-## [#](#router) Router [<>](https://github.com/hyperapp/hyperapp/blob/master/src/router.js)
+## [#](#-router-) Router [<>](https://github.com/hyperapp/hyperapp/blob/master/src/router.js)
 
 ```jsx
 import { Router } from "hyperapp"
@@ -295,7 +295,6 @@ The _key_ is the route and the _value_ is the [view](#view).
 ```
 
 [View online](https://hyperapp-routing.gomix.me)
-
 
 ### actions.router.go
 
