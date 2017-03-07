@@ -126,7 +126,7 @@ app({
   actions: {
     search: (model, { target }, actions) => {
       const text = target.value
-      const url = `//api.giphy.com/v1/gifs/search?q=${text}&limit=1&api_key=dc6zaTOxFJmzC`
+      const url = `//api.giphy.com/v1/gifs/search?q=${text}&api_key=dc6zaTOxFJmzC`
 
       if (model.isFetching || text === "") {
         return
