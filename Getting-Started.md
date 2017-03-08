@@ -9,7 +9,7 @@ The easiest way to get started with HyperApp is to grab the minified library fro
 To use a specific version of HyperApp:
 
 ```html
-<script src="https://unpkg.com/hyperapp@0.5.0"></script>
+<script src="https://unpkg.com/hyperapp@0.7.0"></script>
 ```
 
 You can also skip the installation and try HyperApp in the online REPL.
