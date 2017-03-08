@@ -199,6 +199,8 @@ app({
 })
 ```
 
+[View online](http://codepen.io/jbucaran/pen/jByPNd?editors=0010)
+
 ### subscriptions
 
 An array of functions scheduled to run once after the DOM is [ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use subscriptions to register global events, open a socket connection, etc.
