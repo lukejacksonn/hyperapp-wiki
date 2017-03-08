@@ -1,4 +1,4 @@
-The API reference provides detailed information of HyperApp module exports. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]].
+The API reference provides detailed information of HyperApp functions. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]]. For a high-level discussion of HyperApp's Architecture see [[Concepts]].
 
 * [h](#h-)
 * [app](#app-)
@@ -9,6 +9,7 @@ The API reference provides detailed information of HyperApp module exports. This
   * [hooks](#hooks)
   * [plugins](#plugins)
   * [root](#root)
+* [Lifecycle Methods](#lifecycle-methods)
 * [Router](#router-)
 
 ## [h](#h- "Hyperscript-style virtual node factory function") [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js "View Source")
@@ -38,19 +39,30 @@ Returns the following object:
 
 ## [app](#app- "app") [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js)
 
-Starts an application with the given options. 
+Starts an application with options. 
 
 Signature: (options).
+
+In HyperApp applications are state machines. The entire application state 
 
 ### model
 
 A primitive type, array or object that represents the state of the application.
 
-Changes in the model cause the [view](#view) to be rendered, and the model is changed by triggering [actions](#actions).
+The model is immutable. To understand this, you must realize your application is a 
+
+
+The user interacts with a view which triggers actions. Actions produce a new model and discard the previous model. HyperApp automatically renders the view when the 
+
+
+
+The model is immutable. The user interacts with the [view](#view) to trigger [actions](#actions) that produce a new model. HyperApp automatically renders the view when the model is updated.
 
 ### view
 
 A function that returns a virtual node tree. See: [h](#h), [[Hyperx]], [[JSX]].
+
+A view is a snapshot of the [model](#model) at a given time.
 
 Signature: (model, actions).
 
@@ -269,6 +281,63 @@ app({
 ```
 
 [View online](http://codepen.io/jbucaran/pen/JELvjO).
+
+## Lifecycle Methods
+
+Functions that can be attached to [virtual nodes](hyperapp/hyperapp/wiki/api#h) in order to access a real DOM element before it is created, updated or removed.
+
+The available methods are:
+
+* onCreate([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)):  Called before an element is created.
+
+* onUpdate([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is updated.
+
+* onRemove([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is removed.
+
+### Examples
+
+Simple usage.
+
+```jsx
+app({
+  view: <div onCreate={element => console.log(element)}></div>
+})
+```
+
+Using the [canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial) element.
+
+```jsx
+const repaint = (canvas, model) => {
+  const context = canvas.getContext("2d")
+  context.fillStyle = "white"
+  context.fillRect(0, 0, canvas.width, canvas.height)
+  context.beginPath()
+  context.arc(model.x, model.y, 50, 0, 2 * Math.PI)
+  context.stroke()
+}
+
+app({
+  model: { x: 0, y: 0 },
+  actions: {
+    move: model => ({
+      x: model.x + 1,
+      y: model.y + 1,
+    })
+  },
+  subscriptions: [
+    (_, actions) => setInterval(_ => actions.move(), 60)
+  ],
+  view: model =>
+    <canvas
+      width="600"
+      height="300"
+      onUpdate={e => repaint(e, model)}
+    />
+})
+```
+
+[View online](http://codepen.io/jbucaran/pen/MJXMQZ/).
+
 
 ## Router [<>](https://github.com/hyperapp/hyperapp/blob/master/src/router.js)
 
