@@ -4,11 +4,10 @@
   * [[JSX]]
   * [[Hyperx]]
 * [[Concepts]]
+  * [[Architecture]]
+  * [[Components]]
   * [[Plugins]]
   * [[Virtual Nodes]]
-  * [[Components]]
-  * [[Architecture]]
-  * [[Lifecycle Methods]]
 * [[Tutorials]]
   * [[Rocket Launcher]]
   * [[Tweet Box]]
@@ -17,6 +16,7 @@
   * [app](/hyperapp/hyperapp/wiki/api#app)
     * [model](/hyperapp/hyperapp/wiki/api#model)
     * [view](/hyperapp/hyperapp/wiki/api#view)
+      * [Lifecycle Methods](/hyperapp/hyperapp/wiki/api#lifecycle-methods)
     * [actions](/hyperapp/hyperapp/wiki/api#actions)
     * [subscriptions](/hyperapp/hyperapp/wiki/api#subscriptions)
     * [hooks](/hyperapp/hyperapp/wiki/api#hooks)
