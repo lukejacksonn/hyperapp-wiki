@@ -52,11 +52,11 @@ Signature:
 })
 </pre>
 
-### <a name="model"></a>[#](#model) model
+### <a name="model"></a>[#](#model) model <>
 
 A primitive type, array or object that represents the state of the application.
 
-### <a name="view"></a>[#](#view) view
+### <a name="view"></a>[#](#view) view <>
 
 A function that returns a virtual node tree. See: [h](#h), [[Hyperx]], [[JSX]].
 
@@ -89,7 +89,7 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/ZLGGzy/)
 
-### <a name="actions"></a>[#](#actions) actions
+### <a name="actions"></a>[#](#actions) actions <>
 
 A collection of functions that describe the behavior of an application. Actions are typically used to update the [model](#model).
 
@@ -198,7 +198,7 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/jByPNd?editors=0010)
 
-### <a name="subscriptions"></a>[#](#subscriptions) subscriptions
+### <a name="subscriptions"></a>[#](#subscriptions) subscriptions <>
 
 An array of functions scheduled to run once after the DOM is [ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use subscriptions to register global events, open a socket connection, etc.
 
@@ -229,7 +229,7 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/Bpyraw)
 
-### <a name="hooks"></a>[#](#hooks) hooks
+### <a name="hooks"></a>[#](#hooks) hooks <>
 
 A collection of functions that can be used to inspect an application, implement middleware, etc. 
 
@@ -287,7 +287,7 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/xgbzEy)
 
-### <a name="plugins"></a>[#](#plugins) plugins
+### <a name="plugins"></a>[#](#plugins) plugins <>
 
 An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions) to an application. See also [[Plugins]].
 
