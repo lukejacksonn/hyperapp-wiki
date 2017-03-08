@@ -234,32 +234,6 @@ app({
 
 A collection of functions that can be used to inspect an application, implement middleware, etc. 
 
-```jsx
-app({
-  model: true,
-  actions: {
-    toggle: model => !model,
-    fail: (model, actions, data, err) =>
-      setTimeout(_ => err("Abort, Retry, Fail!"), 1000)
-  },
-  hooks: {
-    onError: e => console.log(`Error: ${e}`),
-    onAction: (action) => console.log(`Action: ${action}`)
-  },
-  view: (model, actions) =>
-    <div>
-      <button onClick={actions.toggle}>
-        Log
-      </button>
-      <button onClick={actions.fail}>
-        Error
-      </button>
-    </div>
-})
-```
-
-[View Online](http://codepen.io/jbucaran/pen/xgbzEy)
-
 <a name="onaction"></a>[#](#onaction) _hooks_.**onAction**(<a href="#onaction_action">action</a>, <a href="#onaction_data">data</a>)
 
 Called before an action is triggered. 
@@ -288,9 +262,37 @@ Called when the error argument passed to actions or subscriptions is used. If no
 
 * <a name="onerror_error"></a>**error**: the error message.
 
+#### Example
+
+```jsx
+app({
+  model: true,
+  actions: {
+    toggle: model => !model,
+    fail: (model, actions, data, err) =>
+      setTimeout(_ => err("Abort, Retry, Fail!"), 1000)
+  },
+  hooks: {
+    onError: e => console.log(`Error: ${e}`),
+    onAction: (action) => console.log(`Action: ${action}`)
+  },
+  view: (model, actions) =>
+    <div>
+      <button onClick={actions.toggle}>
+        Log
+      </button>
+      <button onClick={actions.fail}>
+        Error
+      </button>
+    </div>
+})
+```
+
+[View Online](http://codepen.io/jbucaran/pen/xgbzEy)
+
 ### plugins
 
-An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). For a practical example see: [Router](#router-).
+An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions) of an application. For a practical example see the [Router](#router-).
 
 Signature: (options).
 
@@ -345,29 +347,23 @@ app({
 
 ## Router [<>](https://github.com/hyperapp/hyperapp/blob/master/src/router.js)
 
-```jsx
-import { Router } from "hyperapp"
-```
+When using the router, the [view](#view) is a dictionary of routes/views.
 
-When using the router, you must use the [view](#view) as a dictionary of routes/views.
-
-The _key_ is the route and the _value_ is the view.
+The _key_ is the route and the _value_ is the view function.
 
 * `*` match when no other route matches.
-
 * `/` match the index route.
-
-* `/:key` match a route using the regular expression `[A-Za-z0-9]+`. The matched parameters can be retrieved via [model.router.match](#modelroutermatch).
+* `/:key` match a route using the regular expression `[A-Za-z0-9]+`. The matched parameters can be accessed in [model.router.match](#modelroutermatch).
 
 ```jsx
 // WIP 
 ```
 
-[View Online](https://hyperapp-routing.gomix.me
+[View Online](https://hyperapp-routing.gomix.me)
 
-### actions.router.go
+<a name="router_go"></a>[#](#router_go) _actions_.**router**.**go**(_path_)
 
-Call `actions.router.go(path)` to update the [location.pathname](https://developer.mozilla.org/en-US/docs/Web/API/Location). If the path matches an existing route, the corresponding view will be rendered. 
+Sets the [location.pathname](https://developer.mozilla.org/en-US/docs/Web/API/Location) to the given path. If the path matches an existing route, the corresponding view will be rendered. 
 
 ```jsx
 app({
@@ -394,28 +390,65 @@ app({
 })
 ```
 
-[View Online](https://gomix.com/#!/project/hyperapp-set-location
+[View Online](https://gomix.com/#!/project/hyperapp-set-location)
 
 
-### model.router.match
+<a name="router_match"></a>[#](#router_match) _model_.**router**.**match**
 
 Matched route.
 
-```jsx
-// route /user/:id/posts/:postId
-// url /user/7a45h2/posts/9df081
-model.router.match = '/user/:id/posts/:postId'
-```
+<table>
+  <th>Route</th>
+  <th colspan=3>Example Match</th>
 
-### model.router.params
+  <tr>
+    <td>*</td>
+    <td>/foo</td>
+    <td>/foo/bar/baz</td>
+  </tr>
+
+  <tr>
+    <td>/:key</td>
+    <td>/foo</td>
+    <td>/bar</td>
+  </tr>
+
+  <tr>
+    <td>/item/:id</td>
+    <td>/item/7a45h2</td>
+    <td>/item/1c63p0</td>
+  </tr>
+
+  <tr>
+    <td>/user/:name/post/:id</td>
+    <td>/user/hyper/post/9df081</td>
+    <td>/user/app/post/5ag109</td>
+  </tr>
+</table>
+
+
+<a name="router_params"></a>[#](#router_params) _model_.**router**.**params**
 
 Matched route params.
 
-```jsx
-// route /user/:id/posts/:postId
-// url /user/7a45h2/posts/9df081
-model.router.params = {
-  id: '7a45h2',
-  postId: '9df081'
-}
-```
+<table>
+  <th>Route</th>
+  <th>Example URL</th>
+  <th>name</th>
+  <th>id</th>
+
+  <tr>
+    <td>/user/:name/post/:id</td>
+    <td>/user/hyper/post/9df081</td>
+    <td>hyper</td>
+    <td>9df081</td>
+  </tr>
+
+  <tr>
+    <td>/user/:name/post/:id</td>
+    <td>/user/app/post/5ag109</td>
+    <td>app</td>
+    <td>5ag109</td>
+  </tr>
+</table>
+
