@@ -308,7 +308,7 @@ MyPlugin({
 For example:
 
 ```jsx
-const ActionLogger = options => ({
+const MyLogger = options => ({
   hooks: {
     onAction: action => console.log(`Action: ${action}`)
   }
@@ -319,7 +319,7 @@ app({
   actions: {
     tick: model => model + 1
   },
-  plugins: [ActionLogger],
+  plugins: [MyLogger],
   subscriptions: [
     (_, actions) => setInterval(_ => actions.tick(), 1000)
   ],
@@ -353,13 +353,7 @@ The _key_ is the route and the _value_ is the view function.
 
 * `*` match when no other route matches.
 * `/` match the index route.
-* `/:key` match a route using the regular expression `[A-Za-z0-9]+`. The matched parameters can be accessed in [model.router.match](#modelroutermatch).
-
-```jsx
-// WIP 
-```
-
-[View Online](https://hyperapp-routing.gomix.me)
+* `/:key` match a route using the regular expression `[A-Za-z0-9]+`. The matched parameters can be accessed in [model.router.match](#router_match).
 
 <a name="router_go"></a>[#](#router_go) _actions_.**router**.**go**(_path_)
 
@@ -392,14 +386,11 @@ app({
 
 [View Online](https://hyperapp-router-go.gomix.me)
 
-
-<a name="router_match"></a>[#](#router_match) _model_.**router**.**match**
-
-Matched route.
+<a name="router_match"></a>[#](#router_match) _model_._**router**_.**match**
 
 <table>
   <th>Route</th>
-  <th colspan=3>Example Match</th>
+  <th colspan=3>Matched Route</th>
 
   <tr>
     <td>*</td>
@@ -427,15 +418,13 @@ Matched route.
 </table>
 
 
-<a name="router_params"></a>[#](#router_params) _model_.**router**.**params**
-
-Matched route params.
+<a name="router_params"></a>[#](#router_params) _model_._**router**_.**params**
 
 <table>
   <th>Route</th>
   <th>Example URL</th>
-  <th>name</th>
-  <th>id</th>
+  <td><i>router</i>.<i>params</i>.<b>name</b></td>
+  <td><i>router</i>.<i>params</i>.<b>id</b></td>
 
   <tr>
     <td>/user/:name/post/:id</td>
