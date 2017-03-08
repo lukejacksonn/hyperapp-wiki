@@ -36,7 +36,7 @@ Returns the following object:
 }
 ```
 
-## app [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js)
+## [app](#app) [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js)
 
 Starts an application.
 
