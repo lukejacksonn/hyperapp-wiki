@@ -383,7 +383,7 @@ app({
 
 [View Online](https://hyperapp-router-go.gomix.me)
 
-<a name="router_match"></a>[#](#router_match) _model_._**router**_.**match**
+<a name="router_match"></a>[#](#router_match) _model_.**router**.**match**
 
 <table>
   <th>Route</th>
@@ -415,7 +415,7 @@ app({
 </table>
 
 
-<a name="router_params"></a>[#](#router_params) _model_._**router**_.**params**
+<a name="router_params"></a>[#](#router_params) _model_.**router**.**params**
 
 <table>
   <th>Route</th>
@@ -437,4 +437,3 @@ app({
     <td>5ag1</td>
   </tr>
 </table>
-
