@@ -16,12 +16,13 @@
   * [app](/hyperapp/hyperapp/wiki/api#app)
     * [model](/hyperapp/hyperapp/wiki/api#model)
     * [view](/hyperapp/hyperapp/wiki/api#view)
-      * [Lifecycle Methods](/hyperapp/hyperapp/wiki/api#lifecycle-methods)
     * [actions](/hyperapp/hyperapp/wiki/api#actions)
     * [subscriptions](/hyperapp/hyperapp/wiki/api#subscriptions)
     * [hooks](/hyperapp/hyperapp/wiki/api#hooks)
     * [plugins](/hyperapp/hyperapp/wiki/api#plugins)
     * [root](/hyperapp/hyperapp/wiki/api#root)
+  * [Lifecycle Methods](/hyperapp/hyperapp/wiki/api#lifecycle-methods)
   * [Router](/hyperapp/hyperapp/wiki/api#Router)
+
 
 
