@@ -29,4 +29,4 @@ Vanilla out:
 h("h1", { id: "test" }, "Hi.")
 ```
 
-In the next sections we'll learn how to compile [[JSX]] and [[Hyperx]] with HyperApp.
+In the next sections we'll learn how to compile [[Hyperx]] and [[JSX]] with HyperApp.
