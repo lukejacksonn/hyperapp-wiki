@@ -2,7 +2,7 @@
 
 Hyperx looks like this:
 
-```jsx
+```js
 const hello = html`
   <div>
     <h1>Hello.</h1>
@@ -12,7 +12,7 @@ const hello = html`
 
 To generate the `html` function, you can use the following boilerplate:
 
-```jsx
+```js
 const { h, app } = require("hyperapp")
 const hyperx = require("hyperx")
 const html = hyperx(h)
@@ -40,7 +40,7 @@ In a new directory, create an `index.html` file:
 
 And an `index.js` file:
 
-```jsx
+```js
 const { h, app } = require("hyperapp")
 const hyperx = require("hyperx")
 const html = hyperx(h)
