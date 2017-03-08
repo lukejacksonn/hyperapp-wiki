@@ -48,7 +48,7 @@ A primitive type, array or object that represents the state of the application.
 
 Changes in the model cause the [view](#view) to be rendered, and the model is changed by triggering [actions](#actions).
 
-![](https://cdn.rawgit.com/jbucaran/a13ec111bf7dc765582fbdeb49be0cf6/raw/c567c57e8289cf90de53594774cb1171cf6891d5/harch.svg)
+![](https://rawgit.com/jbucaran/a13ec111bf7dc765582fbdeb49be0cf6/raw/03b6ab36dee3b14172922f7d46ec613d0a142c36/harch.svg)
 
 
 ### view
