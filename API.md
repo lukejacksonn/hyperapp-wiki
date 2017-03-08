@@ -1,4 +1,4 @@
-The API reference provides detailed information of HyperApp functions. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]]. For a high-level discussion of HyperApp's Architecture see [[Concepts]].
+The API reference provides detailed information of HyperApp module exports. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]]. For a high-level discussion of HyperApp see [[Concepts]].
 
 * [h](#h-)
 * [app](#app-)
@@ -42,40 +42,28 @@ Starts an application with options.
 
 Signature: (options).
 
-In HyperApp applications are state machines. The entire application state 
-
 ### model
 
 A primitive type, array or object that represents the state of the application.
-
-The model is immutable. To understand this, you must realize your application is a 
-
-
-The user interacts with a view which triggers actions. Actions produce a new model and discard the previous model. HyperApp automatically renders the view when the 
-
-
-
-The model is immutable. The user interacts with the [view](#view) to trigger [actions](#actions) that produce a new model. HyperApp automatically renders the view when the model is updated.
 
 ### view
 
 A function that returns a virtual node tree. See: [h](#h), [[Hyperx]], [[JSX]].
 
-A view is a snapshot of the [model](#model) at a given time.
+Signature: (<a href="#view_model">model</a>, <a href="#view_actions">actions</a>).
 
-Signature: (model, actions).
-
-* model: the current model.
-* actions: the application's [actions](#actions).
+* <a name="#view_model"></a>**model**: the current model.
+* <a name="#view_actions"></a>**actions**: the application's [actions](#actions).
 
 To call an action:
 
-```js
-actions.action(data)
-```
+<pre>
+<i>actions</i>.<a href="#view_actions_action"><b>action</b></a>(<i><a href="#view_actions_data">data</a></i>)
+</pre>
 
-* data: any data to pass to the action.
-* action: the name of the action.
+* <a name="#view_actions_data"></a>**action**: the name of the action.
+* <a name="#view_actions_action"></a>**data**: any data to pass to the action.
+
 
 ```jsx
 app({
