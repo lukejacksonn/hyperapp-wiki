@@ -13,7 +13,9 @@ The API reference provides detailed information HyperApp module exports. This do
 
 ## [h](#h-) [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js "View Source")
 
-Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element.
+Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element. 
+
+A virtual node with nested children is known as a virtual tree.
 
 Signature: (<a href="#h_tag">tag</a>, <a href="#h_data">data</a>, <a href="#h_children">children</a>).
 
