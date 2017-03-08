@@ -12,7 +12,7 @@ const hello =
   </div>
 ```
 
-For an in-depth introduction to JSX, visit the official [documentation](https://facebook.github.io/react/docs/introducing-jsx.html).
+For an in-depth introduction to JSX, see the official [documentation](https://facebook.github.io/react/docs/introducing-jsx.html).
 
 
 ## Setup
@@ -89,7 +89,7 @@ $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/browserify \
   -p bundle-collapser/plugin index.js | uglifyjs > bundle.js
 </pre>
 
-[Get this boilerplate](https://gist.github.com/jbucaran/21bbf0bbb0fe97345505664883100706).
+[View this Gist](https://gist.github.com/jbucaran/21bbf0bbb0fe97345505664883100706)
 
 ### Webpack
 
@@ -141,7 +141,7 @@ Bundle your application:
 $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/webpack -p
 </pre>
 
-[Get this boilerplate](https://gist.github.com/jbucaran/6010a83891043a6e0c37a3cec684c08e).
+[View this Gist](https://gist.github.com/jbucaran/6010a83891043a6e0c37a3cec684c08e)
 
 ### Rollup
 
@@ -186,5 +186,4 @@ Bundle your application:
 $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/rollup -cf iife -i index.js -o bundle.js
 </pre>
 
-[Get this boilerplate](https://gist.github.com/jbucaran/0c0da8f1256a0a66090151cfda777c2c).
-
+[View this Gist](https://gist.github.com/jbucaran/0c0da8f1256a0a66090151cfda777c2c)
