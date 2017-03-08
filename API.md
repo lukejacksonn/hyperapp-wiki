@@ -353,7 +353,7 @@ The _key_ is the route and the _value_ is the view function.
 
 * `*` match when no other route matches.
 * `/` match the index route.
-* `/:key` match a route using the regular expression `[A-Za-z0-9]+`. The matched parameters can be accessed in [model.router.match](#router_match).
+* `/:key` match a route using the regular expression [A-Za-z0-9]+. The matched parameters are stored in [model.router.params](#router_params).
 
 <a name="router_go"></a>[#](#router_go) _actions_.**router**.**go**(_path_)
 
