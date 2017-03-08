@@ -298,7 +298,7 @@ Signature: (<a href="#onerror_error">error</a>).
 
 ### plugins
 
-An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). See [Router](#router-).
+An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). See [Router](#router-) for a practical example.
 
 Signature: (options).
 
@@ -311,19 +311,29 @@ MyPlugin({
 })
 </pre>
 
+For example:
+
 ```jsx
-cont Logger = options => ({
+const ActionLogger = options => ({
   hooks: {
-    onAction: name => console.log(name)
+    onAction: action => console.log(`Action: ${action}`)
   }
 })
 
 app({
-  plugins: [Logger]
+  model: 0,
+  actions: {
+    tick: model => model + 1
+  },
+  plugins: [ActionLogger],
+  subscriptions: [
+    (_, actions) => setInterval(_ => actions.tick(), 1000)
+  ],
+  view: model => <h1>{model}</h1>
 })
 ```
 
-[View Online]
+[View Online](http://codepen.io/jbucaran/pen/zZNvgM?editors=0011)
 
 ### root
 
