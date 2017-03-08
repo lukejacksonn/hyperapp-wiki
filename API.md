@@ -1,4 +1,4 @@
-The API reference provides detailed information HyperApp exports. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]].
+The API reference provides detailed information HyperApp module exports. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]].
 
 * [h](#h-)
 * [app](#app-)
@@ -11,7 +11,7 @@ The API reference provides detailed information HyperApp exports. This document 
   * [root](#root)
 * [Router](#router-)
 
-## h [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js)
+## [h](#h-) [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js)
 
 Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element.
 
