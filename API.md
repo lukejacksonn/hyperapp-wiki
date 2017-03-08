@@ -40,10 +40,9 @@ Returns the following object:
 
 Starts an application with options. 
 
-Signature: (options).
-
+Signature:
 <pre>
-app({
+({
   <a href="#model">model</a>,
   <a href="#view">view</a>,
   <a href="#actions">actions</a>,
@@ -292,10 +291,10 @@ app({
 
 An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions) to an application. See also [[Plugins]].
 
-Signature: (options).
+Signature:
 
 <pre>
-options => ({ 
+<a href="#app">options</a> => ({ 
   <a href="#model">model</a>, 
   <a href="#actions">actions</a>, 
   <a href="#subscriptions">subscriptions</a>, 
@@ -327,7 +326,7 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/zZNvgM?editors=0011)
 
-### <a name="root"></a>[#](#root) root
+### <a name="root"></a>[#](#root) root [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js#L94 "View Source")
 
 The HTML root element of the application. If none is given, a div element is appended to [document.body](https://developer.mozilla.org/en-US/docs/Web/API/Document/body) and used as the root.
 
