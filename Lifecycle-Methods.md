@@ -8,17 +8,17 @@ app({
 
 The available methods are:
 
-<a name="oncreate"></a>[#](#oncreate) **onCreate**([_element_](https://developer.mozilla.org/en-     US/docs/Web/API/Element)) [<>](#)
+&nbsp; <a name="oncreate"></a>[#](#oncreate) **onCreate**([_element_](https://developer.mozilla.org/en-     US/docs/Web/API/Element)) [<>](#)
 
-&nbsp; Called before the element is created.
+Called before the element is created.
 
-<a name="onupdate"></a>[#](#onupdate) **onUpdate**([_element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
+&nbsp; <a name="onupdate"></a>[#](#onupdate) **onUpdate**([_element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
 
-&nbsp; Called before the element is updated.
+Called before the element is updated.
 
-<a name="onremove"></a>[#](#onremove) **onRemove**([_element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
+&nbsp; <a name="onremove"></a>[#](#onremove) **onRemove**([_element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
 
-&nbsp; Called before the element is removed.
+Called before the element is removed.
 
 ### Examples
 Using a [canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial) element.
