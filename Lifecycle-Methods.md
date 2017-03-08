@@ -1,4 +1,4 @@
-Lifecycle are custom events that can be attached to a [virtual nodes](hyperapp/hyperapp/wiki/api#h) in order to access the real DOM element before it is created, updated or removed.
+Lifecycle are custom events that can be attached to a [virtual node](hyperapp/hyperapp/wiki/api#h) in order to access the real DOM element before it is created, updated or removed.
 
 ```jsx
 app({
