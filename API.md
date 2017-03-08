@@ -15,7 +15,7 @@ The API reference provides detailed information HyperApp module exports. This do
 
 Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element.
 
-Signature: (<a href="#h_tag">tag</a>, <a href="#data_tag">data</a>, <a href="#children_tag">children</a>).
+Signature: (<a href="#h_tag">tag</a>, <a href="#h_data">data</a>, <a href="#h_children">children</a>).
 
 * <a name="h_tag"></a>**tag**: a tag name, e.g. div or a function that returns a tree of virtual nodes.
 * <a name="h_data"></a>**data**: an object with attributes, styles, events, [[Lifecycle Methods]], etc.
