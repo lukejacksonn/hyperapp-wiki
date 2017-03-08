@@ -40,7 +40,7 @@ Create a new `index.html` file, copy and paste the code from the example and ope
 </body>
 ```
 
-[View online](https://rawgit.com/jbucaran/290fcba656dab0275ba86e3f6f9cc969/raw/7cb90ea423b17d7d0625bacad95d22ed0ce70158/index.html).
+[View Online](https://rawgit.com/jbucaran/290fcba656dab0275ba86e3f6f9cc969/raw/7cb90ea423b17d7d0625bacad95d22ed0ce70158/index.html)
 
 ### Hyperx
 
@@ -61,7 +61,7 @@ Create a new `index.html` file, copy and paste the code from the example and ope
   </script>
 </body>
 ```
-[View online](https://rawgit.com/jbucaran/5cfa8c98464fe0b5a48edbae6b332b27/raw/fd27e1cb48d44e2c96714914b4ae05b70f10e33d/index.html).
+[View Online](https://rawgit.com/jbucaran/5cfa8c98464fe0b5a48edbae6b332b27/raw/fd27e1cb48d44e2c96714914b4ae05b70f10e33d/index.html)
 
 ### What just happened?
 
