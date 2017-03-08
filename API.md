@@ -88,7 +88,7 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/ZLGGzy/)
+[View Online](http://codepen.io/jbucaran/pen/ZLGGzy/)
 
 ### actions
 
@@ -124,7 +124,7 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/zNxZLP)
+[View Online](http://codepen.io/jbucaran/pen/zNxZLP)
 
 Actions can trigger other actions, cause side effects, e.g. writing to a database, fetching data from a server, etc. When used this way, there's usually no return value.
 
@@ -172,19 +172,17 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/ZeByKv?editors=0010)
+[View Online](http://codepen.io/jbucaran/pen/ZeByKv?editors=0010)
 
-Alternatively, an action may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows chaining actions via [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use ES7 [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
+Actions can also return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This enables you to chain actions using [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use ES7 [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
 
 ```jsx
 app({
   model: 0,
   actions: {
     add: model => model + 1,
-    
     delay: (model, time) => 
       new Promise(_ => setTimeout(_, time)),   
-    
     async slowlyAdd(model, time, actions) {
       await actions.delay(time)
       actions.add()
@@ -199,7 +197,7 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/jByPNd?editors=0010)
+[View Online](http://codepen.io/jbucaran/pen/jByPNd?editors=0010)
 
 ### subscriptions
 
@@ -230,19 +228,11 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/Bpyraw)
+[View Online](http://codepen.io/jbucaran/pen/Bpyraw)
 
 ### hooks
 
-A collection of functions used to inspect an application, implement middleware, loggers, etc. There are four:
-
-* onUpdate: Called before the model is updated. Signature: (oldModel, newModel, data).
-
-* onAction: Called before an action is triggered. Signature: (action, data).
-
-* onRender: Called before the [view](#view) is rendered. Return a different view to overwrite the default one. Signature: (model, view).
-
-* onError: Called when the error function is used. If none is given, the default behavior is to throw. Signature: (error).
+A collection of functions used to inspect an application, implement middleware, loggers, etc. 
 
 ```jsx
 app({
@@ -268,15 +258,47 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/xgbzEy)
+[View Online](http://codepen.io/jbucaran/pen/xgbzEy)
+
+#### onAction
+
+Called before an action is triggered. 
+
+Signature: (<a href="#onaction_action">action</a>, <a href="#onaction_data">data</a>).
+
+* <a name="onaction_action"></a>**action**: the name of the action.
+* <a name="onaction_data"></a>**data**: the data passed to the action.
+
+#### onUpdate
+
+Called before the [model](#model) is updated. 
+
+Signature: (<a href="#onupdate_oldmodel">oldModel</a>, <a href="#onupdate_newmodel">newModel</a>, <a href="#onupdate_data">data</a>).
+
+* <a name="oldModel"></a>**oldModel**: the previous/current model. 
+* <a name="newModel"></a>**newModel**: the next model.
+* <a name="data"></a>**data**: the data merged to update the model.
+
+#### onRender
+
+Called before the [view](#view) is rendered. You can use this hook to overwrite the default view by returning a different view function. See [Router](#router-).
+
+Signature: (<a href="#onrender_model">model</a>, <a href="#onrender_view">view</a>).
+
+* <a href="onrender_model"></a>**model**: the current model.
+* <a href="onrender_view"></a>**view**: the view function.
+
+#### onError
+
+Called when the error function is used. If none is given, the default behavior is to throw. Signature: (<a href="#onerror_error">error</a>).
+
+* <a name="onerror_error"></a>**error**: the error message.
 
 ### plugins
 
-An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). See the [[Router]] for a practical example.
+An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). See [Router](#router-).
 
-Signature: (options).
-
-* options: the options object passed to [app](#app).
+Signature: ({ <a href="#model">model</a>, <a href="#actions">actions</a>, <a href="#subscriptions">subscriptions</a>, <a href="#hooks">hooks</a> }).
 
 ```jsx
 cont Logger = options => ({
@@ -290,12 +312,13 @@ app({
 })
 ```
 
+[View Online]
+
 ### root
 
 The HTML root element of the application. If none is given, a div element is appended to [document.body](https://developer.mozilla.org/en-US/docs/Web/API/Document/body) and used as the root.
 
-> Note that using document.body as root may lead to unexpected results when other elements are already
-present.
+> Currently you can't use document.body as a root element.
 
 ```jsx
 app({
@@ -305,7 +328,7 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/JELvjO)
+[View Online](http://codepen.io/jbucaran/pen/JELvjO)
 
 ## Router [<>](https://github.com/hyperapp/hyperapp/blob/master/src/router.js)
 
@@ -313,7 +336,7 @@ app({
 import { Router } from "hyperapp"
 ```
 
-When using the router, you must use the [`view`](#view) as a dictionary of routes/views.
+When using the router, you must use the [view](#view) as a dictionary of routes/views.
 
 The _key_ is the route and the _value_ is the view.
 
@@ -327,7 +350,7 @@ The _key_ is the route and the _value_ is the view.
 // WIP 
 ```
 
-[View online](https://hyperapp-routing.gomix.me
+[View Online](https://hyperapp-routing.gomix.me
 
 ### actions.router.go
 
@@ -358,7 +381,7 @@ app({
 })
 ```
 
-[View online](https://gomix.com/#!/project/hyperapp-set-location
+[View Online](https://gomix.com/#!/project/hyperapp-set-location
 
 
 ### model.router.match
