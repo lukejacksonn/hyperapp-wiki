@@ -1,4 +1,4 @@
-The API reference provides detailed information HyperApp module exports. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]].
+The API reference provides detailed information of HyperApp module exports. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]].
 
 * [h](#h-)
 * [app](#app-)
@@ -11,11 +11,9 @@ The API reference provides detailed information HyperApp module exports. This do
   * [root](#root)
 * [Router](#router-)
 
-## [h](#h-) [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js "View Source")
+## [h](#h- "Hyperscript-style virtual node factory function") [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js "View Source")
 
-Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element. 
-
-A virtual node with nested children is known as a virtual tree.
+Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element tree.
 
 Signature: (<a href="#h_tag">tag</a>, <a href="#h_data">data</a>, <a href="#h_children">children</a>).
 
@@ -38,28 +36,20 @@ Returns the following object:
 }
 ```
 
-## [app](#app-) [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js)
+## [app](#app- "XXX") [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js)
 
-Starts an application.
+Starts an application with the given options. 
 
 Signature: (options).
-
-<pre>
-app({
-  <a href="#model">model</a>,
-  <a href="#view">view</a>,
-  <a href="#actions">actions</a>,
-  <a href="#subscriptions">subscriptions</a>,
-  <a href="#plugins">plugins</a>,
-  <a href="#root">root</a>
-})
-</pre>
 
 ### model
 
 A primitive type, array or object that represents the state of the application.
 
 Changes in the model cause the [view](#view) to be rendered, and the model is changed by triggering [actions](#actions).
+
+![](https://cdn.rawgit.com/jbucaran/a13ec111bf7dc765582fbdeb49be0cf6/raw/c567c57e8289cf90de53594774cb1171cf6891d5/harch.svg)
+
 
 ### view
 
