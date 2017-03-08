@@ -11,7 +11,7 @@ The API reference provides detailed information about HyperApp module exports. T
   * [root](#root)
 * [Router](#router-)
 
-## [h](#h- "Hyperscript-style virtual node factory function") [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js "View Source")
+## [][h](#h- "Hyperscript-style virtual node factory function") [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js "View Source")
 
 Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element tree.
 
