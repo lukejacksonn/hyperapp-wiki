@@ -42,6 +42,17 @@ Starts an application with options.
 
 Signature: (options).
 
+<pre>
+app({
+  <a href="#model">model</a>,
+  <a href="#view">view</a>,
+  <a href="#actions">actions</a>,
+  <a href="#subscriptions">subscriptions</a>,
+  <a href="#plugins">plugins</a>,
+  <a href="#root">root</a>
+})
+</pre>
+
 ### model
 
 A primitive type, array or object that represents the state of the application.
@@ -52,8 +63,8 @@ A function that returns a virtual node tree. See: [h](#h), [[Hyperx]], [[JSX]].
 
 Signature: (<a href="#view_model">model</a>, <a href="#view_actions">actions</a>).
 
-* <a name="#view_model"></a>**model**: the current model.
-* <a name="#view_actions"></a>**actions**: the application's [actions](#actions).
+* <a name="view_model"></a>**model**: the current model.
+* <a name="view_actions"></a>**actions**: the application's [actions](#actions).
 
 To call an action:
 
@@ -61,9 +72,8 @@ To call an action:
 <i>actions</i>.<a href="#view_actions_action"><b>action</b></a>(<i><a href="#view_actions_data">data</a></i>)
 </pre>
 
-* <a name="#view_actions_data"></a>**action**: the name of the action.
-* <a name="#view_actions_action"></a>**data**: any data to pass to the action.
-
+* <a name="view_actions_action"></a>**action**: the name of the action.
+* <a name="view_actions_data"></a>**data**: any data to pass to the action.
 
 ```jsx
 app({
@@ -78,20 +88,20 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/ZLGGzy/).
+[View online](http://codepen.io/jbucaran/pen/ZLGGzy/)
 
 ### actions
 
 A collection of functions that describe the behavior of an application. Actions are typically used to update the [model](#model).
 
-To update the model, an action must return a new model or a fragment of it. 
+To update the model, actions return a new model or a fragment of it. 
 
-Signature: (model, data, actions, error).
+Signature: (<a href="#actions_model">model</a>, <a href="#actions_data">data</a>, <a href="#actions_actions">actions</a>, <a href="#actions_error">error</a>).
 
-* model: the current model.
-* data: the data passed to the action.
-* actions: the application's actions.
-* error: a function that calls the onError [hook](#hooks).
+* <a name="actions_model"></a>**model**: the current model.
+* <a name="actions_data"></a>**data**: the data passed to the action.
+* <a name="actions_actions"></a>**actions**: the application's actions.
+* <a name="actions_error"></a>**error**: a function that calls the onError [hook](#hooks).
 
 ```jsx
 app({
@@ -114,12 +124,11 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/zNxZLP).
+[View online](http://codepen.io/jbucaran/pen/zNxZLP)
 
-Actions may trigger other actions, cause side effects, e.g. writing to a database, fetching data from a server, etc. When used this way, there's usually no return value.
+Actions can trigger other actions, cause side effects, e.g. writing to a database, fetching data from a server, etc. When used this way, there's usually no return value.
 
 ```jsx
-
 app({
   model: {
     url: "",
@@ -163,15 +172,42 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/ZeByKv?editors=0010).
+[View online](http://codepen.io/jbucaran/pen/ZeByKv?editors=0010)
 
 Alternatively, an action may return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This allows chaining actions via [.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or use ES7 [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
+
+```jsx
+app({
+  model: 0,
+  actions: {
+    add: model => model + 1,
+    
+    delay: (model, time) => 
+      new Promise(_ => setTimeout(_, time)),   
+    
+    async slowlyAdd(model, time, actions) {
+      await actions.delay(time)
+      actions.add()
+    }
+  },
+  view: (model, actions) => 
+    <button
+      onClick={_ => actions.slowlyAdd(1000)}
+    >
+      {model}
+    </button>,
+})
+```
 
 ### subscriptions
 
 An array of functions scheduled to run once after the DOM is [ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use subscriptions to register global events, open a socket connection, etc.
 
-Signature: (model, actions, error).
+Signature: (<a href="#subs_model">model</a>, <a href="#subs_actions">actions</a>, <a href="#subs_error">error</a>).
+
+* <a name="subs_model"></a>**model**: the current model.
+* <a name="subs_actions"></a>**actions**: the application's actions.
+* <a name="subs_error"></a>**error**: a function that calls the onError [hook](#hooks).
 
 ```jsx
 app({
@@ -192,7 +228,7 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/Bpyraw).
+[View online](http://codepen.io/jbucaran/pen/Bpyraw)
 
 ### hooks
 
@@ -230,7 +266,7 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/xgbzEy).
+[View online](http://codepen.io/jbucaran/pen/xgbzEy)
 
 ### plugins
 
@@ -267,7 +303,7 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/JELvjO).
+[View online](http://codepen.io/jbucaran/pen/JELvjO)
 
 ## Router [<>](https://github.com/hyperapp/hyperapp/blob/master/src/router.js)
 
@@ -289,7 +325,7 @@ The _key_ is the route and the _value_ is the view.
 // WIP 
 ```
 
-[View online](https://hyperapp-routing.gomix.me)
+[View online](https://hyperapp-routing.gomix.me
 
 ### actions.router.go
 
@@ -320,7 +356,7 @@ app({
 })
 ```
 
-[View online](https://gomix.com/#!/project/hyperapp-set-location)
+[View online](https://gomix.com/#!/project/hyperapp-set-location
 
 
 ### model.router.match
