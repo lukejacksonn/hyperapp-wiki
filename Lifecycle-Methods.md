@@ -1,4 +1,4 @@
-Lifecycle are custom events that can be attached to a [virtual node](hyperapp/hyperapp/wiki/api#h) to access the real DOM element before it is created, updated or removed.
+Lifecycle are custom events that can be attached to a [virtual node](hyperapp/hyperapp/wiki/api#h) to access its real DOM element **before** it is created, updated or removed.
 
 ```jsx
 app({
@@ -8,15 +8,15 @@ app({
 
 The available methods are:
 
-<a name="oncreate"></a>[#](#oncreate) **onCreate**([_Element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
+<a name="oncreate"></a>[#](#oncreate) **onCreate**([_element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
 
 Called before the element is created.
 
-<a name="onupdate"></a>[#](#onupdate) **onUpdate**([_Element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
+<a name="onupdate"></a>[#](#onupdate) **onUpdate**([_element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
 
 Called before the element is updated.
 
-<a name="onremove"></a>[#](#onremove) **onRemove**([_Element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
+<a name="onremove"></a>[#](#onremove) **onRemove**([_element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
 
 Called before the element is removed.
 
