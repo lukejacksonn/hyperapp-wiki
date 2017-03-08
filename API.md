@@ -232,7 +232,7 @@ app({
 
 ### hooks
 
-A collection of functions used to inspect an application, implement middleware, loggers, etc. 
+A collection of functions that can be used to inspect an application, implement middleware, etc. 
 
 ```jsx
 app({
@@ -260,39 +260,31 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/xgbzEy)
 
-#### onAction
+<a name="onaction"></a>[#](#onaction) _hooks_.**onAction**(<a href="#onaction_action">action</a>, <a href="#onaction_data">data</a>)
 
-A function called before an action is triggered. 
-
-Signature: (<a href="#onaction_action">action</a>, <a href="#onaction_data">data</a>).
+Called before an action is triggered. 
 
 * <a name="onaction_action"></a>**action**: the name of the action.
 * <a name="onaction_data"></a>**data**: the data passed to the action.
 
-#### onUpdate
+<a name="onupdate"></a>[#](#onupdate) _hooks_.**onUpdate**(<a href="#onupdate_oldmodel">oldModel</a>, <a href="#onupdate_newmodel">newModel</a>, <a href="#onupdate_data">data</a>)
 
-A function called before the [model](#model) is updated. 
-
-Signature: (<a href="#onupdate_oldmodel">oldModel</a>, <a href="#onupdate_newmodel">newModel</a>, <a href="#onupdate_data">data</a>).
+Called before the [model](#model) is updated. 
 
 * <a name="onupdate_oldmodel"></a>**oldModel**: the previous/current model. 
 * <a name="onupdate_newmodel"></a>**newModel**: the next model.
 * <a name="onupdate_data"></a>**data**: the data merged to update the model.
 
-#### onRender
+<a name="onrender"></a>[#](#onrender) _hooks_.**onRender**(<a href="#onrender_model">model</a>, <a href="#onrender_view">view</a>)
 
-A function called before the [view](#view) is rendered. You can use this hook to overwrite the default view by returning a different view function. See: [Router](#router-).
-
-Signature: (<a href="#onrender_model">model</a>, <a href="#onrender_view">view</a>).
+Called before the [view](#view) is rendered. You can use this hook to overwrite the default view by returning a different view function. See: [Router](#router-).
 
 * <a href="onrender_model"></a>**model**: the current model.
 * <a href="onrender_view"></a>**view**: the view function.
 
-#### onError
+<a name="onerror"></a>[#](#onerror) _hooks_.**onError**(<a href="#onerror_error">error</a>)
 
-A function called when the error argument passed to actions or subscriptions is used. If none is given, the default behavior is to throw. 
-
-Signature: (<a href="#onerror_error">error</a>).
+Called when the error argument passed to actions or subscriptions is used. If none is given, the default behavior is to throw. 
 
 * <a name="onerror_error"></a>**error**: the error message.
 
