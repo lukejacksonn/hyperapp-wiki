@@ -412,8 +412,8 @@ app({
 
   <tr>
     <td>/user/:name/post/:id</td>
-    <td>/user/hyper/post/9df081</td>
-    <td>/user/app/post/5ag109</td>
+    <td>/user/hyper/post/9df0</td>
+    <td>/user/app/post/5ag1</td>
   </tr>
 </table>
 
