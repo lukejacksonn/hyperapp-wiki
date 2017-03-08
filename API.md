@@ -390,7 +390,7 @@ app({
 })
 ```
 
-[View Online](https://gomix.com/#!/project/hyperapp-set-location)
+[View Online](https://hyperapp-router-go.gomix.me)
 
 
 <a name="router_match"></a>[#](#router_match) _model_.**router**.**match**
