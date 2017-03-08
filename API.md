@@ -1,6 +1,6 @@
 The API reference provides detailed information about HyperApp module exports. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]]. For a high-level discussion of HyperApp see [[Concepts]].
 
-* [h](#h-)
+* [h](#h- "Hyperscript-style virtual node factory function")
 * [app](#app-)
   * [model](#model)
   * [view](#view)
