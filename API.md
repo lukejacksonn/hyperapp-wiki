@@ -390,7 +390,7 @@ app({
 
 <table>
   <th>Route</th>
-  <th colspan=3>Matched Route</th>
+  <th colspan=3>URL</th>
 
   <tr>
     <td>*</td>
@@ -406,8 +406,8 @@ app({
 
   <tr>
     <td>/item/:id</td>
-    <td>/item/7a45h2</td>
-    <td>/item/1c63p0</td>
+    <td>/item/7a45</td>
+    <td>/item/1c63</td>
   </tr>
 
   <tr>
@@ -422,22 +422,22 @@ app({
 
 <table>
   <th>Route</th>
-  <th>Example URL</th>
-  <td><i>router</i>.<i>params</i>.<b>name</b></td>
-  <td><i>router</i>.<i>params</i>.<b>id</b></td>
+  <th>URL</th>
+  <td><i>params</i>.<b>name</b></td>
+  <td><i>params</i>.<b>id</b></td>
 
   <tr>
     <td>/user/:name/post/:id</td>
-    <td>/user/hyper/post/9df081</td>
+    <td>/user/hyper/post/9df0</td>
     <td>hyper</td>
-    <td>9df081</td>
+    <td>9df0</td>
   </tr>
 
   <tr>
     <td>/user/:name/post/:id</td>
-    <td>/user/app/post/5ag109</td>
+    <td>/user/app/post/5ag1</td>
     <td>app</td>
-    <td>5ag109</td>
+    <td>5ag1</td>
   </tr>
 </table>
 
