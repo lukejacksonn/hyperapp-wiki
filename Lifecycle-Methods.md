@@ -1,20 +1,27 @@
-Lifecycle methods are functions that can be attached to [virtual nodes](hyperapp/hyperapp/wiki/api#h) in order to access a real DOM element before it is created, updated or removed.
+Lifecycle are custom events that can be attached to a [virtual nodes](hyperapp/hyperapp/wiki/api#h) in order to access the real DOM element before it is created, updated or removed.
 
 ```jsx
 app({
-  view: <div onCreate={element => console.log(element)}></div>
+  view: <div onCreate={elm => alert(elm)}></div>
 })
 ```
+
 The available methods are:
 
-* onCreate([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)):  Called before an element is created.
+<a name="oncreate"></a>[#](#oncreate) **onCreate**([_Element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
 
-* onUpdate([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is updated.
+Called before the element is created.
 
-* onRemove([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)): Called before an element is removed.
+<a name="onupdate"></a>[#](#onupdate) **onUpdate**([_Element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
+
+Called before the element is updated.
+
+<a name="onremove"></a>[#](#onremove) **onRemove**([_Element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
+
+Called before the element is removed.
 
 ### Examples
-Using the [canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial) element.
+Using a [canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial) element.
 
 ```jsx
 const repaint = (canvas, model) => {
@@ -35,7 +42,7 @@ app({
     })
   },
   subscriptions: [
-    (_, actions) => setInterval(_ => actions.move(), 60)
+    (_, actions) => setInterval(actions.move, 60)
   ],
   view: model =>
     <canvas
@@ -46,4 +53,4 @@ app({
 })
 ```
 
-[View online](http://codepen.io/jbucaran/pen/MJXMQZ/).
+[View Online](http://codepen.io/jbucaran/pen/MJXMQZ)
