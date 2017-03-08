@@ -269,7 +269,7 @@ Called before an action is triggered.
 
 <a name="onupdate"></a>[#](#onupdate) _hooks_.**onUpdate**(<a href="#onupdate_oldmodel">oldModel</a>, <a href="#onupdate_newmodel">newModel</a>, <a href="#onupdate_data">data</a>)
 
-Called before the [model](#model) is updated. 
+Called before the model is updated. 
 
 * <a name="onupdate_oldmodel"></a>**oldModel**: the previous/current model. 
 * <a name="onupdate_newmodel"></a>**newModel**: the next model.
@@ -279,8 +279,8 @@ Called before the [model](#model) is updated.
 
 Called before the [view](#view) is rendered. You can use this hook to overwrite the default view by returning a different view function. See: [Router](#router-).
 
-* <a href="onrender_model"></a>**model**: the current model.
-* <a href="onrender_view"></a>**view**: the view function.
+* <a name="onrender_model"></a>**model**: the current model.
+* <a name="onrender_view"></a>**view**: the view function.
 
 <a name="onerror"></a>[#](#onerror) _hooks_.**onError**(<a href="#onerror_error">error</a>)
 
