@@ -24,31 +24,30 @@ Called before the element is removed.
 Using a [canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial) element.
 
 ```jsx
-const repaint = (canvas, model) => {
-  const context = canvas.getContext("2d")
-  context.fillStyle = "white"
-  context.fillRect(0, 0, canvas.width, canvas.height)
-  context.beginPath()
-  context.arc(model.x, model.y, 50, 0, 2 * Math.PI)
-  context.stroke()
-}
-
 app({
   model: { x: 0, y: 0 },
   actions: {
     move: model => ({
       x: model.x + 1,
       y: model.y + 1,
-    })
+    }),
+    repaint: (model, canvas) => {
+      const context = canvas.getContext("2d")
+      context.fillStyle = "white"
+      context.fillRect(0, 0, canvas.width, canvas.height)
+      context.beginPath()
+      context.arc(model.x, model.y, 50, 0, 2 * Math.PI)
+      context.stroke()
+    }
   },
   subscriptions: [
     (_, actions) => setInterval(actions.move, 60)
   ],
-  view: model =>
+  view: (model, actions) =>
     <canvas
       width="600"
       height="300"
-      onUpdate={e => repaint(e, model)}
+      onUpdate={actions.repaint}
     />
 })
 ```
