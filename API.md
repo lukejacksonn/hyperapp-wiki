@@ -304,10 +304,10 @@ Signature: (options).
 
 <pre>
 MyPlugin({ 
-    <a href="#model">model</a>, 
-    <a href="#actions">actions</a>, 
-    <a href="#subscriptions">subscriptions</a>, 
-    <a href="#hooks">hooks</a> 
+  <a href="#model">model</a>, 
+  <a href="#actions">actions</a>, 
+  <a href="#subscriptions">subscriptions</a>, 
+  <a href="#hooks">hooks</a> 
 })
 </pre>
 
