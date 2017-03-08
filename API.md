@@ -281,7 +281,7 @@ Signature: (<a href="#onupdate_oldmodel">oldModel</a>, <a href="#onupdate_newmod
 
 #### onRender
 
-A function called before the [view](#view) is rendered. You can use this hook to overwrite the default view by returning a different view function. See [Router](#router-).
+A function called before the [view](#view) is rendered. You can use this hook to overwrite the default view by returning a different view function. See: [Router](#router-).
 
 Signature: (<a href="#onrender_model">model</a>, <a href="#onrender_view">view</a>).
 
@@ -298,7 +298,7 @@ Signature: (<a href="#onerror_error">error</a>).
 
 ### plugins
 
-An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). See [Router](#router-) for a practical example.
+An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). For a practical example see: [Router](#router-).
 
 Signature: (options).
 
