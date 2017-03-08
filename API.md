@@ -1,7 +1,7 @@
 The API reference provides detailed information about HyperApp module exports. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]]. For a high-level discussion of HyperApp see [[Concepts]].
 
-* [h](#h- "Hyperscript-style virtual node factory function")
-* [app](#app-)
+* [h](#h "Hyperscript-style virtual node factory function")
+* [app](#app)
   * [model](#model)
   * [view](#view)
   * [actions](#actions)
@@ -9,9 +9,9 @@ The API reference provides detailed information about HyperApp module exports. T
   * [hooks](#hooks)
   * [plugins](#plugins)
   * [root](#root)
-* [Router](#router-)
+* [Router](#router)
 
-## [][h](#h- "Hyperscript-style virtual node factory function") [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js "View Source")
+## <a name="h"></a>[#](#h) h [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js "View Source")
 
 Returns a virtual node. A virtual node is a JavaScript object that describes an HTML/[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) element tree.
 
@@ -36,7 +36,7 @@ Returns the following object:
 }
 ```
 
-## [app](#app- "app") [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js)
+## <a name="app"></a>[#](#app) app [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js "View Source")
 
 Starts an application with options. 
 
@@ -53,11 +53,11 @@ app({
 })
 </pre>
 
-### model
+### <a name="model"></a>[#](#model) model
 
 A primitive type, array or object that represents the state of the application.
 
-### view
+### <a name="view"></a>[#](#view) view
 
 A function that returns a virtual node tree. See: [h](#h), [[Hyperx]], [[JSX]].
 
@@ -90,7 +90,7 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/ZLGGzy/)
 
-### actions
+### <a name="actions"></a>[#](#actions) actions
 
 A collection of functions that describe the behavior of an application. Actions are typically used to update the [model](#model).
 
@@ -199,7 +199,7 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/jByPNd?editors=0010)
 
-### subscriptions
+### <a name="subscriptions"></a>[#](#subscriptions) subscriptions
 
 An array of functions scheduled to run once after the DOM is [ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use subscriptions to register global events, open a socket connection, etc.
 
@@ -230,7 +230,7 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/Bpyraw)
 
-### hooks
+### <a name="hooks"></a>[#](#hooks) hooks
 
 A collection of functions that can be used to inspect an application, implement middleware, etc. 
 
@@ -262,8 +262,6 @@ Called when the error argument passed to actions or subscriptions is used. If no
 
 * <a name="onerror_error"></a>**error**: the error message.
 
-#### Example
-
 ```jsx
 app({
   model: true,
@@ -290,9 +288,9 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/xgbzEy)
 
-### plugins
+### <a name="plugins"></a>[#](#plugins) plugins
 
-An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions) of an application. For a practical example see the [Router](#router-).
+An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions) to an application. See [[Plugins]] for examples.
 
 Signature: (options).
 
@@ -329,7 +327,7 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/zZNvgM?editors=0011)
 
-### root
+### <a name="root"></a>[#](#root) root
 
 The HTML root element of the application. If none is given, a div element is appended to [document.body](https://developer.mozilla.org/en-US/docs/Web/API/Document/body) and used as the root.
 
@@ -345,7 +343,7 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/JELvjO)
 
-## Router [<>](https://github.com/hyperapp/hyperapp/blob/master/src/router.js)
+## <a name="Router"></a>[#](#Router) Router [<>](https://github.com/hyperapp/hyperapp/blob/master/src/router.js "View Source")
 
 When using the router, the [view](#view) is a dictionary of routes/views.
 
