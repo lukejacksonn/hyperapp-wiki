@@ -290,12 +290,12 @@ app({
 
 ### <a name="plugins"></a>[#](#plugins) plugins
 
-An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions) to an application. See [[Plugins]] for examples.
+An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions) to an application. See also [[Plugins]].
 
 Signature: (options).
 
 <pre>
-MyPlugin({ 
+options => ({ 
   <a href="#model">model</a>, 
   <a href="#actions">actions</a>, 
   <a href="#subscriptions">subscriptions</a>, 
