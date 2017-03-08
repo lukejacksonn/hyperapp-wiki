@@ -36,7 +36,7 @@ Returns the following object:
 }
 ```
 
-## [app](#app- "XXX") [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js)
+## [app](#app- "app") [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js)
 
 Starts an application with the given options. 
 
@@ -47,9 +47,6 @@ Signature: (options).
 A primitive type, array or object that represents the state of the application.
 
 Changes in the model cause the [view](#view) to be rendered, and the model is changed by triggering [actions](#actions).
-
-![](https://rawgit.com/jbucaran/a13ec111bf7dc765582fbdeb49be0cf6/raw/03b6ab36dee3b14172922f7d46ec613d0a142c36/harch.svg)
-
 
 ### view
 
