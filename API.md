@@ -262,7 +262,7 @@ app({
 
 #### onAction
 
-Called before an action is triggered. 
+A function called before an action is triggered. 
 
 Signature: (<a href="#onaction_action">action</a>, <a href="#onaction_data">data</a>).
 
@@ -271,17 +271,17 @@ Signature: (<a href="#onaction_action">action</a>, <a href="#onaction_data">data
 
 #### onUpdate
 
-Called before the [model](#model) is updated. 
+A function called before the [model](#model) is updated. 
 
 Signature: (<a href="#onupdate_oldmodel">oldModel</a>, <a href="#onupdate_newmodel">newModel</a>, <a href="#onupdate_data">data</a>).
 
-* <a name="oldModel"></a>**oldModel**: the previous/current model. 
-* <a name="newModel"></a>**newModel**: the next model.
-* <a name="data"></a>**data**: the data merged to update the model.
+* <a name="onupdate_oldmodel"></a>**oldModel**: the previous/current model. 
+* <a name="onupdate_newmodel"></a>**newModel**: the next model.
+* <a name="onupdate_data"></a>**data**: the data merged to update the model.
 
 #### onRender
 
-Called before the [view](#view) is rendered. You can use this hook to overwrite the default view by returning a different view function. See [Router](#router-).
+A function called before the [view](#view) is rendered. You can use this hook to overwrite the default view by returning a different view function. See [Router](#router-).
 
 Signature: (<a href="#onrender_model">model</a>, <a href="#onrender_view">view</a>).
 
@@ -290,7 +290,9 @@ Signature: (<a href="#onrender_model">model</a>, <a href="#onrender_view">view</
 
 #### onError
 
-Called when the error function is used. If none is given, the default behavior is to throw. Signature: (<a href="#onerror_error">error</a>).
+A function called when the error argument passed to actions or subscriptions is used. If none is given, the default behavior is to throw. 
+
+Signature: (<a href="#onerror_error">error</a>).
 
 * <a name="onerror_error"></a>**error**: the error message.
 
@@ -298,7 +300,16 @@ Called when the error function is used. If none is given, the default behavior i
 
 An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions). See [Router](#router-).
 
-Signature: ({ <a href="#model">model</a>, <a href="#actions">actions</a>, <a href="#subscriptions">subscriptions</a>, <a href="#hooks">hooks</a> }).
+Signature: (options).
+
+<pre>
+MyPlugin({ 
+    <a href="#model">model</a>, 
+    <a href="#actions">actions</a>, 
+    <a href="#subscriptions">subscriptions</a>, 
+    <a href="#hooks">hooks</a> 
+})
+</pre>
 
 ```jsx
 cont Logger = options => ({
