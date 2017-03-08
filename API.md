@@ -289,13 +289,13 @@ import { Router } from "hyperapp"
 
 When using the router, you must use the [`view`](#view) as a dictionary of routes/views.
 
-The _key_ is the route and the _value_ is the [view](#view).
+The _key_ is the route and the _value_ is the view.
 
 * `*` match when no other route matches.
 
 * `/` match the index route.
 
-* `/:key` match a route using the regular expression `[A-Za-z0-9]+`. The matched parameters can be accessed in [model.router.match](#modelroutermatch).
+* `/:key` match a route using the regular expression `[A-Za-z0-9]+`. The matched parameters can be retrieved via [model.router.match](#modelroutermatch).
 
 ```jsx
 // WIP 
@@ -335,25 +335,25 @@ app({
 [View online](https://gomix.com/#!/project/hyperapp-set-location)
 
 
-## model.router.match
+### model.router.match
 
 Matched route.
 
-```javascript
+```jsx
 // route /user/:id/posts/:postId
 // url /user/7a45h2/posts/9df081
 model.router.match = '/user/:id/posts/:postId'
 ```
 
-## model.router.params
+### model.router.params
 
 Matched route params.
 
-```javascript
+```jsx
 // route /user/:id/posts/:postId
 // url /user/7a45h2/posts/9df081
 model.router.params = {
-	id: '7a45h2',
-	postId: '9df081'
+  id: '7a45h2',
+  postId: '9df081'
 }
 ```
