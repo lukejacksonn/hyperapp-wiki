@@ -281,7 +281,7 @@ app({
 
 [View online](http://codepen.io/jbucaran/pen/JELvjO).
 
-## [#](#router)Router [<>](https://github.com/hyperapp/hyperapp/blob/master/src/router.js)
+## Router [<>](https://github.com/hyperapp/hyperapp/blob/master/src/router.js)
 
 ```jsx
 import { Router } from "hyperapp"
