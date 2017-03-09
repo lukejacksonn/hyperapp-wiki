@@ -90,7 +90,7 @@ app({
     toggle: model => !model,
   },
   view: (model, actions) =>
-    <button onClick={actions.toggle}>
+    <button onclick={actions.toggle}>
       {model.toString()}
     </button>
 })
@@ -120,11 +120,11 @@ app({
   },
   view: (model, actions) =>
     <div>
-      <button onClick={actions.add}>
+      <button onclick={actions.add}>
         +
       </button>
       <h1>{model}</h1>
-      <button onClick={actions.sub}
+      <button onclick={actions.sub}
         disabled={model <= 0}>
         -
       </button>
@@ -166,7 +166,7 @@ app({
       <input
         type="text"
         placeholder="Type to search..."
-        onKeyUp={actions.search}
+        onkeyup={actions.search}
       />
       <div>
         <img
@@ -198,7 +198,7 @@ app({
   },
   view: (model, actions) => 
     <button
-      onClick={_ => actions.slowlyAdd(1000)}
+      onclick={_ => actions.slowlyAdd(1000)}
     >
       {model}
     </button>
@@ -284,10 +284,10 @@ app({
   },
   view: (model, actions) =>
     <div>
-      <button onClick={actions.toggle}>
+      <button onclick={actions.toggle}>
         Log
       </button>
-      <button onClick={actions.fail}>
+      <button onclick={actions.fail}>
         Error
       </button>
     </div>
