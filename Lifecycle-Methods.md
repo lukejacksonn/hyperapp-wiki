@@ -1,15 +1,15 @@
 Lifecycle methods are custom event handlers invoked at various points in a [virtual node](hyperapp/hyperapp/wiki/api#h)'s life. They are useful for starting animations and wrapping third party libraries that require a reference to the DOM element.
 
-<a name="oncreate"></a> [#](#oncreate) **onCreate**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
+<a name="oncreate"></a> [#](#oncreate) **onCreate**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element "HTML/DOM Element")) [<>](#) 
 
 Called when the element is appended to DOM.
 
 
-<a name="onupdate"></a> [#](#onupdate) **onUpdate**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
+<a name="onupdate"></a> [#](#onupdate) **onUpdate**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element "HTML/DOM Element")) [<>](#) 
 
 Called when the element is updated.
 
-<a name="onremove"></a> [#](#onremove) **onRemove**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
+<a name="onremove"></a> [#](#onremove) **onRemove**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element "HTML/DOM Element")) [<>](#) 
 
 Called when the element is going to be removed.
 
