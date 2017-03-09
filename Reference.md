@@ -1,13 +1,14 @@
-The API reference provides detailed information about HyperApp modules. This document is not an introduction to the library, for a step-by-step walk-through see [[Getting Started]]. For a high-level discussion of HyperApp see [[Concepts]].
+This document is the primary reference for HyperApp and provides detailed information about the available modules, how to use them and relevant examples.
 
-There are basically two ways to write: with a pen or pencil, which is inexpensive and easily accessible; or by computer and printer, which is more expensive but quick and neat.
+This document is not an introduction to the library, for a step-by-step walk-through see [[Getting Started]]. For a high-level discussion of HyperApp see [[Concepts]].
 
 HyperApp exports three components: a [hyperscript](https://github.com/dominictarr/hyperscript)-style virtual node factory function [h](#h), the [app](#app) function and the [Router](#router) plugin. 
 
 You can use these modules independently, or you can use them together. For example, components rarely have use for the app function and not all applications require a Router.
 
+> A [toString](#) method for use in Server-Side Rendering is a work in progress.
+
 * [h](#h "Hyperscript-style virtual node factory function")
-  * [Lifecycle Methods](#lifecycle-methods)
 * [app](#app)
   * [model](#model)
   * [view](#view)
@@ -17,6 +18,7 @@ You can use these modules independently, or you can use them together. For examp
   * [plugins](#plugins)
   * [root](#root)
 * [Router](#router)
+* [Lifecycle Methods](#lifecycle-methods)
 
 ## <a name="h"></a>[#](#h) h [<>](https://github.com/hyperapp/hyperapp/blob/master/src/h.js "View Source")
 
@@ -42,49 +44,6 @@ Returns the following object:
   children: "Hi."
 }
 ```
-
-### <a name="lifecycle-methods"></a>[#](#lifecycle-methods) Lifecycle Methods
-
-Custom event handlers invoked at various points in a [virtual node](hyperapp/hyperapp/wiki/api#h)'s life.
-
-They are useful for starting animations and wrapping third party libraries that require a reference to the DOM element.
-
-<a name="oncreate"></a> [#](#oncreate) **onCreate**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
-
-Called when the element is appended to DOM.
-
-<a name="onupdate"></a> [#](#onupdate) **onUpdate**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
-
-Called when the element is updated.
-
-<a name="onremove"></a> [#](#onremove) **onRemove**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
-
-Called when the element is going to be removed.
-
-### Example
-
-Integration with [CodeMirror](https://codemirror.net/).
-
-```jsx
-const node = document.createElement("div")
-const editor = CodeMirror(node)
-
-const Editor = options => {
-  const setOptions = options =>
-    Object.keys(options).forEach(key => editor.setOption(key, options[key]))
-
-  const onCreate = elm => {
-    setOptions(options)
-    elm.appendChild(node)
-  }
-
-  const onUpdate = _ => setOptions(options)
-
-  return <div onCreate={onCreate} onUpdate={onUpdate}></div>
-}
-```
-
-[View Online](https://hyperapp-code-mirror.gomix.me)
 
 ## <a name="app"></a>[#](#app) app [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js "View Source")
 
@@ -487,3 +446,46 @@ app({
     <td>5ag1</td>
   </tr>
 </table>
+
+## <a name="lifecycle-methods"></a>[#](#lifecycle-methods) Lifecycle Methods
+
+Custom event handlers invoked at various points in a [virtual node](#h)'s life.
+
+They are useful for starting animations and wrapping third party libraries that require a reference to the DOM element.
+
+<a name="oncreate"></a> [#](#oncreate) **onCreate**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
+
+Called when the element is appended to DOM.
+
+<a name="onupdate"></a> [#](#onupdate) **onUpdate**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
+
+Called when the element is updated.
+
+<a name="onremove"></a> [#](#onremove) **onRemove**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
+
+Called when the element is going to be removed.
+
+### Example
+
+Integration with [CodeMirror](https://codemirror.net/).
+
+```jsx
+const node = document.createElement("div")
+const editor = CodeMirror(node)
+
+const Editor = options => {
+  const setOptions = options =>
+    Object.keys(options).forEach(key => editor.setOption(key, options[key]))
+
+  const onCreate = elm => {
+    setOptions(options)
+    elm.appendChild(node)
+  }
+
+  const onUpdate = _ => setOptions(options)
+
+  return <div onCreate={onCreate} onUpdate={onUpdate}></div>
+}
+```
+
+[View Online](https://hyperapp-code-mirror.gomix.me)
