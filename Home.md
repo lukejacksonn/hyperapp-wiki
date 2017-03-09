@@ -19,7 +19,7 @@ HyperApp is not opinionated about your stack either; we're compatible with all b
 * [[Build Setup]]
 * [[Concepts]]
 * [[Tutorials]]
-* [[API]]
+* [[Reference]]
 
 ## Contributing
 
