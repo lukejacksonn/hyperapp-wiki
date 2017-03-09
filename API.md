@@ -18,7 +18,7 @@ Returns a virtual node. A virtual node is a JavaScript object that describes an 
 Signature: (<a href="#h_tag">tag</a>, <a href="#h_data">data</a>, <a href="#h_children">children</a>).
 
 * <a name="h_tag"></a>**tag**: a tag name, e.g. div or a function that returns a tree of virtual nodes.
-* <a name="h_data"></a>**data**: an object with attributes, styles, events, [[Lifecycle Methods]], etc.
+* <a name="h_data"></a>**data**: an object with attributes, styles, events, [[Lifecycle Events]], etc.
 * <a name="h_children"></a>**children**: a string or an array of virtual nodes.
 
 For example:
