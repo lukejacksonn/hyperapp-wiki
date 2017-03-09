@@ -12,8 +12,9 @@
   * [[Rocket Launcher]]
   * [[Tweet Box]]
 * [[API]]
-  * [h](/hyperapp/hyperapp/wiki/api#h- "Hyperscript-style virtual node factory function")
-  * [app](/hyperapp/hyperapp/wiki/api#app-)
+  * [h](/hyperapp/hyperapp/wiki/api#h)
+    * [Lifecycle Methods](/hyperapp/hyperapp/wiki/api#lifecycle-methods)
+  * [app](/hyperapp/hyperapp/wiki/api#app)
     * [model](/hyperapp/hyperapp/wiki/api#model)
     * [view](/hyperapp/hyperapp/wiki/api#view)
     * [actions](/hyperapp/hyperapp/wiki/api#actions)
@@ -22,7 +23,6 @@
     * [plugins](/hyperapp/hyperapp/wiki/api#plugins)
     * [root](/hyperapp/hyperapp/wiki/api#root)
   * [Router](/hyperapp/hyperapp/wiki/api#Router)
-  * [[Lifecycle Methods]]
 
 
 
