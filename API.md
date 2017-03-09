@@ -1,4 +1,9 @@
-The API reference provides detailed information about HyperApp modules and . This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]]. For a high-level discussion of HyperApp see [[Concepts]].
+The API reference provides detailed information about HyperApp modules. This document is not an introduction to the library, for a step-by-step walk-through see [[Getting Started]]. For a high-level discussion of HyperApp see [[Concepts]].
+
+
+```jsx
+import { h, app, Router } from "hyperapp"
+```
 
 * [h](#h "Hyperscript-style virtual node factory function")
 * [app](#app)
@@ -36,7 +41,7 @@ Returns the following object:
 }
 ```
 
-### <a name="lifecycle-methods"></a>[#](#lifecycle-methods) Lifecycle Methods [<>](#)
+### <a name="lifecycle-methods"></a>[#](#lifecycle-methods) Lifecycle Methods
 
 Custom event handlers invoked at various points in a [virtual node](hyperapp/hyperapp/wiki/api#h)'s life.
 
@@ -45,7 +50,6 @@ They are useful for starting animations and wrapping third party libraries that 
 <a name="oncreate"></a> [#](#oncreate) **onCreate**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
 
 Called when the element is appended to DOM.
-
 
 <a name="onupdate"></a> [#](#onupdate) **onUpdate**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
 
@@ -79,7 +83,6 @@ const Editor = options => {
 ```
 
 [View Online](https://hyperapp-code-mirror.gomix.me)
-
 
 ## <a name="app"></a>[#](#app) app [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js "View Source")
 
