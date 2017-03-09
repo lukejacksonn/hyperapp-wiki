@@ -6,7 +6,6 @@
 * [[Concepts]]
   * [[Architecture]]
   * [[Components]]
-  * [[Lifecycle Methods]]
   * [[Plugins]]
   * [[Virtual Nodes]]
 * [[Tutorials]]
@@ -14,6 +13,7 @@
   * [[Tweet Box]]
 * [[API]]
   * [h](/hyperapp/hyperapp/wiki/api#h- "Hyperscript-style virtual node factory function")
+    * [[Lifecycle Methods]]
   * [app](/hyperapp/hyperapp/wiki/api#app-)
     * [model](/hyperapp/hyperapp/wiki/api#model)
     * [view](/hyperapp/hyperapp/wiki/api#view)
