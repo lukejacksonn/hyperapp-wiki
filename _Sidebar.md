@@ -11,18 +11,18 @@
 * [[Tutorials]]
   * [[Rocket Launcher]]
   * [[Tweet Box]]
-* [[API]]
-  * [h](/hyperapp/hyperapp/wiki/api#h)
-    * [Lifecycle Methods](/hyperapp/hyperapp/wiki/api#lifecycle-methods)
-  * [app](/hyperapp/hyperapp/wiki/api#app)
-    * [model](/hyperapp/hyperapp/wiki/api#model)
-    * [view](/hyperapp/hyperapp/wiki/api#view)
-    * [actions](/hyperapp/hyperapp/wiki/api#actions)
-    * [subscriptions](/hyperapp/hyperapp/wiki/api#subscriptions)
-    * [hooks](/hyperapp/hyperapp/wiki/api#hooks)
-    * [plugins](/hyperapp/hyperapp/wiki/api#plugins)
-    * [root](/hyperapp/hyperapp/wiki/api#root)
-  * [Router](/hyperapp/hyperapp/wiki/api#Router)
-
+* [[Reference]]
+  * [h](/hyperapp/hyperapp/wiki/reference#h)
+  * [app](/hyperapp/hyperapp/wiki/reference#app)
+    * [model](/hyperapp/hyperapp/wiki/reference#model)
+    * [view](/hyperapp/hyperapp/wiki/reference#view)
+    * [actions](/hyperapp/hyperapp/wiki/reference#actions)
+    * [subscriptions](/hyperapp/hyperapp/wiki/reference#subscriptions)
+    * [hooks](/hyperapp/hyperapp/wiki/reference#hooks)
+    * [plugins](/hyperapp/hyperapp/wiki/reference#plugins)
+    * [root](/hyperapp/hyperapp/wiki/reference#root)
+  * [toString](/hyperapp/hyperapp/wiki/reference#tostring)
+  * [Router](/hyperapp/hyperapp/wiki/reference#Router)
+  * [Lifecycle Methods](/hyperapp/hyperapp/wiki/reference#lifecycle-methods)
 
 
