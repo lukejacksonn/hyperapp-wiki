@@ -1,4 +1,4 @@
-The API reference provides detailed information about HyperApp module exports. This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]]. For a high-level discussion of HyperApp see [[Concepts]].
+The API reference provides detailed information about HyperApp modules and . This document is not a tutorial, for a step-by-step walk-through see [[Getting Started]]. For a high-level discussion of HyperApp see [[Concepts]].
 
 * [h](#h "Hyperscript-style virtual node factory function")
 * [app](#app)
@@ -52,11 +52,11 @@ Signature:
 })
 </pre>
 
-### <a name="model"></a>[#](#model) model <>
+### <a name="model"></a>[#](#model) model [<>](# "View Source")
 
 A primitive type, array or object that represents the state of the application.
 
-### <a name="view"></a>[#](#view) view <>
+### <a name="view"></a>[#](#view) view [<>](# "View Source")
 
 A function that returns a virtual node tree. See: [h](#h), [[Hyperx]], [[JSX]].
 
@@ -89,7 +89,7 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/ZLGGzy/)
 
-### <a name="actions"></a>[#](#actions) actions <>
+### <a name="actions"></a>[#](#actions) actions [<>](# "View Source")
 
 A collection of functions that describe the behavior of an application. Actions are typically used to update the [model](#model).
 
@@ -192,13 +192,13 @@ app({
       onClick={_ => actions.slowlyAdd(1000)}
     >
       {model}
-    </button>,
+    </button>
 })
 ```
 
 [View Online](http://codepen.io/jbucaran/pen/jByPNd?editors=0010)
 
-### <a name="subscriptions"></a>[#](#subscriptions) subscriptions <>
+### <a name="subscriptions"></a>[#](#subscriptions) subscriptions [<>](# "View Source")
 
 An array of functions scheduled to run once after the DOM is [ready](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded). Use subscriptions to register global events, open a socket connection, etc.
 
@@ -229,18 +229,18 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/Bpyraw)
 
-### <a name="hooks"></a>[#](#hooks) hooks <>
+### <a name="hooks"></a>[#](#hooks) hooks [<>](# "View Source")
 
 A collection of functions that can be used to inspect an application, implement middleware, etc. 
 
-<a name="onaction"></a>[#](#onaction) _hooks_.**onAction**(<a href="#onaction_action">action</a>, <a href="#onaction_data">data</a>)
+<a name="onaction"></a>[#](#onaction) _hooks_.**onAction**(<a href="#onaction_action">action</a>, <a href="#onaction_data">data</a>) [<>](# "View Source")
 
 Called before an action is triggered. 
 
 * <a name="onaction_action"></a>**action**: the name of the action.
 * <a name="onaction_data"></a>**data**: the data passed to the action.
 
-<a name="onupdate"></a>[#](#onupdate) _hooks_.**onUpdate**(<a href="#onupdate_oldmodel">oldModel</a>, <a href="#onupdate_newmodel">newModel</a>, <a href="#onupdate_data">data</a>)
+<a name="onupdate"></a>[#](#onupdate) _hooks_.**onUpdate**(<a href="#onupdate_oldmodel">oldModel</a>, <a href="#onupdate_newmodel">newModel</a>, <a href="#onupdate_data">data</a>) [<>](# "View Source")
 
 Called before the model is updated. 
 
@@ -248,14 +248,14 @@ Called before the model is updated.
 * <a name="onupdate_newmodel"></a>**newModel**: the next model.
 * <a name="onupdate_data"></a>**data**: the data merged to update the model.
 
-<a name="onrender"></a>[#](#onrender) _hooks_.**onRender**(<a href="#onrender_model">model</a>, <a href="#onrender_view">view</a>)
+<a name="onrender"></a>[#](#onrender) _hooks_.**onRender**(<a href="#onrender_model">model</a>, <a href="#onrender_view">view</a>) [<>](# "View Source")
 
 Called before the [view](#view) is rendered. You can use this hook to overwrite the default view by returning a different view function. See: [Router](#router-).
 
 * <a name="onrender_model"></a>**model**: the current model.
 * <a name="onrender_view"></a>**view**: the view function.
 
-<a name="onerror"></a>[#](#onerror) _hooks_.**onError**(<a href="#onerror_error">error</a>)
+<a name="onerror"></a>[#](#onerror) _hooks_.**onError**(<a href="#onerror_error">error</a>) [<>](# "View Source")
 
 Called when the error argument passed to actions or subscriptions is used. If none is given, the default behavior is to throw. 
 
@@ -287,7 +287,7 @@ app({
 
 [View Online](http://codepen.io/jbucaran/pen/xgbzEy)
 
-### <a name="plugins"></a>[#](#plugins) plugins <>
+### <a name="plugins"></a>[#](#plugins) plugins [<>](# "View Source")
 
 An array of functions that can extend the [model](#model), add new [actions](#actions), [hooks](#hooks) or [subscriptions](#subscriptions) to an application. See also [[Plugins]].
 
@@ -352,7 +352,7 @@ The _key_ is the route and the _value_ is the view function.
 * `/` match the index route.
 * `/:key` match a route using the regular expression [A-Za-z0-9]+. The matched parameters are stored in [model.router.params](#router_params).
 
-<a name="router_go"></a>[#](#router_go) _actions_.**router**.**go**(_path_)
+<a name="router_go"></a>[#](#router_go) _actions_.**router**.**go**(_path_) [<>](# "View Source")
 
 Sets the [location.pathname](https://developer.mozilla.org/en-US/docs/Web/API/Location) to the given path. If the path matches an existing route, the corresponding view will be rendered. 
 
@@ -383,7 +383,7 @@ app({
 
 [View Online](https://hyperapp-router-go.gomix.me)
 
-<a name="router_match"></a>[#](#router_match) _model_.**router**.**match**
+<a name="router_match"></a>[#](#router_match) _model_.**router**.**match** [<>](# "View Source")
 
 <table>
   <th>Route</th>
@@ -415,7 +415,7 @@ app({
 </table>
 
 
-<a name="router_params"></a>[#](#router_params) _model_.**router**.**params**
+<a name="router_params"></a>[#](#router_params) _model_.**router**.**params** [<>](# "View Source")
 
 <table>
   <th>Route</th>
