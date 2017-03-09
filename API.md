@@ -18,7 +18,7 @@ Returns a virtual node. A virtual node is a JavaScript object that describes an 
 Signature: (<a href="#h_tag">tag</a>, <a href="#h_data">data</a>, <a href="#h_children">children</a>).
 
 * <a name="h_tag"></a>**tag**: a tag name, e.g. div or a function that returns a tree of virtual nodes.
-* <a name="h_data"></a>**data**: an object with attributes, styles, events, [[Lifecycle Events]], etc.
+* <a name="h_data"></a>**data**: an object with attributes, styles, events, [Lifecycle Methods](#lifecycle-methods), etc.
 * <a name="h_children"></a>**children**: a string or an array of virtual nodes.
 
 For example:
@@ -35,6 +35,51 @@ Returns the following object:
   children: "Hi."
 }
 ```
+
+### <a name="lifecycle-methods"></a>[#](#lifecycle-methods) Lifecycle Methods [<>](#)
+
+Custom event handlers invoked at various points in a [virtual node](hyperapp/hyperapp/wiki/api#h)'s life.
+
+They are useful for starting animations and wrapping third party libraries that require a reference to the DOM element.
+
+<a name="oncreate"></a> [#](#oncreate) **onCreate**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
+
+Called when the element is appended to DOM.
+
+
+<a name="onupdate"></a> [#](#onupdate) **onUpdate**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
+
+Called when the element is updated.
+
+<a name="onremove"></a> [#](#onremove) **onRemove**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
+
+Called when the element is going to be removed.
+
+### Example
+
+Integration with [CodeMirror](https://codemirror.net/).
+
+```jsx
+const node = document.createElement("div")
+const editor = CodeMirror(node)
+
+const Editor = options => {
+  const setOptions = options =>
+    Object.keys(options).forEach(key => editor.setOption(key, options[key]))
+
+  const onCreate = elm => {
+    setOptions(options)
+    elm.appendChild(node)
+  }
+
+  const onUpdate = _ => setOptions(options)
+
+  return <div onCreate={onCreate} onUpdate={onUpdate}></div>
+}
+```
+
+[View Online](https://hyperapp-code-mirror.gomix.me)
+
 
 ## <a name="app"></a>[#](#app) app [<>](https://github.com/hyperapp/hyperapp/blob/master/src/app.js "View Source")
 
