@@ -8,15 +8,15 @@ app({
 
 The available methods are:
 
-#### <a name="oncreate"></a>[#](#oncreate) **onCreate**([_element_](https://developer.mozilla.org/en-     US/docs/Web/API/Element)) [<>](#)
+<a name="oncreate"></a>[#](#oncreate) **onCreate**([_element_](https://developer.mozilla.org/en-     US/docs/Web/API/Element)) [<>](#)
 
 Called before the element is created.
 
-#### <a name="onupdate"></a>[#](#onupdate) **onUpdate**([_element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
+<a name="onupdate"></a>[#](#onupdate) **onUpdate**([_element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
 
 Called before the element is updated.
 
-#### <a name="onremove"></a>[#](#onremove) **onRemove**([_element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
+<a name="onremove"></a>[#](#onremove) **onRemove**([_element_](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#)
 
 Called before the element is removed.
 
