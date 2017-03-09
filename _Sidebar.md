@@ -22,7 +22,7 @@
     * [plugins](/hyperapp/hyperapp/wiki/api#plugins)
     * [root](/hyperapp/hyperapp/wiki/api#root)
   * [Router](/hyperapp/hyperapp/wiki/api#Router)
-  * [[Lifecycle Events]]
+  * [[Lifecycle Methods]]
 
 
 
