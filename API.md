@@ -1,8 +1,13 @@
 The API reference provides detailed information about HyperApp modules. This document is not an introduction to the library, for a step-by-step walk-through see [[Getting Started]]. For a high-level discussion of HyperApp see [[Concepts]].
 
-HyperApp exports three components; a [hyperscript](https://github.com/dominictarr/hyperscript)-style virtual node factory function [h](#h), the [app](#app) function and [Router](#routeR). You can use these modules independently, or you can use them together. For example, components rarely have any use for the app function and not all applications require a Router.
+There are basically two ways to write: with a pen or pencil, which is inexpensive and easily accessible; or by computer and printer, which is more expensive but quick and neat.
+
+HyperApp exports three components: a [hyperscript](https://github.com/dominictarr/hyperscript)-style virtual node factory function [h](#h), the [app](#app) function and the [Router](#router) plugin. 
+
+You can use these modules independently, or you can use them together. For example, components rarely have use for the app function and not all applications require a Router.
 
 * [h](#h "Hyperscript-style virtual node factory function")
+  * [Lifecycle Methods](#lifecycle-methods)
 * [app](#app)
   * [model](#model)
   * [view](#view)
