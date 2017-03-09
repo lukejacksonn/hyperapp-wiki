@@ -14,7 +14,7 @@ To create applications ready for production you will be using:
 
 ## Why?
 
-To compile JSX or Hyperx into native HyperApp [h](/hyperapp/hyperapp/wiki/API#h) function calls.
+To compile JSX or Hyperx into native HyperApp [h](/hyperapp/hyperapp/wiki/reference#h) function calls.
 
 The generated code is smaller and faster than the alternative: sending a parser over the wire and compiling the view in the user's browser. 
 
