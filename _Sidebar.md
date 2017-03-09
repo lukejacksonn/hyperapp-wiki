@@ -11,7 +11,7 @@
 * [[Tutorials]]
   * [[Rocket Launcher]]
   * [[Tweet Box]]
-* [[Reference]]
+* [[API]]
   * [h](/hyperapp/hyperapp/wiki/api#h- "Hyperscript-style virtual node factory function")
   * [app](/hyperapp/hyperapp/wiki/api#app-)
     * [model](/hyperapp/hyperapp/wiki/api#model)
