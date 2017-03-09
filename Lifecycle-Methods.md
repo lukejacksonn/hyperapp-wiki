@@ -1,6 +1,4 @@
-Lifecycle methods are custom event handlers invoked at various points in a [virtual node](hyperapp/hyperapp/wiki/api#h)'s life.
-
-They are useful for starting animations and wrapping third party libraries that require a reference to the DOM element.
+Lifecycle methods are custom event handlers invoked at various points in a [virtual node](hyperapp/hyperapp/wiki/api#h)'s life. They are useful for starting animations and wrapping third party libraries that require a reference to the DOM element.
 
 <a name="oncreate"></a> [#](#oncreate) **onCreate**([element](https://developer.mozilla.org/en-US/docs/Web/API/Element)) [<>](#) 
 
