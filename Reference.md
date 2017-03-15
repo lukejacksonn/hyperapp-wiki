@@ -184,7 +184,8 @@ app({
 
 Actions can also return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). This enables you use ES7 [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) functions.
 
-<a name="actions-async-await"></a>
+<a name="actions_async_await"></a>
+
 ```jsx
 app({
   model: 0,
@@ -206,7 +207,8 @@ app({
 })
 ```
 
-[View Online](http://codepen.io/jbucaran/pen/jByPNd?editors=0010) [#](#actions-async-await)
+[#](#actions_async_await)
+[View Online](http://codepen.io/jbucaran/pen/jByPNd?editors=0010) 
 
 ### <a name="subscriptions"></a>[#](#subscriptions) subscriptions [<>](# "View Source")
 
