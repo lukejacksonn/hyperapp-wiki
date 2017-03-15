@@ -207,7 +207,6 @@ app({
 })
 ```
 
-[#](#actions_async_await)
 [View Online](http://codepen.io/jbucaran/pen/jByPNd?editors=0010) 
 
 ### <a name="subscriptions"></a>[#](#subscriptions) subscriptions [<>](# "View Source")
