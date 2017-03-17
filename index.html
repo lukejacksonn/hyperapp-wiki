@@ -49,7 +49,7 @@
             </main>
           </view->`,
         subscriptions: [
-          (m,a) => a.fetch('_Sidebar')
+          (m,a) => a.fetch('Sidebar')
             .then(a.setMenu)
             .then(htmlify('aside')),
           (m,a) => a.fetch(location.pathname === '/hyperapp-wiki/' ? 'Home' : location.pathname)
