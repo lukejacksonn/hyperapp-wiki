@@ -20,7 +20,8 @@
       }
 
       const localizePath = path => {
-        if(!!location.hostname.match(/.*\.github\.io/)) return 'hyperapp-wiki/pages/' + path
+        if(!!location.hostname.match(/.*\.github\.io/))
+        return 'hyperapp-wiki/pages/' + path.replace('/hyperapp-wiki/','')
         return 'pages/' + path.replace('/hyperapp-wiki/','')
       }
 
