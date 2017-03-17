@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hyperapp Wiki</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.7/assets/css/emojione.min.css"/>
+    <script src='https://rawgit.com/chjj/marked/master/lib/marked.js'></script>
+    <script src="https://unpkg.com/hyperapp"></script>
+    <script src="https://wzrd.in/standalone/hyperx"></script>
+    <script>
+
+      const { h, app } = hyperapp
+      const html = hyperx(h)
+      const htmlify = selector => () => {
+        const $ = document.querySelector(selector)
+        $.innerHTML = $.textContent
+      }
+
+      app({
+        model: {
+          menu: '',
+          main: '',
+        },
+        actions: {
+          setMenu: (m,d) => ({ menu: d }),
+          setMain: (m,d) => ({ main: d }),
+          fetch: (m,d,a) => fetch(d)
+            .then(d => d.text())
+            .then(marked)
+        },
+        view: (m,a) => html`
+          <view->
+            <nav>
+              <icon-></icon->
+              <h1>Hyperapp Docs</h1>
+            </nav>
+            <main>
+              <aside>${m.menu}</aside>
+              <article>${m.main}</article>
+            </main>
+          </view->`,
+        subscriptions: [
+          (m,a) => a.fetch('/_Sidebar.md')
+            .then(a.setMenu)
+            .then(htmlify('aside')),
+          (m,a) => a.fetch(location.pathname+'.md')
+            .then(emojione.shortnameToImage)
+            .then(a.setMain)
+            .then(htmlify('article'))
+            .then(hljs.initHighlighting)
+        ],
+      })
+
+    </script>
+    <style>
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: calc(10px + 1vmin);
+        line-height: 150%;
+        color: rgba(0,0,0,.8)
+      }
+      main {
+        display: flex;
+      }
+      nav {
+        width: 100%;
+        background: linear-gradient(to right, #16e3e7, #0acbff);
+        padding: 2rem;
+        color: #fff;
+        display: flex;
+      }
+      h1 {
+        font-weight: lighter;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        font-size: 1.38rem;
+        margin-left: auto;
+      }
+      aside {
+        flex: 1;
+        padding: 2rem 2rem 2rem 1rem;
+        background: rgba(0,0,0,.025);
+      }
+      article {
+        width: 0;
+        flex: 3;
+        padding: 2rem;
+      }
+      article > *+* {
+        margin-top: 2rem;
+      }
+      article > pre {
+        width: 100%;
+        overflow-x: auto;
+        padding: .5rem;
+        overflow: auto;
+        font-size: 85%;
+        line-height: 1.45;
+        background-color: #f6f8fa;
+        border-radius: 3px;
+      }
+      article > pre > code {
+        background: transparent !important;
+      }
+      article > *:not(pre) > code {
+        padding: 0;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        margin: 0;
+        font-size: 85%;
+        background-color: rgba(27,31,35,0.05);
+        border-radius: 3px;
+      }
+      article blockquote {
+        padding: 0 1em;
+        color: #6a737d;
+        border-left: 0.25em solid #dfe2e5;
+      }
+      a {
+        color: #0acbff;
+      }
+
+      icon- {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      icon-::before {
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        background: #fff;
+      }
+      icon-::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-bottom: 1rem solid #fff;
+        border-right: 1rem solid transparent;
+        margin-left: .18rem;
+      }
+
+    </style>
+  </head>
+  <body></body>
+</html>
