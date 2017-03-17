@@ -27,7 +27,8 @@
         actions: {
           setMenu: (m,d) => ({ menu: d }),
           setMain: (m,d) => ({ main: d }),
-          fetch: (m,d,a) => fetch(`https://rawgit.com/lukejacksonn/hyperapp-wiki/master/${d.replace('/hyperapp-wiki/','')}.md`)
+          fetch: (m,d,a) =>
+            fetch(`https://rawgit.com/lukejacksonn/hyperapp-wiki/master/${d.replace('/hyperapp-wiki/','').split('#')[0]}.md`)
             .then(d => d.text())
             .then(marked)
         },
@@ -50,7 +51,20 @@
             .then(emojione.shortnameToImage)
             .then(a.setMain)
             .then(htmlify('article'))
-            .then(hljs.initHighlighting)
+            .then(hljs.initHighlighting),
+          (m,a) => {
+            addEventListener('click', e => {
+              if(e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('/')) {
+                e.preventDefault()
+                history.pushState(null, null, e.target.getAttribute('href'));
+                a.fetch(e.target.getAttribute('href'))
+                  .then(emojione.shortnameToImage)
+                  .then(a.setMain)
+                  .then(htmlify('article'))
+                  .then(hljs.initHighlighting)
+              }
+            })
+          }
         ],
       })
 
