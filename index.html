@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <title>Hyperapp Wiki</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.7/assets/css/emojione.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.7/assets/css/emojione.min.css"/>
     <script src='https://rawgit.com/chjj/marked/master/lib/marked.js'></script>
     <script src="https://unpkg.com/hyperapp"></script>
     <script src="https://wzrd.in/standalone/hyperx"></script>
+    <script src="https://rawgit.com/cure53/DOMPurify/master/dist/purify.min.js"></script>
     <script>
 
       const { h, app } = hyperapp
@@ -43,6 +44,7 @@
             fetch(`/${localizePath(d)}.md`)
             .then(d => d.text())
             .then(marked)
+            .then(DOMPurify.sanitize)
         },
         view: (m,a) => html`
           <view->
