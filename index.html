@@ -27,7 +27,7 @@
         actions: {
           setMenu: (m,d) => ({ menu: d }),
           setMain: (m,d) => ({ main: d }),
-          fetch: (m,d,a) => fetch(d)
+          fetch: (m,d,a) => fetch(`https://rawgit.com/lukejacksonn/hyperapp-wiki/master/${d.replace('/hyperapp-wiki/','')}.md`)
             .then(d => d.text())
             .then(marked)
         },
@@ -43,10 +43,10 @@
             </main>
           </view->`,
         subscriptions: [
-          (m,a) => a.fetch('/_Sidebar.md')
+          (m,a) => a.fetch('_Sidebar')
             .then(a.setMenu)
             .then(htmlify('aside')),
-          (m,a) => a.fetch(location.pathname+'.md')
+          (m,a) => a.fetch(location.pathname === '/hyperapp-wiki/' ? 'Home' : location.pathname)
             .then(emojione.shortnameToImage)
             .then(a.setMain)
             .then(htmlify('article'))
