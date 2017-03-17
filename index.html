@@ -20,8 +20,14 @@
       }
 
       const localizePath = path => {
-        if(!!location.hostname.match(/.*\.github\.io/)) return 'hyperapp-wiki/' + path
-        return path.replace('/hyperapp-wiki/','')
+        if(!!location.hostname.match(/.*\.github\.io/)) return 'hyperapp-wiki/pages/' + path
+        return 'pages/' + path.replace('/hyperapp-wiki/','')
+      }
+
+      const redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
       }
 
       app({
