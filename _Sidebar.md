@@ -1,28 +1,26 @@
-* [[Home]]
-* [[Getting Started]]
-* [[Build Setup]]
-  * [[Hyperx]]
-  * [[JSX]]
-* [[Concepts]]
-  * [[Architecture]]
-  * [[Components]]
-  * [[Plugins]]
-  * [[Virtual Nodes]]
-* [[Tutorials]]
-  * [[Rocket Launcher]]
-  * [[Tweet Box]]
-* [[Reference]]
-  * [h](/hyperapp/hyperapp/wiki/reference#h)
-  * [app](/hyperapp/hyperapp/wiki/reference#app)
-    * [model](/hyperapp/hyperapp/wiki/reference#model)
-    * [view](/hyperapp/hyperapp/wiki/reference#view)
-    * [actions](/hyperapp/hyperapp/wiki/reference#actions)
-    * [subscriptions](/hyperapp/hyperapp/wiki/reference#subscriptions)
-    * [hooks](/hyperapp/hyperapp/wiki/reference#hooks)
-    * [plugins](/hyperapp/hyperapp/wiki/reference#plugins)
-    * [root](/hyperapp/hyperapp/wiki/reference#root)
-  * [toString](/hyperapp/hyperapp/wiki/reference#tostring)
-  * [Router](/hyperapp/hyperapp/wiki/reference#Router)
-  * [Lifecycle Methods](/hyperapp/hyperapp/wiki/reference#lifecycle-methods)
-
-
+* [Home](/Home)
+* [Getting Started](/Getting-Started)
+* [Build Setup](/Build-Setup)
+  * [Hyperx](/Hyperx)
+  * [JSX](/JSX)
+* [Concepts](/Concepts)
+  * [Architecture](/Architecture)
+  * [Components](/Components)
+  * [Plugins](/Plugins)
+  * [Virtual Nodes](/Virtual-Nodes)
+* [Tutorials](/Tutorials)
+  * [Rocket Launcher](/Rocket-Launcher)
+  * [Tweet Box](/Tweet-Box)
+* [Reference](/Reference)
+  * [h](/reference#h)
+  * [app](/reference#app)
+    * [model](/reference#model)
+    * [view](/reference#view)
+    * [actions](/reference#actions)
+    * [subscriptions](/reference#subscriptions)
+    * [hooks](/reference#hooks)
+    * [plugins](/reference#plugins)
+    * [root](/reference#root)
+  * [toString](/reference#tostring)
+  * [Router](/reference#Router)
+  * [Lifecycle Methods](/reference#lifecycle-methods)
