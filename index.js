@@ -1,9 +1,4 @@
-const { h, app } = hyperapp
-const html = hyperx(h)
-const htmlify = selector => () => {
-  const $ = document.querySelector(selector)
-  $.innerHTML = $.textContent
-}
+const { h, app, Router } = hyperapp
 
 const localizePath = path => {
   if(!!location.hostname.match(/.*\.github\.io/))
@@ -16,6 +11,8 @@ delete sessionStorage.redirect;
 if (redirect && redirect != location.href) {
   history.replaceState(null, null, redirect);
 }
+
+/** @jsx h */
 
 app({
   model: {
@@ -31,25 +28,47 @@ app({
       .then(marked)
       .then(DOMPurify.sanitize)
   },
-  view: (m,a) => html`
-    <view->
-      <nav>
-        <icon-></icon->
-        <h1>Hyperapp Docs</h1>
-      </nav>
-      <main>
-        <aside>${m.menu}</aside>
-        <article>${m.main}</article>
-      </main>
-    </view->`,
+  view: {
+    '*': (m,a) =>
+      <view->
+        <nav>
+          <icon-></icon->
+          <h1>Hyperapp Docs</h1>
+        </nav>
+        <main>
+          <aside onUpdate={e => e.innerHTML=m.menu}></aside>
+          <article onUpdate={e => e.innerHTML=m.main}></article>
+        </main>
+      </view->
+  },
   subscriptions: [
     (m,a) => a.fetch('Sidebar')
-      .then(a.setMenu)
-      .then(htmlify('aside')),
+      .then(a.setMenu),
     (m,a) => a.fetch(location.pathname === '/hyperapp-wiki/' ? 'Home' : location.pathname)
       .then(emojione.shortnameToImage)
       .then(a.setMain)
-      .then(htmlify('article'))
-      .then(hljs.initHighlighting),
+      .then(() => setTimeout(hljs.initHighlighting, 0)),
+    (m,a) =>
+      addEventListener("click", (e) => {
+        if (e.metaKey || e.shiftKey || e.ctrlKey || e.altKey) return
+        var target = e.target
+        while (target && target.localName !== "a") {
+          target = target.parentNode
+        }
+        if (target && target.host === location.host && !target.hasAttribute("data-no-routing")) {
+          var element = document.querySelector(target.hash === "" ? element : target.hash)
+          if (element) {
+            element.scrollIntoView(true)
+          } else {
+            e.preventDefault()
+            a.router.go(target.pathname)
+            a.fetch(location.pathname === '/hyperapp-wiki/' ? 'Home' : location.pathname)
+            .then(emojione.shortnameToImage)
+            .then(a.setMain)
+            .then(() => setTimeout(hljs.initHighlighting, 0))
+          }
+        }
+      }),
   ],
+  plugins: [Router],
 })
