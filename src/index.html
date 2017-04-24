@@ -3,10 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>Hyperapp Docs</title>
-    <link rel="stylesheet" href="/index.css">
+    <script>
+
+      function localizePath(path) {
+        return !!location.hostname.match(/.*\.github\.io/)
+        ? '/hyperapp-wiki' + path
+        : path
+      }
+
+      var style = document.createElement('link')
+      style.rel = 'stylesheet'
+      style.href = localizePath('/index.css')
+
+      var script = document.createElement('script')
+      script.src = localizePath('/index.js')
+
+      document.head.appendChild(style)
+      document.head.appendChild(script)
+
+    </script>
     <link rel="stylesheet" href="https://rawgit.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
   </head>
   <body></body>
-  <script src="/index.js"></script>
 </html>
