@@ -1,44 +1,40 @@
-[Hyperx](https://github.com/substack/hyperx) is a standards-compliant ES6 tagged [template string function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) factory. It is a pure JavaScript alternative to [[JSX]].
+# Hyperx
 
-Hyperx looks like this:
+[Hyperx](https://github.com/substack/hyperx) is a standards-compliant ES6 tagged [template string function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) factory. It is a pure JavaScript alternative to [JSX](/docs/jsx.md).
+
+Hyperx is used as follows:
 
 ```js
+const hyperx = require("hyperx")
+const html = hyperx(h)
+
 const hello = html`
   <div>
     <h1>Hello.</h1>
-    <button onclick=${action}>Click</button>
+    <button onclick=${() => alert("Hi")}>Click</button>
   </div>`
-```
-
-To generate the `html` function, you can use the following boilerplate:
-
-```js
-const { h, app } = require("hyperapp")
-const hyperx = require("hyperx")
-const html = hyperx(h)
 ```
 
 ## Setup
 
-We'll use [hyperxify](https://github.com/substack/hyperxify) to transform Hyperx into native HyperApp [h](/hyperapp/hyperapp/wiki/reference#h) function calls and a bundler to create a single `bundle.js` file we can deliver to the browser.
+We'll use [hyperxify](https://github.com/substack/hyperxify) to transform Hyperx into native HyperApp [h](/docs/h.md#h) function calls and a bundler to create a single bundle.js file we can deliver to the browser.
 
-There are caveats, however, the ES6 module syntax is incompatible with hyperxify, so you have to use Node.js `require` function.
+There are caveats, however, the ES6 module syntax is incompatible with hyperxify, so we must use the Node.js require function.
 
-In a new directory, create an `index.html` file:
+In a new directory, create an index.html file:
 
 ```html
 <!doctype html>
-<html lang="en">
-<head>
-  <title>Hello HyperApp</title>
-</head>
+<html>
+
 <body>
   <script src="bundle.js"></script>
 </body>
+
 </html>
 ```
 
-And an `index.js` file:
+And an index.js file:
 
 ```js
 const { h, app } = require("hyperapp")
@@ -46,8 +42,8 @@ const hyperx = require("hyperx")
 const html = hyperx(h)
 
 app({
-  model: "Hi.",
-  view: model => html`<h1>${model}</h1>`
+  state: "Hi.",
+  view: state => html`<h1>${state}</h1>`
 })
 ```
 
@@ -56,7 +52,7 @@ Install dependencies:
 npm i -S <a href="https://www.npmjs.com/package/hyperapp">hyperapp</a>
 </pre>
 
-### Browserify
+### [Browserify](https://gist.github.com/jbucaran/48c1edb4fb0ea1aa5415b6686cc7fb45)
 
 Install development dependencies:
 <pre>
@@ -70,6 +66,13 @@ npm i -D \
   <a href="https://www.npmjs.com/package/uglify-js">uglify-js</a>
 </pre>
 
+Create a .babelrc file:
+
+```
+{
+  "presets": ["es2015"]
+}
+```
 
 Bundle your application:
 <pre>
@@ -80,15 +83,14 @@ $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/browserify \
   -p bundle-collapser/plugin index.js | uglifyjs > bundle.js
 </pre>
 
-[View this Gist](https://gist.github.com/jbucaran/48c1edb4fb0ea1aa5415b6686cc7fb45)
-
-### Webpack
+### [Webpack](https://gist.github.com/jbucaran/c6a6bdb5383a985cec6b0ae4ebe5a4b1)
 
 Install development dependencies:
 
 <pre>
 npm i -D \
   <a href="https://www.npmjs.com/package/hyperx">hyperx</a> \
+  <a href="https://www.npmjs.com/package/hyperxify">hyperxify</a> \
   <a href="https://www.npmjs.com/package/webpack">webpack</a> \
   <a href="https://www.npmjs.com/package/transform-loader">transform-loader</a> \
   <a href="https://www.npmjs.com/package/babel-core">babel-core</a> \
@@ -128,9 +130,7 @@ Bundle your application:
 $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/webpack -p
 </pre>
 
-[View this Gist](https://gist.github.com/jbucaran/c6a6bdb5383a985cec6b0ae4ebe5a4b1)
-
-### Rollup
+### [Rollup](https://gist.github.com/jbucaran/fac2c3de24e5171596fb189f9c1feb8e)
 
 Install development dependencies:
 
@@ -176,5 +176,3 @@ Bundle your application:
 <pre>
 $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/rollup -cf iife -i index.js -o bundle.js
 </pre>
-
-[View this Gist](https://gist.github.com/jbucaran/fac2c3de24e5171596fb189f9c1feb8e)

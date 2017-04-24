@@ -1,47 +1,45 @@
-JSX is an XML-like syntax extension to ECMAScript. It allows you to mix HTML and JavaScript.
+# JSX
 
-JSX is not part of the ECMAScript standard, but using the appropriate tooling we can compile our JavaScript + JSX code into vanilla JavaScript that browsers understand.
+[JSX](https://facebook.github.io/jsx/) is an XML-like syntax extension to ECMAScript. It allows you to mix HTML and JavaScript.
+
+JSX is not part of the ECMAScript standard, but using the appropriate tooling we can compile our JavaScript/JSX code into vanilla JavaScript that browsers understand.
 
 JSX looks like this:
 
 ```jsx
-const hello =
-  <div>
-    <h1>Hello.</h1>
-    <button onclick=${action}>Click</button>
-  </div>
+<div>
+  <h1>Hello.</h1>
+  <button onclick={() => alert("Hi")}>Click</button>
+</div>
 ```
 
 For an in-depth introduction to JSX, see the official [documentation](https://facebook.github.io/react/docs/introducing-jsx.html).
 
-
 ## Setup
 
-To use JSX with HyperApp, we'll use a compiler to transform JSX into native HyperApp [h](/hyperapp/hyperapp/wiki/reference#h) function calls and a bundler to create a single `bundle.js` file we can deliver to the browser.
+To use JSX with HyperApp, we'll use a compiler to transform JSX into native HyperApp [h](/docs/h.md#h) function calls and a bundler to create a single bundle.js file we can deliver to the browser.
 
-In a new directory, create an `index.html` file:
+In a new directory, create an index.html file:
 
 ```html
 <!doctype html>
-<html lang="en">
-<head>
-  <title>Hello HyperApp</title>
-</head>
+<html>
 
 <body>
   <script src="bundle.js"></script>
 </body>
+
 </html>
 ```
 
-And an `index.js` file:
+And an index.js file:
 
 ```jsx
 import { h, app } from "hyperapp"
 
 app({
-  model: "Hi.",
-  view: model => <h1>{model}</h1>
+  state: "Hi.",
+  view: state => <h1>{state}</h1>
 })
 ```
 
@@ -50,8 +48,7 @@ Install dependencies:
 npm i -S <a href="https://www.npmjs.com/package/hyperapp">hyperapp</a>
 </pre>
 
-
-### Browserify
+### [Browserify](https://gist.github.com/jbucaran/21bbf0bbb0fe97345505664883100706)
 
 Install development dependencies:
 <pre>
@@ -89,9 +86,7 @@ $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/browserify \
   -p bundle-collapser/plugin index.js | uglifyjs > bundle.js
 </pre>
 
-[View this Gist](https://gist.github.com/jbucaran/21bbf0bbb0fe97345505664883100706)
-
-### Webpack
+### [Webpack](https://gist.github.com/jbucaran/6010a83891043a6e0c37a3cec684c08e)
 
 Install development dependencies:
 <pre>
@@ -141,9 +136,7 @@ Bundle your application:
 $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/webpack -p
 </pre>
 
-[View this Gist](https://gist.github.com/jbucaran/6010a83891043a6e0c37a3cec684c08e)
-
-### Rollup
+### [Rollup](https://gist.github.com/jbucaran/0c0da8f1256a0a66090151cfda777c2c)
 
 Install development dependencies:
 <pre>
@@ -185,5 +178,3 @@ Bundle your application:
 <pre>
 $(<a href="https://docs.npmjs.com/cli/bin">npm bin</a>)/rollup -cf iife -i index.js -o bundle.js
 </pre>
-
-[View this Gist](https://gist.github.com/jbucaran/0c0da8f1256a0a66090151cfda777c2c)

@@ -1,0 +1,81 @@
+{
+  "name": "hyperapp-docs",
+  "version": "1.0.0",
+  "description": "A hyperapp that serves up markdown documentation",
+  "keywords": [],
+  "main": "src/index.js",
+  "watch": {
+    "index": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "html",
+      "quiet": true
+    },
+    "script": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js",
+      "quiet": true
+    },
+    "style": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "css",
+      "quiet": true
+    },
+    "serve": {
+      "patterns": [
+        "."
+      ],
+      "extensions": "json",
+      "quiet": true
+    }
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      [
+        "transform-react-jsx",
+        {
+          "pragma": "h"
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "index": "copyfiles -f src/index.html .",
+    "script": "browserify -t [ babelify ] src/index.js > index.js",
+    "style": "node-sass -q src/index.css -o .",
+    "serve": "http-server-spa .",
+    "uglifyjs": "uglifyjs --screw-ie8 -c -m -o index.js -- index.js",
+    "uglifycss": "echo `uglifycss index.css` > index.css",
+    "minify": "npm run uglifyjs && npm run uglifycss",
+    "start": "npm run index && npm-watch",
+    "build": "npm run index && npm run script && npm run style && npm run minify"
+  },
+  "author": "Luke Jackson <lukejacksonn@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "copyfiles": "^1.2.0",
+    "http-server-spa": "^1.2.0",
+    "node-sass": "^3.8.0",
+    "npm-watch": "^0.1.6",
+    "uglify-js": "^2.7.5",
+    "uglifycss": "0.0.25"
+  },
+  "dependencies": {
+    "highlight.js": "^9.10.0",
+    "hyperapp": "0.8.1",
+    "marked": "^0.3.6"
+  }
+}
