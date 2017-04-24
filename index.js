@@ -17643,17 +17643,28 @@ var Aside = function Aside(_ref2) {
 });
 
 },{"./plugins/linker":181,"highlight.js":2,"hyperapp":177,"marked":178,"url-join":179}],181:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _urlJoin = require('url-join');
+
+var _urlJoin2 = _interopRequireDefault(_urlJoin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function (options) {
   return {
     events: {
       loaded: function loaded(s, a) {
         return addEventListener("click", function (e) {
+
+          var localizePath = function localizePath(path) {
+            return !!location.hostname.match(/.*\.github\.io/) ? (0, _urlJoin2.default)('/hyperapp-wiki', path.replace('/hyperapp-wiki', '/')) : path;
+          };
+
           if (e.metaKey || e.shiftKey || e.ctrlKey || e.altKey) return;
           var target = e.target;
           while (target && target.localName !== "a") {
@@ -17665,7 +17676,7 @@ exports.default = function (options) {
               element.scrollIntoView(true);
             } else {
               e.preventDefault();
-              a.router.go(target.pathname);
+              a.router.go(localizePath(target.pathname));
             }
           }
         });
@@ -17674,4 +17685,4 @@ exports.default = function (options) {
   };
 };
 
-},{}]},{},[180]);
+},{"url-join":179}]},{},[180]);
