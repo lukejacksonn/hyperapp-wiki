@@ -76,6 +76,7 @@
   "dependencies": {
     "highlight.js": "^9.10.0",
     "hyperapp": "0.8.1",
-    "marked": "^0.3.6"
+    "marked": "^0.3.6",
+    "url-join": "^2.0.1"
   }
 }

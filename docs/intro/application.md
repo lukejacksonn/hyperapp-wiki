@@ -4,7 +4,7 @@ To create applications use the [app](/docs/api#app) function. This is the founda
 
 ## Basic Application
 
-This is an example of an application that has _knowledge_ of just a singular view containing some static HTML. When this code is evaluated then the contents of the view gets rendered to the root element (which defaults to `document.body`).
+This is an example of an application that has _knowledge_ of just a singular view containing some static HTML. When this code is evaluated then the contents of the view gets rendered to the root element which defaults to `document.body`.
 
 ```
 app({

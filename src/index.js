@@ -1,5 +1,6 @@
 import { h, app, Router } from 'hyperapp'
 import marked from 'marked'
+import urljoin from 'url-join'
 import highlight from 'highlight.js'
 
 import Linker from './plugins/linker'
@@ -8,45 +9,27 @@ marked.setOptions({
   highlight: (code) => highlight.highlightAuto(code).value
 })
 
-const redirect = sessionStorage.redirect;
-delete sessionStorage.redirect;
-if (redirect && redirect != location.href) {
-  history.replaceState(null, null, redirect);
+const handleErrors = res => {
+  if (!res.ok) throw Error(res.statusText)
+  return res
 }
 
 const localizePath = path =>
   !!location.hostname.match(/.*\.github\.io/)
-  ? 'hyperapp-wiki' + path
-  : path
+  ? urljoin('/hyperapp-wiki/docs', path.replace('/hyperapp-wiki', '/'))
+  : '/docs' + path
 
-const fetchMarkdown = x =>
-  fetch(`${
-    localizePath(x) === localizePath('/')
-    ? localizePath('/docs/README')
-    : localizePath(x)
-  }.md`)
+const fetchMarkdown = file =>
+  fetch(`${localizePath(file)}.md`)
+  .then(handleErrors)
   .then(data => data.text())
   .then(marked)
 
-const Article = ({html, a}) => {
+const Article = ({html, a}) =>
+  <article class='markdown-body' onUpdate={ e => e.innerHTML = html }></article>
 
-  html ? null :
-    fetchMarkdown(location.pathname)
-    .then(a.setArticle)
-
-  return <article class='markdown-body' onUpdate={ e => e.innerHTML = html }></article>
-
-}
-
-const Aside = ({html, a}) => {
-
-  html ? null :
-    fetchMarkdown('/docs/CONTENTS')
-    .then(a.setAside)
-
-  return <aside class='markdown-body' onUpdate={ e => e.innerHTML = html }></aside>
-
-}
+const Aside = ({html, a}) =>
+  <aside class='markdown-body' onUpdate={ e => e.innerHTML = html }></aside>
 
 app({
   state: {
@@ -58,10 +41,18 @@ app({
     setAside: (s,d) => ({ aside: d }),
   },
   events: {
-    route: (s,a,d) => {
-      fetchMarkdown(location.pathname)
+    loaded: (s,a,d) =>
+      fetchMarkdown('/CONTENTS')
+      .then(a.setAside)
+      .catch(a.setAside),
+    route: (s,a,d) =>
+      fetchMarkdown(
+        localizePath(location.pathname) === localizePath('/')
+        ? '/README'
+        : location.pathname
+      )
       .then(a.setArticle)
-    },
+      .catch(a.setArticle),
   },
   view: (s,a,d) =>
     <page->

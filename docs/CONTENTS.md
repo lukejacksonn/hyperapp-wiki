@@ -1,17 +1,17 @@
 
 ### Introduction
 
-* [README](/docs/README)
-* [Application](/docs/intro/application)
-* [View and State](/docs/intro/view-and-state)
-* [Actions](/docs/intro/actions)
-* [Events](/docs/intro/events)
+* [Overview](/README)
+* [Application](/intro/application)
+* [View and State](/intro/view-and-state)
+* [Actions](/intro/actions)
+* [Events](/intro/events)
 
 ### Extras
 
-* [Lifecycle Events](/docs/lifecycle-events.md)
-* [Routing](/docs/routing.md)
-* [Mixins](/docs/creating-an-application.md#mixins)
+* [Lifecycle Events](/lifecycle-events.md)
+* [Routing](/routing.md)
+* [Mixins](/creating-an-application.md#mixins)
 
 ### API
 
@@ -30,9 +30,9 @@
 
 ### Virtual DOM
 
-* [Hyperx](/docs/vdom/hyperx)
-* [JSX](/docs/vdom/jsx)
-* [Custom Tags](/docs/vdom/custom-tags)
+* [Hyperx](/vdom/hyperx)
+* [JSX](/vdom/jsx)
+* [Custom Tags](/vdom/custom-tags)
 
 ### Examples
 
