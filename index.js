@@ -17510,8 +17510,18 @@ _marked2.default.setOptions({
   }
 });
 
+var redirect = sessionStorage.redirect;
+delete sessionStorage.redirect;
+if (redirect && redirect != location.href) {
+  history.replaceState(null, null, redirect);
+}
+
+var localizePath = function localizePath(path) {
+  return !!location.hostname.match(/.*\.github\.io/) ? 'hyperapp-wiki' + path : path;
+};
+
 var fetchMarkdown = function fetchMarkdown(x) {
-  return fetch((x === '/' ? '/docs/README' : x) + '.md').then(function (data) {
+  return fetch((localizePath(x) === localizePath('/') ? localizePath('/docs/README') : localizePath(x)) + '.md').then(function (data) {
     return data.text();
   }).then(_marked2.default);
 };

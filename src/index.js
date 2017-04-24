@@ -8,9 +8,22 @@ marked.setOptions({
   highlight: (code) => highlight.highlightAuto(code).value
 })
 
+const redirect = sessionStorage.redirect;
+delete sessionStorage.redirect;
+if (redirect && redirect != location.href) {
+  history.replaceState(null, null, redirect);
+}
+
+const localizePath = path =>
+  !!location.hostname.match(/.*\.github\.io/)
+  ? 'hyperapp-wiki' + path
+  : path
+
 const fetchMarkdown = x =>
   fetch(`${
-    x === '/' ? '/docs/README' : x
+    localizePath(x) === localizePath('/')
+    ? localizePath('/docs/README')
+    : localizePath(x)
   }.md`)
   .then(data => data.text())
   .then(marked)
