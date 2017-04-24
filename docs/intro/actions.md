@@ -1,6 +1,6 @@
 # Actions
 
-As mentioned in [view and state], the only way to modify the applications state and is through [actions](/docs/api.md#actions). Actions are pure functions that take the current state and transform it into a new one (which causes the view to be re-rendered). Actions can be triggered by DOM Events such as `onclick`.
+As mentioned in [view and state], the only way to modify the applications state and is through [actions](/api#actions). Actions are pure functions that take the current state and transform it into a new one (which causes the view to be re-rendered). Actions can be triggered by DOM Events such as `onclick`.
 
 ```
 app({

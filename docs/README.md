@@ -33,10 +33,6 @@ app({
 
 No software is free of bugs. If you're not sure if something is a bug or not, [file an issue](https://github.com/hyperapp/hyperapp/issues) anyway. Questions, feedback and feature requests are welcome too.
 
-## Documentation
-
-See the [Wiki](https://github.com/hyperapp/hyperapp/wiki).
-
 ## Community
 
 * [Slack](https://hyperappjs.herokuapp.com)

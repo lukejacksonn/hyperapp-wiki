@@ -1,6 +1,6 @@
 # Application
 
-To create applications use the [app](/docs/api#app) function. This is the foundation of every hyperapp. The `app` function gets passed an `options` object that describes all of the apps _knowledge_.
+To create applications use the [app](/api#app) function. This is the foundation of every hyperapp. The `app` function gets passed an `options` object that describes all of the apps _knowledge_.
 
 ## Basic Application
 
@@ -14,4 +14,4 @@ app({
 
 Obviously there is more to hyperapp than this.. Building more complex applications means passing more knowledge to the app function; options include `state`, `actions` and `events`.
 
-A good place to start is [view and state](/docs/intro/view-and-state).
+A good place to start is [view and state](/intro/view-and-state).

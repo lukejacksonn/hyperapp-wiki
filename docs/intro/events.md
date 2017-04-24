@@ -1,6 +1,6 @@
 # Events
 
-[Events](/docs/api.md#events) are called to notify your application that something has happened. For example when your application has completely loaded, before a view is rendered, etc.
+[Events](/api#events) are called to notify your application that something has happened. For example when your application has completely loaded, before a view is rendered, etc.
 
 ```
 app({
@@ -38,7 +38,7 @@ Events can be useful to hook into the update and render mechanism. For a practic
 
 ### Custom Events
 
-To create custom events, use the [emit](/docs/api.md#emit) function which is passed as the last argument to actions and events.
+To create custom events, use the [emit](/api#emit) function which is passed as the last argument to actions and events.
 
 ```
 app({
