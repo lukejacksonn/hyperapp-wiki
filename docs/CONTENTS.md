@@ -9,24 +9,24 @@
 
 ### Extras
 
-* [Lifecycle Events](/lifecycle-events.md)
-* [Routing](/routing.md)
-* [Mixins](/creating-an-application.md#mixins)
+* [Lifecycle Events](/extras/lifecycle-events)
+* [Routing](/extras/routing)
+* [Plugins](/extras/plugins)
 
 ### API
 
-* [State]()
-* [View]()
-* [Actions]()
-* [Events]()
+* State
+* View
+* Actions
+* Events
 
 ### Events
 
-* [Loaded]()
-* [Action]()
-* [Update]()
-* [Render]()
-* [Emit]()
+* Loaded
+* Action
+* Update
+* Render
+* Emit
 
 ### Virtual DOM
 
