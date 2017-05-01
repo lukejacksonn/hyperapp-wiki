@@ -81,6 +81,9 @@ article {
     padding-bottom: .5em !important;
     * + & { margin-top: 1.618em !important; }
   }
+  p {
+    color: rgba(0,0,0,.8);
+  }
   pre code {
     line-height: 162% !important;
   }
