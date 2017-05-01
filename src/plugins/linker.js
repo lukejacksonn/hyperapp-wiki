@@ -19,7 +19,7 @@ export default (options) => ({
           element.scrollIntoView(true)
         } else {
           e.preventDefault()
-          a.router.go(localizePath(target.pathname))
+          a.router.go(localizePath(target.pathname.replace('.md','')))
         }
       }
     })

@@ -74,3 +74,14 @@ article {
   margin: 0 auto;
   min-height: 100vh;
 }
+
+.markdown-body {
+  h1,h2,h3 {
+    color: rgba(0,0,0,.2);
+    padding-bottom: .5em !important;
+    * + & { margin-top: 1.618em !important; }
+  }
+  pre code {
+    line-height: 162% !important;
+  }
+}

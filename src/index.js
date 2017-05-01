@@ -16,8 +16,8 @@ const handleErrors = res => {
 
 const localizePath = path =>
   !!location.hostname.match(/.*\.github\.io/)
-  ? urljoin('/hyperapp-wiki/docs', path.replace('/hyperapp-wiki', '/'))
-  : '/docs' + path
+  ? urljoin('/hyperapp-wiki', path.replace('/hyperapp-wiki', '/'))
+  : path
 
 const fetchMarkdown = file =>
   fetch(`${localizePath(file)}.md`)
@@ -42,13 +42,13 @@ app({
   },
   events: {
     loaded: (s,a,d) =>
-      fetchMarkdown('/CONTENTS')
+      fetchMarkdown('/docs/README')
       .then(a.setAside)
       .catch(a.setAside),
     route: (s,a,d) =>
       fetchMarkdown(
         localizePath(location.pathname) === localizePath('/')
-        ? '/README'
+        ? 'docs/getting-started'
         : location.pathname
       )
       .then(a.setArticle)
