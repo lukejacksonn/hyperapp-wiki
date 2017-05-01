@@ -21,7 +21,7 @@ We'll use [hyperxify](https://github.com/substack/hyperxify) to transform Hyperx
 
 There are caveats, however, the ES6 module syntax is incompatible with hyperxify, so we must use the Node.js require function.
 
-In a new directory, create an index.html file:
+In a new directory, create an <samp>index.html</samp> file:
 
 ```html
 <!doctype html>
@@ -34,7 +34,7 @@ In a new directory, create an index.html file:
 </html>
 ```
 
-And an index.js file:
+And <samp>index.js</samp> file:
 
 ```js
 const { h, app } = require("hyperapp")
@@ -66,7 +66,7 @@ npm i -D \
   <a href="https://www.npmjs.com/package/uglify-js">uglify-js</a>
 </pre>
 
-Create a .babelrc file:
+Create a <samp>.babelrc</samp> file:
 
 ```
 {
@@ -98,14 +98,14 @@ npm i -D \
   <a href="https://www.npmjs.com/package/babel-preset-es2015">babel-preset-es2015</a>
 </pre>
 
-Create a `.babelrc` file:
+Create a <samp>.babelrc</samp> file:
 ```js
 {
   "presets": ["es2015"]
 }
 ```
 
-Create a `webpack.config.js` file:
+Create a <samp>webpack.config.js</samp> file:
 
 ```jsx
 module.exports = {
@@ -148,7 +148,7 @@ npm i -D \
 </pre>
 
 
-Create a `rollup.config.js` file:
+Create a <samp>rollup.config.js</samp> file:
 
 ```jsx
 import buble from "rollup-plugin-buble"

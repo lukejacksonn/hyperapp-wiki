@@ -19,7 +19,7 @@ For an in-depth introduction to JSX, see the official [documentation](https://fa
 
 To use JSX with HyperApp, we'll use a compiler to transform JSX into native HyperApp [h](/docs/h.md#h) function calls and a bundler to create a single bundle.js file we can deliver to the browser.
 
-In a new directory, create an index.html file:
+In a new directory, create an <samp>index.html</samp> file:
 
 ```html
 <!doctype html>
@@ -32,7 +32,7 @@ In a new directory, create an index.html file:
 </html>
 ```
 
-And an index.js file:
+And <samp>index.js</samp> file:
 
 ```jsx
 import { h, app } from "hyperapp"
@@ -62,7 +62,7 @@ npm i -D \
   <a href="https://www.npmjs.com/package/uglifyjs">uglifyjs</a>
 </pre>
 
-Create a `.babelrc` file:
+Create a <samp>.babelrc</samp> file:
 
 ```js
 {
@@ -98,7 +98,7 @@ npm i -D \
   <a href="https://www.npmjs.com/package/babel-plugin-transform-react-jsx">babel-plugin-transform-react-jsx</a>
 </pre>
 
-Create a `.babelrc` file:
+Create a <samp>.babelrc</samp> file:
 ```js
 {
   "presets": ["es2015"],
@@ -113,7 +113,7 @@ Create a `.babelrc` file:
 }
 ```
 
-Create a `webpack.config.js` file:
+Create a <samp>webpack.config.js</samp> file:
 
 ```js
 module.exports = {
@@ -150,7 +150,7 @@ npm i -D \
 </pre>
 
 
-Create a `rollup.config.js` file:
+Create a <samp>rollup.config.js</samp> file:
 
 ```jsx
 import babel from "rollup-plugin-babel"
